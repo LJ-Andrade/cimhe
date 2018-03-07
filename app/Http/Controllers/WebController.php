@@ -90,7 +90,7 @@ class WebController extends Controller
 			$subject = 'Nuevo contacto desde la web';
 
 			$data = $request->all();
-			Mail::to(APP_EMAIL_TEST)->send(new WebContactMail($subject, $data));
+			Mail::to(APP_EMAIL_1)->send(new WebContactMail($subject, $data));
 			
 			return response()->json(['response' => 1,
 									 'error'    => '0']); 
