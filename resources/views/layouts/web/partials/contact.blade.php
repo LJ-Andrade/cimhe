@@ -21,26 +21,6 @@
 					</div>
 
 					<div class="form-group">
-						{!! Form::text('data4', null, ['class' => 'form-control', 'placeholder' => 'TIPO DE SERVICIO', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::text('data5', null, ['class' => 'form-control', 'placeholder' => 'EMPRESA (CUIT)', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::text('data6', null, ['class' => 'form-control', 'placeholder' => 'DIRECCIÓN DE OBRA', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::text('data7', null, ['class' => 'form-control', 'placeholder' => 'RESPONSABLE DE OBRA', 'required']) !!}
-					</div>
-						
-					<div class="form-group">
-						{!! Form::text('data8', null, ['class' => 'form-control', 'placeholder' => 'REQUERIMIENTO PARTICULAR', 'required']) !!}
-					</div>
-
-					<div class="form-group">
 						{!! Form::textarea('message', null, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'CONSULTA / MENSAJE']) !!}
 					</div>
 
@@ -137,3 +117,44 @@
 <section class="contact-map">
 	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13133.568470043838!2d-58.53853298162236!3d-34.61952996272408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7e00b9b886f%3A0x6be25ae56d06d6de!2sSan+Roque+2470%2C+B1703BCF+Jos%C3%A9+Ingenieros%2C+Buenos+Aires!5e0!3m2!1ses-419!2sar!4v1519977329474" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
 </section>
+{{-- 
+
+{!! Form::open(['id' => 'MainContactForm', 'method' => 'POST']) !!}
+				
+					<div class="form-group">
+						{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'required']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'TELÉFONO', 'required']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-MAIL', 'required']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::text('data4', null, ['class' => 'form-control', 'placeholder' => 'TIPO DE SERVICIO', 'required']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::text('data5', null, ['class' => 'form-control', 'placeholder' => 'EMPRESA (CUIT)', 'required']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::text('data6', null, ['class' => 'form-control', 'placeholder' => 'DIRECCIÓN DE OBRA', 'required']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::text('data7', null, ['class' => 'form-control', 'placeholder' => 'RESPONSABLE DE OBRA', 'required']) !!}
+					</div>
+						
+					<div class="form-group">
+						{!! Form::text('data8', null, ['class' => 'form-control', 'placeholder' => 'REQUERIMIENTO PARTICULAR', 'required']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::textarea('message', null, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'CONSULTA / MENSAJE']) !!}
+					</div>
+
+					{{ csrf_field() }} --}}
