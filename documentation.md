@@ -46,3 +46,6 @@ Comando para generar CRUDS desde consola
 php artisan crud:generate Posts --fields='title#string; content#text; category#select#options={"technology": "Technology", "tips": "Tips", "health": "Health"}' --view-path=admin --controller-namespace=Admin --route-group=admin --form-helper=html
 
 php artisan crud:generate Shippings --fields='name#string' --view-path=Vadmin/Catalog --controller-namespace=Catalog --route-group=Vadmin
+
+## Emails
+Las direcciones destino de email donde Vadmin puede enviar notificaciones, mails, etc se configuran desde el archivo app/Http/config.php

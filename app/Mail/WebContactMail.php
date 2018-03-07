@@ -12,16 +12,16 @@ class WebContactMail extends Mailable
     use Queueable, SerializesModels;
 
     public $subject;
-    public $content;
+    public $data;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($subject, $content)
+    public function __construct($subject, $data)
     {
-        $this->content = $content;
+        $this->data = $data;
         $this->subject = $subject;
     }
 
@@ -33,6 +33,6 @@ class WebContactMail extends Mailable
     public function build()
     {
         return $this->subject($this->subject)->markdown('vadmin.components.mailWebContact')
-            ->with(['content' => $this->content]);
+            ->with(['data' => $this->data]);
     }
 }

@@ -102,7 +102,7 @@
             </div>
         </div>
     </section>
-
+    
     <section class="container-fluid section section-container home-section-4">
         <div class="container">
             <div class="row">
@@ -153,6 +153,7 @@
             </div>  
         </div>
     </section>
+    <div id="Error"></div>
     @include('layouts.web.partials.contact')
 
     @include('layouts.web.partials.foot')

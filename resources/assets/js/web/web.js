@@ -90,54 +90,23 @@ $(document).ready(function () {
 
 }); // Document Ready
 
-    // Home Parallax
-    var image = "{{ asset('webimages/gral/home/home-back.jpg') }}";
-    $('.main-home').parallax({ imageSrc: image });
+// Home Parallax
+var image = "{{ asset('webimages/gral/home/home-back.jpg') }}";
+$('.main-home').parallax({ imageSrc: image });
 
-    var mySwiper = new Swiper('.swiper-container', {
-        pagination: true,
-        spaceBetween: 20,
-        autoHeight: true,
-        slidesPerView: 4,
-        autoplay: true,
-        autoplay: {
-            delay: 2000,
-        },
-        delay: 0,
-        loop: true,
-        speed: 2500,
-    }); 
+var mySwiper = new Swiper('.swiper-container', {
+	pagination: true,
+	spaceBetween: 20,
+	autoHeight: true,
+	slidesPerView: 4,
+	autoplay: true,
+	autoplay: {
+		delay: 2000,
+	},
+	delay: 0,
+	loop: true,
+	speed: 2500,
+}); 
 
-    $(document).on('submit','#MainContactForm',function(e){
-        e.preventDefault();
-        var data   = $(this).serialize();
-        var route  = "{{ url('mail_sender') }}";
-        // var route  = "{{ url('test_sender') }}";
-        var loader = '<img src="{{ asset("images/loaders/loader-sm.svg") }}"/>' + '<div style="color: #fff; margin-left: 15px">Enviando...</div>';
-
-        $.ajax({
-            type: "POST",
-            url: route,
-            dataType: 'json',
-            data: data,
-            beforeSend: function(){
-                var loader = "<img src='{{ asset('images/loaders/loader-sm.svg') }}'>";
-                $('#ContactBtn').html('Enviando ' + loader);
-            },
-            success: function(data) {
-                $('#MainContactForm').hide();
-                $('#FormSuccess').removeClass('Hidden');
-                $('#FormResponse').hide();
-                console.log(data);
-            },
-            error: function(data) {
-                $('#FormResponse').hide();
-                $('#MainContactForm').hide();
-                $('#ContactBtn').html('ENVIAR');
-                $('#FormError').removeClass('Hidden');
-                console.log(data);
-            }
-        });
-	});
+    
 	
-	console.log('ookok');

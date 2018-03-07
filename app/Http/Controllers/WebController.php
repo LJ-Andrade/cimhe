@@ -82,49 +82,15 @@ class WebController extends Controller
 
 	public function mail_sender(Request $request)
     {
-
-		// $MailToAddress    = "info@studiovimana.com.ar";
-		// $MailSubject      = "Mensaje desde la web";
-
-		// if (!isset($MailFromAddress) ) {
-		// 	$MailFromAddress = "info@studiovimana.com.ar";
-		// }
-
-		// $Header = "Contacto desde la Web";
-		// $Message = $Footer = "";
-
-		// if (!is_array($_POST))
-		// 	return;
-		// 	reset($_POST);
-
-		// // Genera un mensaje personalizado.
-		// $Message  = "Nombre/Empresa: ".stripslashes($_POST['name'])." \n";
-		// $Message .= "Tel.: ".stripslashes($_POST['phone'])." \n";
-		// $Message .= "E-Mail: ".stripslashes($_POST['email'])." \n";
-		// $Message .= "Consulta/Mensaje: ".stripslashes($_POST['message'])." \n";
-
-		// if ($Header) {
-		// 	$Message = $Header."\n\n".$Message."\n\n";
-		// }
-
-		// // $REMOTE_USER = (isset($_SERVER["REMOTE_USER"]))?$_SERVER["REMOTE_USER"]:"";
-		// $REMOTE_ADDR = (isset($_SERVER["REMOTE_ADDR"]))?$_SERVER["REMOTE_ADDR"]:"";
-		// // $Message .= "REMOTE USER: ". $REMOTE_USER."\n";
-		// $Message .= "I.P del contacto: ". $REMOTE_ADDR."\n";
-
-		// if ($Footer) {
-		// 	$Message .= "\n\n".$Footer;
-		// }
-
 		try{
-			// Está deshabilitada la funcion envío vía mail hasta que sea permitido el uso de SMTP desde Digital Ocean
-			// mail("$MailToAddress", "$MailSubject", "$Message", "From: $MailFromAddress");
+			// Puede utilizarse POSTFIX para enviar mails pero suelen llegar a SPAM. Mejor usar GMAIL, ZOGO, MAILGUN, etc.
 			$contact = new Contact();
-            $contact->fill($request->all());
+			$contact->fill($request->all());
 			$contact->save();
 			$subject = 'Nuevo contacto desde la web';
 
-			Mail::to(APP_EMAIL_1)->send(new WebContactMail($subject, $contact));
+			$data = $request->all();
+			Mail::to(APP_EMAIL_TEST)->send(new WebContactMail($subject, $data));
 			
 			return response()->json(['response' => 1,
 									 'error'    => '0']); 
@@ -132,30 +98,5 @@ class WebController extends Controller
 			return response()->json(['response' => 0,
 									 'error'    => $e]); 
 		}
-
-		// function ValidarDatos($campo){
-		// 	//Array con las posibles cabeceras a utilizar por un spammer
-		// 	$badHeads = array("Content-Type:",
-		// 	"MIME-Version:",
-		// 	"Content-Transfer-Encoding:",
-		// 	"Return-path:",
-		// 	"Subject:",
-		// 	"From:",
-		// 	"Envelope-to:",
-		// 	"To:",
-		// 	"bcc:",
-		// 	"cc:");
-
-		// 	foreach($badHeads as $valor){
-		// 		if(strpos(strtolower($campo), strtolower($valor)) !== false){
-		// 			header( "HTTP/1.0 403 Forbidden");
-		// 			exit;
-		// 		}
-		// 	}
-		// }
-		// ValidarDatos($_POST['name']);
-		// ValidarDatos($_POST['email']);
-		// ValidarDatos($_POST['phone']);
-		// ValidarDatos($_POST['message']);
-		}		
+	}		
 }

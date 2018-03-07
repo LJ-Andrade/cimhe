@@ -1949,7 +1949,7 @@ ul {
 }
 
 .contact-section .inner .contact-form input {
-  height: 50px;
+  height: 40px;
 }
 
 .contact-section .inner .contact-form input, .contact-section .inner .contact-form textarea {
@@ -1963,7 +1963,7 @@ ul {
 }
 
 .contact-section .inner .contact-form textarea {
-  height: 210px;
+  height: 155px;
 }
 
 .contact-section .inner .contact-form .contactBtn {

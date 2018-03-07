@@ -187,40 +187,6 @@ var mySwiper = new Swiper('.swiper-container', (_ref = {
 	delay: 2000
 }), _defineProperty(_ref, 'delay', 0), _defineProperty(_ref, 'loop', true), _defineProperty(_ref, 'speed', 2500), _ref));
 
-$(document).on('submit', '#MainContactForm', function (e) {
-	e.preventDefault();
-	var data = $(this).serialize();
-	var route = "{{ url('mail_sender') }}";
-	// var route  = "{{ url('test_sender') }}";
-	var loader = '<img src="{{ asset("images/loaders/loader-sm.svg") }}"/>' + '<div style="color: #fff; margin-left: 15px">Enviando...</div>';
-
-	$.ajax({
-		type: "POST",
-		url: route,
-		dataType: 'json',
-		data: data,
-		beforeSend: function beforeSend() {
-			var loader = "<img src='{{ asset('images/loaders/loader-sm.svg') }}'>";
-			$('#ContactBtn').html('Enviando ' + loader);
-		},
-		success: function success(data) {
-			$('#MainContactForm').hide();
-			$('#FormSuccess').removeClass('Hidden');
-			$('#FormResponse').hide();
-			console.log(data);
-		},
-		error: function error(data) {
-			$('#FormResponse').hide();
-			$('#MainContactForm').hide();
-			$('#ContactBtn').html('ENVIAR');
-			$('#FormError').removeClass('Hidden');
-			console.log(data);
-		}
-	});
-});
-
-console.log('ookok');
-
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {

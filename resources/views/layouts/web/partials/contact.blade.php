@@ -1,38 +1,61 @@
-<section id="contact" class="container-fluid contact-section">
+<section id="contacto" class="container-fluid contact-section">
 	<div class="container wow animated fadeIn">
 		<div class="row inner">
 			<div class="col-md-12 contact-form">
 			{{-- <h1>CONTACTANOS !</h1> --}}
 			{{--  <img src="{{asset('webimages/logos/main-logo.png')}}" class="wow animated zoomIn" data-wow-delay="1.5s" data-wow-duration="3s">  --}}
-				<div class="col-md-6">
+				<div class="col-md-6 text-center">
 					<h1>Contactanos</h1>
 					{!! Form::open(['id' => 'MainContactForm', 'method' => 'POST']) !!}
 				
 					<div class="form-group">
 						{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'required']) !!}
 					</div>
+
 					<div class="form-group">
 						{!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'TELÉFONO', 'required']) !!}
 					</div>
+
 					<div class="form-group">
 						{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-MAIL', 'required']) !!}
 					</div>
+
+					<div class="form-group">
+						{!! Form::text('data4', null, ['class' => 'form-control', 'placeholder' => 'TIPO DE SERVICIO', 'required']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::text('data5', null, ['class' => 'form-control', 'placeholder' => 'EMPRESA (CUIT)', 'required']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::text('data6', null, ['class' => 'form-control', 'placeholder' => 'DIRECCIÓN DE OBRA', 'required']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::text('data7', null, ['class' => 'form-control', 'placeholder' => 'RESPONSABLE DE OBRA', 'required']) !!}
+					</div>
 						
+					<div class="form-group">
+						{!! Form::text('data8', null, ['class' => 'form-control', 'placeholder' => 'REQUERIMIENTO PARTICULAR', 'required']) !!}
+					</div>
+
 					<div class="form-group">
 						{!! Form::textarea('message', null, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'CONSULTA / MENSAJE']) !!}
 					</div>
+
 					{{ csrf_field() }}
-					<button type="submit" class="btn btnBlue contactBtn">Enviar</button>
+					<button type="submit" class="ContactBtn btn btnBlue contactBtn">Enviar</button>
 					{!! Form::close() !!}
 					<div id="FormResponse"></div>
-					<div id="FormSuccess" class="form-responses animated fadeIn Hidden">
+					<div id="FormSuccess" class="form-responses animated fadeIn text-center Hidden">
 						<i class="success ion-checkmark-round"></i>
 						<h2>Mensaje Enviado !</h2> 
 						Gracias por contactarse con nosotros. <br>
 						Nos estaremos comunicando a la brevedad.
 						<hr class="softhr">
 					</div>
-					<div id="FormError" class="form-responses animated fadeIn Hidden">
+					<div id="FormError" class="form-responses animated text-center fadeIn Hidden">
 						<i class="error ion-close-round"></i>
 						<h2>Ha ocurrido un error !</h2> 
 						Intente comunicarse directamente por mail o teléfono <br>
