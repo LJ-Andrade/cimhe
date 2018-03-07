@@ -83,7 +83,7 @@ Route::get('profesionales', function(){ return view('web/profesionales'); });
 |--------------------------------------------------------------------------
 */
 
-Route::get('portfolio', ['as'   => 'web.portfolio',	'uses' => 'WebController@portfolio']);
+Route::get('noticias', ['as'   => 'web.portfolio',	'uses' => 'WebController@portfolio']);
 // Show Article / Catalogue
 Route::get('article/{slug}', ['uses' => 'WebController@showWithSlug', 'as'   => 'web.portfolio.article'])->where('slug', '[\w\d\-\_]+');
 // Article Searcher

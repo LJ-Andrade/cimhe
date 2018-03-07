@@ -93,7 +93,7 @@
 			<i data-toggle="tooltip" data-placement="right" data-original-title="Support" class="icon-ellipsis icon-ellipsis"></i>
 		</li>
 		{{--  Tienda  --}}
-		<li class="nav-item has-sub {{ Menu::activeMenu('vadmin-tienda') }}"><a href="#"><i class="icon-cart4"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Tienda</span></a>
+		{{-- <li class="nav-item has-sub {{ Menu::activeMenu('vadmin-tienda') }}"><a href="#"><i class="icon-cart4"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Tienda</span></a>
 			<ul class="menu-content" style="">
 				<li class="{{ Menu::activeMenu('panel-de-control') }}"><a href="{{ route('storeControlPanel') }}" class="menu-item"> Control de Tienda</a></li>
 				<li class="has-sub is-shown"><a href="#" data-i18n="nav.menu_levels.second_level_child.main" class="menu-item">
@@ -115,7 +115,7 @@
 					</ul>
 				</li>
 			</ul>
-		</li>
+		</li> --}}
 
 		{{--  CATALOGO  --}}
 		<li class="nav-item has-sub {{ Menu::activeMenu('catalogo') }}"><a href="#"><i class="icon-clipboard"></i>
@@ -156,10 +156,10 @@
 			</ul>
 		</li>
 
-		<li class="nav-item has-sub PortfolioLi"><a href="#"><i class="icon-briefcase2"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Portfolio</span></a>
+		<li class="nav-item has-sub {{ Menu::activeMenu('portfolio') }}"><a href="#"><i class="icon-briefcase2"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Noticias</span></a>
 			<ul class="menu-content" style="">
-				<li class="PortfolioList"><a href="{{ route('portfolio.index') }}" class="menu-item"><i class="icon-list"></i> Listado</a></li>
-				<li class="PortfolioNew"><a href="{{ route('portfolio.create') }}" class="menu-item"><i class="icon-plus-round"></i> Nuevo Artículo</a></li>
+				<li class="{{ Menu::activeMenu('portfolio') }}"><a href="{{ route('portfolio.index') }}" class="menu-item"><i class="icon-list"></i> Listado</a></li>
+				<li class="{{ Menu::activeMenu('portfolio') }}"><a href="{{ route('portfolio.create') }}" class="menu-item"><i class="icon-plus-round"></i> Nueva Noticia</a></li>
 				<li class="has-sub is-shown PortfolioCategoriesLi"><a href="#" data-i18n="nav.menu_levels.second_level_child.main" class="menu-item">Categorías</a>
 					<ul class="menu-content" style="">
 						<li class="is-shown PortfolioCategoriesList"><a href="{{ route('categories.index') }}" data-i18n="nav.menu_levels.second_level_child.third_level" class="menu-item"><i class="icon-list"></i> Listado</a></li>

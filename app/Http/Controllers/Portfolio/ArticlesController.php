@@ -60,11 +60,26 @@ class ArticlesController extends Controller
 
     public function create(Request $request)
     {
+    
         $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        $tags       = Tag::orderBy('name', 'ASC')->pluck('name', 'id');
-        return view('vadmin.portfolio.create')
-            ->with('categories', $categories)
-            ->with('tags', $tags);
+        $tags = Tag::orderBy('name', 'ASC')->pluck('name', 'id');
+        $articles = Article::orderBy('id', 'DESCC')->paginate(15);
+
+        if($tags->isEmpty() ||$categories->isEmpty()){
+            return back()
+                ->with('categories', $categories)
+                ->with('articles', $articles)
+                ->with('tagscategoriesmissing', 'Antes de crear noticias debe crear etiquetas y categorías');
+        }
+
+        if($categories->isEmpty()){
+            return view('vadmin.portfolio.index')->with('message', 'Debe crear categorías');    
+        }
+        dd();
+
+        //return view('vadmin.portfolio.create')
+        //    ->with('categories', $categories)
+        //    ->with('tags', $tags);
     }
 
     public function store(Request $request)

@@ -1328,8 +1328,10 @@ ul {
 }
 
 .main-home {
-  background: url(../webimages/main/banner.jpg) no-repeat center center fixed;
+  background: url(../webimages/main/banner.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   position: relative;
   padding: 80px 10px 110px;
 }

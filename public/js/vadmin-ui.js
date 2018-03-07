@@ -88,6 +88,10 @@ $('#SearchFiltersBtn').on('click', function () {
     searchFilters.toggle(100);
 });
 
+$('.Disabled-Input-Modificable').click(function () {
+    $(this).addClass('disabled-input-modificable-on');
+});
+
 /***/ })
 
 /******/ });

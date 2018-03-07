@@ -8,11 +8,10 @@
 	height: 100px
 
 .main-home
-	background: url(../webimages/main/banner.jpg) no-repeat center center fixed
-	-webkit-background-size: cover
-	-moz-background-size: cover
-	-o-background-size: cover
+	background: url(../webimages/main/banner.jpg)
 	background-size: cover
+	background-repeat: no-repeat
+	background-position: center center
 	position: relative
 	padding: 80px 10px 110px
 	.inner
@@ -39,6 +38,7 @@
 
 
 @media (max-width:990px) and (min-width:768px)
+	.main-home
 	.nav-container
 		@include flex-column
 

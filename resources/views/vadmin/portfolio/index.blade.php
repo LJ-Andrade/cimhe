@@ -1,5 +1,5 @@
 @extends('layouts.vadmin.main')
-@section('title', 'Vadmin | Portfolio')
+@section('title', 'Vadmin | Noticias')
 {{-- STYLE INCLUDES --}}
 @section('styles')
 @endsection
@@ -9,7 +9,7 @@
 	@component('vadmin.components.headerfixed')
 		@slot('breadcrums')
 		    <li class="breadcrumb-item"><a href="{{ url('vadmin')}}">Inicio</a></li>
-            <li class="breadcrumb-item active">Listado de Artículos</li>
+            <li class="breadcrumb-item active">Listado de Noticias</li>
 		@endslot
 		@slot('actions')
 			{{-- Actions --}}
@@ -59,11 +59,8 @@
 		<div class="row">
 			@component('vadmin.components.list')
 				@slot('actions', '')
-				@slot('title', 'Listado de Usuarios')
-					@if($articles->count() == '0')
-						@slot('tableTitles', '')
-						@slot('tableContent', '')
-					@else
+				@slot('title', 'Listado de Noticias')
+					@if(!$articles->count() == '0')
 					@slot('tableTitles')
 						<th></th>
 						<th>Imágen</th>
@@ -110,6 +107,15 @@
 								</td>
 							</tr>						
 						@endforeach
+						@else 
+							@slot('tableTitles')
+								<th></th>
+							@endslot
+							@slot('tableContent')
+								<tr>
+									<td class="w-200">No se han encontrado noticias</td>
+								</tr>
+							@endslot
 						@endif
 				@endslot
 			@endcomponent

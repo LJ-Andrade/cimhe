@@ -740,6 +740,14 @@ hr {
   background-color: #9FD56B;
 }
 
+.disabled-input-modificable {
+  border: 0 !important;
+}
+
+.disabled-input-modificable-on {
+  border: 1px solid #d4d4d4 !important;
+}
+
 .btn {
   -webkit-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
@@ -824,6 +832,19 @@ hr {
 
 .btnBlue:active, .btnBlue:focus {
   color: #fff;
+}
+
+.btnWhite {
+  background-color: #fff;
+  color: #000;
+}
+
+.btnWhite:hover {
+  background-color: #f9f9f9;
+}
+
+.btnWhite:active, .btnWhite:focus {
+  color: #000;
 }
 
 .btnGrey {

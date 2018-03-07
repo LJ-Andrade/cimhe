@@ -141,6 +141,16 @@ function uncheckAll() {
 }
 uncheckAll();
 
+// Check All Checkboxes | Not WORKING
+//$('#CheckAllCheckBoxes').click(function() {
+//	var checkboxes = $('.list-checkbox').find(':checkbox');
+//	checkboxes.css('background-color','red');
+//	console.log(checkboxes);
+//	
+//	checkboxes.prop('checked', $(this).is(':checked'));
+//	$('#DeleteBtn').removeClass('Hidden');
+//});   
+
 /*
 |--------------------------------------------------------------------------
 | FUNCTIONS
@@ -181,8 +191,8 @@ deleteRecord = function deleteRecord(id, route, bigtext, smalltext) {
 					console.log(data);
 					return true;
 				} else {
-					alert_error('Ups!', 'Ha ocurrido un error (Puede que este registro tenga relación con otros items en el sistema). Debe eliminar primero los mismos.');
 					console.log(data);
+					alert_error('Ups!', 'Ha ocurrido un error (Puede que este registro tenga relación con otros items en el sistema). Debe eliminar primero los mismos.');
 					return false;
 				}
 			},
@@ -225,6 +235,7 @@ deleteAndReload = function deleteAndReload(id, route, bigtext, smalltext) {
 					// alert_ok('Ok!','Eliminación completa');
 					location.reload();
 				} else {
+					console.log(data);
 					alert_error('Ups!', 'Ha ocurrido un error (Puede que este registro tenga relación con otros items en el sistema). Debe eliminar primero los mismos.');
 					return false;
 				}
