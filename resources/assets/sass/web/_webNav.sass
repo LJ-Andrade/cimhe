@@ -37,7 +37,7 @@
         font-weight: 400
         font-size: 1rem
         @include transition(0.5s)
-        &:hover
+        &:hover,&:active,&:focus
             border-bottom: 1px solid $color3
             color: $color3
 
@@ -51,6 +51,7 @@
 
 .navbar-collapse .nav-mobile-extra
     display: none
+
 
 @media (max-width: 768px)
     .navbar-default .navbar-nav>li>a 

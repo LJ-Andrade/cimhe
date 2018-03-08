@@ -1270,7 +1270,7 @@ ul {
   transition: all 0.5s ease 0s;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:focus {
   border-bottom: 1px solid #00c9ef;
   color: #00c9ef;
 }
