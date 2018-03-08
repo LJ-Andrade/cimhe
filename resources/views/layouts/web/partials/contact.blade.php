@@ -1,4 +1,4 @@
-<section id="contacto" class="container-fluid contact-section">
+<section class="container-fluid contact-section">
 	<div class="container wow animated fadeIn">
 		<div class="row inner">
 			<div class="col-md-12 contact-form">
@@ -7,39 +7,36 @@
 				<div class="col-md-6 text-center">
 					<h1>Contactanos</h1>
 					{!! Form::open(['id' => 'MainContactForm', 'method' => 'POST']) !!}
-				
-					<div class="form-group">
-						{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'TELÉFONO', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-MAIL', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::textarea('message', null, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'CONSULTA / MENSAJE']) !!}
-					</div>
-
-					{{ csrf_field() }}
-					<button type="submit" class="ContactBtn btn btnBlue contactBtn">Enviar</button>
+						<div class="form-group">
+							{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'required']) !!}
+						</div>
+						<div class="form-group">
+							{!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'TELÉFONO', 'required']) !!}
+						</div>
+						<div class="form-group">
+							{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-MAIL', 'required']) !!}
+						</div>
+						<div class="form-group">
+							{!! Form::textarea('message', null, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'CONSULTA / MENSAJE']) !!}
+						</div>
+						{{ csrf_field() }}
+						<button type="submit" class="MainFormBtn btn btnBlue contactBtn">Enviar</button>
 					{!! Form::close() !!}
-					<div id="FormResponse"></div>
-					<div id="FormSuccess" class="form-responses animated fadeIn text-center Hidden">
-						<i class="success ion-checkmark-round"></i>
-						<h2>Mensaje Enviado !</h2> 
-						Gracias por contactarse con nosotros. <br>
-						Nos estaremos comunicando a la brevedad.
-						<hr class="softhr">
-					</div>
-					<div id="FormError" class="form-responses animated text-center fadeIn Hidden">
-						<i class="error ion-close-round"></i>
-						<h2>Ha ocurrido un error !</h2> 
-						Intente comunicarse directamente por mail o teléfono <br>
-						Gracias.
+					<div id="ResponsesMainContactForm">
+						<div id="FormResponse"></div>
+						<div class="FormSuccess form-responses animated fadeIn text-center Hidden">
+							<i class="success ion-checkmark-round"></i>
+							<h2>Mensaje Enviado !</h2> 
+							Gracias por contactarse con nosotros. <br>
+							Nos estaremos comunicando a la brevedad.
+							<hr class="softhr">
+						</div>
+						<div class="FormError form-responses animated text-center fadeIn Hidden">
+							<i class="error ion-close-round"></i>
+							<h2>Ha ocurrido un error !</h2> 
+							Intente comunicarse directamente por mail o teléfono <br>
+							Gracias.
+						</div>
 					</div>
 				</div>
 				<div class="col-md-6 contact-data">
@@ -84,7 +81,7 @@
 		</div>
 	</div>
 </section>
-<section id="contacto" class="container-fluid section contact-section2">
+<section class="container-fluid section contact-section2">
 	<div class="container">
 		<div class="row">
 			<div class="horiz-items">
@@ -117,44 +114,3 @@
 <section class="contact-map">
 	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13133.568470043838!2d-58.53853298162236!3d-34.61952996272408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7e00b9b886f%3A0x6be25ae56d06d6de!2sSan+Roque+2470%2C+B1703BCF+Jos%C3%A9+Ingenieros%2C+Buenos+Aires!5e0!3m2!1ses-419!2sar!4v1519977329474" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
 </section>
-{{-- 
-
-{!! Form::open(['id' => 'MainContactForm', 'method' => 'POST']) !!}
-				
-					<div class="form-group">
-						{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'TELÉFONO', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-MAIL', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::text('data4', null, ['class' => 'form-control', 'placeholder' => 'TIPO DE SERVICIO', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::text('data5', null, ['class' => 'form-control', 'placeholder' => 'EMPRESA (CUIT)', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::text('data6', null, ['class' => 'form-control', 'placeholder' => 'DIRECCIÓN DE OBRA', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::text('data7', null, ['class' => 'form-control', 'placeholder' => 'RESPONSABLE DE OBRA', 'required']) !!}
-					</div>
-						
-					<div class="form-group">
-						{!! Form::text('data8', null, ['class' => 'form-control', 'placeholder' => 'REQUERIMIENTO PARTICULAR', 'required']) !!}
-					</div>
-
-					<div class="form-group">
-						{!! Form::textarea('message', null, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'CONSULTA / MENSAJE']) !!}
-					</div>
-
-					{{ csrf_field() }} --}}

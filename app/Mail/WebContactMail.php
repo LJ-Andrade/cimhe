@@ -13,16 +13,18 @@ class WebContactMail extends Mailable
 
     public $subject;
     public $data;
+    public $view;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($subject, $data)
+    public function __construct($subject, $data, $view)
     {
         $this->data = $data;
         $this->subject = $subject;
+        $this->view = $view;
     }
 
     /**
@@ -32,7 +34,7 @@ class WebContactMail extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->subject)->markdown('vadmin.components.mailWebContact')
+        return $this->subject($this->subject)->markdown($this->view)
             ->with(['data' => $this->data]);
     }
 }

@@ -17,8 +17,8 @@
                     <span>Buenos Aires, Argentina</span>
                 </div>
                 <div class="pull-right">
-                    <button class="btn btnBlue">Presupuestar Suelos</button>
-                    <button class="btn btnBlue">Presupuestar Hormigón</button>
+                    <button class="FormModal btn btnBlue" data-toggle="modal" data-target="#SuelosModal">Presupuestar Suelos</button>
+                    <button class="FormModal btn btnBlue" data-toggle="modal" data-target="#HormigonModal">Presupuestar Hormigón</button>
                 </div>
             </div>
         </div>
@@ -36,18 +36,18 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{ url('/') }}">INICIO</a></li>
-                <li><a href="">LABORATORIO</a></li>
+                {{-- <a><a href="">LABORATORIO</a></a> --}}
                 <li><a href="{{ url('profesionales') }}">PROFESIONALES</a></li>
-                <li><a href="">FOTOS</a></li>
-                <li><a href="{{ url('noticias') }}">NOTICIAS</a></li>
+                {{-- <li><a href="">FOTOS</a></li> --}}
+                {{-- <li><a href="{{ url('noticias') }}">NOTICIAS</a></li> --}}
                 <li><a class="contacto" href="{{ url('/#contacto') }}">CONTACTO</a></li>   
             </ul>
             <div class="nav-mobile-extra">
                 <hr>
                 <div class="row item-inline">            
-                    <div class="">
-                        <button class="btn btnBlue">Presupuestar Suelos</button>
-                        <button class="btn btnBlue">Presupuestar Hormigón</button>
+                    <div>
+                        <button class="btn btnBlue" data-toggle="modal" data-target="#SuelosModal">Presupuestar Suelos</button>
+                        <button class="btn btnBlue" data-toggle="modal" data-target="#HormigonModal">Presupuestar Hormigón</button>
                     </div>
                     <div class="inner">
                         <span>Cel: (011) 5648-7952 || Tel: 4757-6985</span> 

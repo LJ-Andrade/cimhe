@@ -89,7 +89,9 @@ Route::get('article/{slug}', ['uses' => 'WebController@showWithSlug', 'as'   => 
 // Article Searcher
 Route::get('categories/{name}', ['uses' => 'WebController@searchCategory', 'as'   => 'web.search.category']);
 Route::get('tag/{name}', ['uses' => 'WebController@searchTag', 'as'   => 'web.search.tag']);
-Route::post('mail_sender', 'WebController@mail_sender');
+Route::post('main_contact_mailsender', 'WebController@mainContactMailSender');
+Route::post('suelos_mailsender', 'WebController@suelosMailSender');
+Route::post('hormigon_mailsender', 'WebController@hormigonMailSender');
 
 /*
 |--------------------------------------------------------------------------

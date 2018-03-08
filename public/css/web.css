@@ -842,6 +842,13 @@
   }
 }
 
+.anchor {
+  display: block;
+  position: relative;
+  top: -140px;
+  visibility: hidden;
+}
+
 .single-item-category {
   margin-bottom: 5px;
 }
@@ -1047,6 +1054,15 @@
 .error-page {
   padding-top: 180px;
   text-align: center;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.modal-content .form-control {
+  border: 1px solid #00122d;
+  border-radius: 0;
 }
 
 html {
@@ -1908,51 +1924,51 @@ ul {
   color: #00122d;
 }
 
-.contact-section .inner .contact-form form {
+.contact-form form {
   color: #383838;
 }
 
-.contact-section .inner .contact-form form > .col-md-6 {
+.contact-form form > .col-md-6 {
   padding: 0;
 }
 
-.contact-section .inner .contact-form form .form-group {
+.contact-form form .form-group {
   margin-bottom: 0;
 }
 
-.contact-section .inner .contact-form form ::-webkit-input-placeholder {
+.contact-form form ::-webkit-input-placeholder {
   color: #949494;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Arvo", serif;
   font-weight: 400;
 }
 
-.contact-section .inner .contact-form form ::-moz-placeholder {
+.contact-form form ::-moz-placeholder {
   color: #949494;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Arvo", serif;
   font-weight: 400;
 }
 
-.contact-section .inner .contact-form form ::-ms-input-placeholder {
+.contact-form form ::-ms-input-placeholder {
   color: #949494;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Arvo", serif;
   font-weight: 400;
 }
 
-.contact-section .inner .contact-form form ::-moz-placeholder {
+.contact-form form ::-moz-placeholder {
   color: #949494;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Arvo", serif;
   font-weight: 400;
 }
 
-.contact-section .inner .contact-form input {
+.contact-form input {
   height: 40px;
 }
 
-.contact-section .inner .contact-form input, .contact-section .inner .contact-form textarea {
+.contact-form input, .contact-form textarea {
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -1962,37 +1978,37 @@ ul {
   margin-bottom: 10px;
 }
 
-.contact-section .inner .contact-form textarea {
+.contact-form textarea {
   height: 155px;
 }
 
-.contact-section .inner .contact-form .contactBtn {
+.contact-form .contactBtn {
   font-size: 1.5rem;
   color: #fff;
   font-family: "Arvo", serif;
   padding: 8px 80px;
 }
 
-.contact-section .inner .contact-form .form-responses {
+.contact-form .form-responses {
   padding-top: 30px;
   padding-bottom: 20px;
   color: #383838;
   font-size: 1.5rem;
 }
 
-.contact-section .inner .contact-form .form-responses i {
+.contact-form .form-responses i {
   font-size: 4rem;
 }
 
-.contact-section .inner .contact-form .form-responses i.success {
+.contact-form .form-responses i.success {
   color: #03c3ad;
 }
 
-.contact-section .inner .contact-form .form-responses i.error {
+.contact-form .form-responses i.error {
   color: #D77777;
 }
 
-.contact-section .inner .contact-form .form-responses hr {
+.contact-form .form-responses hr {
   margin-top: 60px;
 }
 
