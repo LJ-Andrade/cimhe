@@ -36,7 +36,9 @@
 		<header>
 			@include('layouts.web.partials.nav')
 		</header>
+		<a id="top" class="anchor"></a>
 		@yield('content')
+		@include('layouts.web.partials.modals')
 		@include('layouts.web.partials.scripts')
 		@yield('scripts')
 		@yield('custom_js')

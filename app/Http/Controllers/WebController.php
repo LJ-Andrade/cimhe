@@ -21,8 +21,14 @@ class WebController extends Controller
 	public function home()
     {
         return view('web/web');
-    }
-
+	}
+	
+	/*
+    |--------------------------------------------------------------------------
+    | BLOG
+    |--------------------------------------------------------------------------
+	*/
+	
 	public function portfolio(Request $request)
 	{
         $articles = Article::search($request->title)->orderBy('id', 'DESC')->where('status', '1')->paginate(12);
@@ -30,8 +36,14 @@ class WebController extends Controller
             $articles->category;
             $articles->images;
 		}); 
-    	return view('web.portfolio.portfolio')
-    		->with('articles', $articles);
+
+		$categories = Category::all();
+		$tags = Tag::all();
+
+    	return view('web.blog.blog')
+			->with('articles', $articles)
+			->with('categories', $categories)
+			->with('tags', $tags);
     }
 
 	public function searchCategory($name)
@@ -42,7 +54,14 @@ class WebController extends Controller
 				$articles->category;
 				$articles->images;
 		});
-		return view('web.portfolio.portfolio')->with('articles', $articles);
+		
+		$categories = Category::all();
+		$tags = Tag::all();
+
+		return view('web.blog.blog')
+			->with('articles', $articles)
+			->with('categories', $categories)
+			->with('tags', $tags);
 	}
 
     public function searchTag($name)
@@ -53,7 +72,14 @@ class WebController extends Controller
                 $articles->category;
                 $articles->images;
         });
-        return view('web.portfolio.portfolio')->with('articles', $articles);
+		
+		$categories = Category::all();
+		$tags = Tag::all();
+
+		return view('web.blog.blog')
+			->with('articles', $articles)
+			->with('categories', $categories)
+			->with('tags', $tags);
     }
 
     public function viewArticle($id)
@@ -64,16 +90,35 @@ class WebController extends Controller
                 $article->images;
                 $article->tags;
                 $article->colors;
-        });
-        return view('web.portfolio.article')->with('article', $article);
+		});
+		
+        $categories = Category::all();
+		$tags = Tag::all();
+
+		return view('web.blog.blog')
+			->with('articles', $articles)
+			->with('categories', $categories)
+			->with('tags', $tags);
     }
 
     public function showWithSlug($slug) {
 
         $article = Article::where('slug', '=', $slug)->first();
-        // dd($article);
-        return view('web.portfolio.article')->with('article', $article);
+		$categories = Category::all();
+		$tags = Tag::all();
+
+		return view('web.blog.article')
+			->with('article', $article)
+			->with('categories', $categories)
+			->with('tags', $tags);
     }
+
+
+	/*
+    |--------------------------------------------------------------------------
+    | CONTACT
+    |--------------------------------------------------------------------------
+    */
 
     public function contact()
     {  

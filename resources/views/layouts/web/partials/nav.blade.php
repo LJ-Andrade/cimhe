@@ -35,7 +35,11 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url('/') }}">INICIO</a></li>
+                @if(Menu::activeMenu('/') == 'active')
+                    <li><a href="{{ url('#top') }}">INICIO</a></li>
+                @else
+                    <li><a href="{{ url('/') }}">INICIO</a></li>    
+                @endif
                 {{-- <a><a href="">LABORATORIO</a></a> --}}
                 <li><a href="{{ url('profesionales') }}">PROFESIONALES</a></li>
                 {{-- <li><a href="">FOTOS</a></li> --}}

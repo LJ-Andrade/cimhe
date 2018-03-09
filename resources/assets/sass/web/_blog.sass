@@ -1,0 +1,149 @@
+////////////////////////////////////////
+//                                    //
+//               BLOG                 //
+//                                    //
+////////////////////////////////////////
+
+.blog-item
+    margin-bottom: 35px
+    .image
+        float: left
+        img
+            max-width: 100%
+    .inner
+        min-height: 220px
+        position: relative
+        h3,p
+            color: #383838
+        h3
+            margin-top: 0
+        p
+            font-size: 1rem
+            overflow: hidden
+            text-overflow: ellipsis
+        .date
+            position: absolute
+            bottom: 5px
+            right: 5px
+        .search
+            position: absolute
+            bottom: 5px
+            left: 12px
+
+.search-input
+    hr
+        margin-top: 20px
+    input
+        width: 70%
+        float: left
+        margin-right: 5px
+        border-radius: 0
+    button
+        color: #000
+        border-radius: 0
+
+@media (min-width: 765px)
+    .blog-filters-desktop
+        padding: 15px
+        background-color: rgba(#f9f9f9,0.42)
+    
+@media (max-width: 765px)
+	.blog-filters-desktop
+		display: none
+
+.blog-filters-mobile
+	display: none
+
+@media (max-width: 765px)
+	.blog-filters-mobile
+		display: block
+		position: relative
+		padding: 0
+		margin-top: 100px
+		h2
+			color: #383838
+		.inner-main
+			position: relative
+			height: 40px
+			padding-left: 15px
+			.title
+				font-family: $font2
+				font-size: 1.5rem
+				font-weight: 600
+				color: $color1
+			.filterMobileBtn
+				color: #383838
+				background-color: transparent
+				position: absolute
+				right: 0
+				top: 2px
+				border-radius: 0
+				padding: 5px 26px 0
+				margin-right: 20px
+				margin-bottom: 10px
+				font-weight: 400
+				font-size: 1.3rem
+				border: 1px solid #ccc
+				border-radius: 50px
+				&:hover
+					color: #383838
+					background-color: #ccc
+.search-bar
+    border: 1px solid #ccc
+    border-radius: 40px
+    padding: 0px 18px
+    min-height: 38px
+    input
+        border: 0
+        box-shadow: none
+        font-size: 1rem
+        background-color: transparent
+    .search-btn
+        background-color: transparent
+        color: #383838
+
+@media (max-width: 1200px) and (min-width: 768px)
+    .search-bar .search-btn
+        display: none
+    .search-input input
+        width: 100%
+
+// Filters
+.filter-inner
+    text-align: center
+    background-color: #fff
+    padding: 10px
+    hr
+        margin-top: 10px
+        margin-bottom: 20px
+        border: 0
+        border-top: 1px solid #d4d4d4
+        // border-top: 1px solid rgb(84, 87, 116)
+    .search-input
+        hr
+            margin-top: 20px
+        input
+            width: 70%
+            float: left
+            margin-right: 5px
+            border-radius: 0
+        button
+            color: #000
+            border-radius: 0
+    .search-buttons
+        .title
+            font-size: 1.2rem
+            margin-bottom: 10px
+            font-weight: 400
+        .filter-button
+            font-weight: 300
+            border-radius: 50px
+            background-color: transparent
+            border: 1px solid #dbdbdb
+            padding: 5px
+            margin-right: 5px
+            margin-bottom: 5px
+            color: #000
+            font-size: 1rem
+            &:hover
+                background-color: #f9f9f9

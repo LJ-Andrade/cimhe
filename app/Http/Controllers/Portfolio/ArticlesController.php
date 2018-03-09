@@ -40,7 +40,7 @@ class ArticlesController extends Controller
 
         $categories = Category::orderBy('id','ASC')->pluck('name','id');
 
-        return view('vadmin.portfolio.index')
+        return view('vadmin.blog.index')
             ->with('articles', $articles)
             ->with('categories', $categories);
 
@@ -49,7 +49,7 @@ class ArticlesController extends Controller
     public function show($id)
     {
         $article = Article::find($id);
-        return view('vadmin.portfolio.show')->with('article', $article);
+        return view('vadmin.blog.show')->with('article', $article);
     }
 
     /*
@@ -75,11 +75,10 @@ class ArticlesController extends Controller
         if($categories->isEmpty()){
             return view('vadmin.portfolio.index')->with('message', 'Debe crear categorías');    
         }
-        dd();
 
-        //return view('vadmin.portfolio.create')
-        //    ->with('categories', $categories)
-        //    ->with('tags', $tags);
+        return view('vadmin.portfolio.create')
+            ->with('categories', $categories)
+            ->with('tags', $tags);
     }
 
     public function store(Request $request)

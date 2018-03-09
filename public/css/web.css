@@ -849,6 +849,14 @@
   visibility: hidden;
 }
 
+.top-space {
+  height: 100px;
+}
+
+.top-space-big {
+  height: 150px;
+}
+
 .single-item-category {
   margin-bottom: 5px;
 }
@@ -1085,7 +1093,7 @@ body {
 
 body a {
   text-decoration: none;
-  color: #bbb7f2;
+  color: #00c9ef;
 }
 
 body a:hover {
@@ -1247,11 +1255,13 @@ ul {
   cursor: pointer;
 }
 
-.navbar-default {
-  height: 150px;
-  background-color: transparent;
-  border-bottom: 0;
-  border: 0;
+@media (min-width: 768px) {
+  .navbar-default {
+    height: 150px;
+    background-color: transparent;
+    border-bottom: 0;
+    border: 0;
+  }
 }
 
 .nav-container {
@@ -1337,10 +1347,6 @@ ul {
   .main-header {
     display: none;
   }
-}
-
-.top-space {
-  height: 100px;
 }
 
 .main-home {
@@ -1490,335 +1496,6 @@ ul {
 
 .profesionales-section-1 .inner .item p {
   margin-top: 5px;
-}
-
-.dark-container-top {
-  padding: 0;
-  padding-top: 60px;
-  background-color: #fff;
-  color: #fff;
-}
-
-.dark-container-top h2 {
-  text-align: center;
-}
-
-.container-top {
-  padding: 0;
-  margin-top: 80px;
-  padding-bottom: 50px;
-}
-
-.filters .searcher input {
-  color: #000;
-}
-
-.portfolio-container {
-  padding-top: 20px;
-}
-
-.portfolio-container .portfolio-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -ms-grid-row-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin-bottom: 25px;
-}
-
-.portfolio-container .portfolio-item .inner img {
-  max-width: 100%;
-  -webkit-transition: all 0.2s ease 0s;
-  transition: all 0.2s ease 0s;
-}
-
-.portfolio-container .portfolio-item .inner img:hover {
-  -webkit-filter: brightness(50%);
-          filter: brightness(50%);
-  cursor: pointer;
-}
-
-.portfolio-container .portfolio-item .inner .info {
-  padding: 15px;
-  background-color: #fff;
-  position: relative;
-  min-height: 188px;
-  padding-bottom: 70px;
-}
-
-.portfolio-container .portfolio-item .inner .info hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.portfolio-container .portfolio-item .inner .info .text {
-  font-family: "Arvo", serif;
-  font-size: 1rem;
-  color: #00c9ef;
-  font-weight: 400;
-}
-
-.portfolio-container .portfolio-item .inner .info .title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  margin-left: 5px;
-}
-
-.portfolio-container .portfolio-item .inner .info .cat-title {
-  margin-left: 5px;
-}
-
-.portfolio-container .portfolio-item .inner .info .cat-text a {
-  color: #9D9D9D;
-}
-
-.portfolio-container .portfolio-item .inner .info .cat-text a:hover {
-  color: #383838;
-}
-
-.portfolio-container .portfolio-item .inner .info .bottom-content {
-  position: absolute;
-  bottom: 10px;
-  left: 5px;
-}
-
-.portfolio-container .portfolio-item .inner .info .bottom-content .tags {
-  margin-top: 5px;
-  line-height: 28px;
-}
-
-.portfolio-container .portfolio-item .inner .info .bottom-content .date {
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-.portfolio-container .portfolio-item .inner .info .bottom-content .date span.text {
-  color: #ABABAB;
-}
-
-@media (max-width: 1380px) and (min-width: 991px) {
-  .portfolio-container .portfolio-item .inner .info {
-    min-height: 208px;
-  }
-}
-
-@media (min-width: 765px) {
-  .portfolio-filter {
-    background-color: #fff;
-    border: 0;
-  }
-  .portfolio-filter .icons-menu {
-    font-size: 1.2rem;
-    margin-right: 5px;
-  }
-  .portfolio-filter .container-fluid, .portfolio-filter .navbar-collapse {
-    padding-left: 0;
-    padding-right: 15px;
-  }
-  .portfolio-filter .portfolio-filter-left {
-    height: 50px;
-  }
-  .portfolio-filter .portfolio-filter-left .title {
-    padding: 15px 30px;
-    background-color: #fff;
-    border-right: 1px solid #ccc;
-    color: #383838;
-    height: 55px;
-  }
-  .portfolio-filter .portfolio-filter-left li.filter-parent-link {
-    height: 55px;
-  }
-  .portfolio-filter .portfolio-filter-left li {
-    border-right: 1px solid #ccc;
-  }
-  .portfolio-filter .portfolio-filter-left li:hover, .portfolio-filter .portfolio-filter-left li:focus, .portfolio-filter .portfolio-filter-left li:active {
-    border: 0 !important;
-  }
-  .portfolio-filter .portfolio-filter-left li:hover a, .portfolio-filter .portfolio-filter-left li:focus a, .portfolio-filter .portfolio-filter-left li:active a {
-    border: 0 !important;
-  }
-  .portfolio-filter .portfolio-filter-left li a {
-    padding-left: 10px;
-    color: #fff;
-    font-size: 1rem;
-    font-family: "Muli", sans-serif;
-    font-weight: 300;
-  }
-  .portfolio-filter .portfolio-filter-left li:hover {
-    background-color: #03c3ad;
-  }
-  .portfolio-filter .portfolio-filter-left li:hover a {
-    color: #fff;
-  }
-  .portfolio-filter .portfolio-filter-left li:focus, .portfolio-filter .portfolio-filter-left li:active {
-    background-color: #03c3ad;
-    border: 0;
-    color: #fff;
-  }
-  .portfolio-filter .portfolio-filter-left li:focus a, .portfolio-filter .portfolio-filter-left li:active a {
-    color: #fff;
-  }
-  .portfolio-filter .portfolio-filter-left .open > a, .portfolio-filter .portfolio-filter-left .open > a:focus, .portfolio-filter .portfolio-filter-left .open > a:hover {
-    border: 0;
-    background-color: #03c3ad;
-    color: #fff;
-  }
-  .portfolio-filter .portfolio-filter-left .dropdown-items {
-    background-color: #fff;
-    border: 0;
-    border-radius: 0;
-  }
-  .portfolio-filter .portfolio-filter-left .dropdown-items .badge {
-    font-family: "Arvo", serif;
-    font-weight: 400;
-    font-size: 0.8rem;
-    margin-right: 5px;
-    background-color: #03c3ad;
-    width: 28px;
-  }
-  .portfolio-filter .portfolio-filter-left .dropdown-items li a {
-    color: #000;
-  }
-  .portfolio-filter .portfolio-filter-left .dropdown-items li:hover {
-    background-color: #fff;
-    color: #383838;
-  }
-  .portfolio-filter .portfolio-filter-left .dropdown-items li:hover a {
-    color: #383838;
-  }
-  .portfolio-filter .portfolio-filter-right .search-bar {
-    border: 1px solid #ccc;
-    border-radius: 40px;
-    padding: 0px 18px;
-  }
-  .portfolio-filter .portfolio-filter-right .search-bar input {
-    border: 0;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    font-size: 1rem;
-  }
-  .portfolio-filter .portfolio-filter-right .search-bar .search-btn {
-    background-color: #fff;
-    color: #383838;
-  }
-}
-
-@media (max-width: 765px) {
-  .portfolio-filter {
-    display: none;
-  }
-}
-
-.portfolio-filter-mobile {
-  display: none;
-}
-
-@media (max-width: 765px) {
-  .portfolio-filter-mobile {
-    display: block;
-    position: relative;
-    padding: 0;
-  }
-  .portfolio-filter-mobile .search-bar {
-    border: 1px solid #ccc;
-    border-radius: 40px;
-    padding: 0px 18px;
-  }
-  .portfolio-filter-mobile .search-bar input {
-    border: 0;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    font-size: 1rem;
-  }
-  .portfolio-filter-mobile .search-bar .search-btn {
-    background-color: #fff;
-    color: #383838;
-  }
-  .portfolio-filter-mobile h2 {
-    color: #383838;
-  }
-  .portfolio-filter-mobile .inner-main {
-    height: 40px;
-    padding-left: 15px;
-  }
-  .portfolio-filter-mobile .title {
-    font-size: 1.5rem;
-    color: #383838;
-  }
-  .portfolio-filter-mobile .filterMobileBtn {
-    color: #383838;
-    background-color: transparent;
-    position: absolute;
-    right: 0;
-    top: -9px;
-    border-radius: 0;
-    padding: 5px 26px 0;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    font-family: "Josefin Slab", serif;
-    font-weight: 400;
-    font-size: 1.3rem;
-    border: 1px solid #ccc;
-    border-radius: 50px;
-  }
-  .portfolio-filter-mobile .filterMobileBtn:hover {
-    color: #383838;
-    background-color: #ccc;
-  }
-  .portfolio-filter-mobile .filter-inner {
-    text-align: center;
-    background-color: #fff;
-    padding: 10px;
-  }
-  .portfolio-filter-mobile .filter-inner hr {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #d4d4d4;
-  }
-  .portfolio-filter-mobile .filter-inner .search-input hr {
-    margin-top: 20px;
-  }
-  .portfolio-filter-mobile .filter-inner .search-input input {
-    width: 70%;
-    float: left;
-    margin-right: 5px;
-    border-radius: 0;
-  }
-  .portfolio-filter-mobile .filter-inner .search-input button {
-    color: #000;
-    border-radius: 0;
-  }
-  .portfolio-filter-mobile .filter-inner .search-buttons .title {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    font-weight: 400;
-  }
-  .portfolio-filter-mobile .filter-inner .search-buttons .filter-button {
-    font-weight: 300;
-    border-radius: 50px;
-    background-color: transparent;
-    border: 1px solid #dbdbdb;
-    padding: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    color: #000;
-    font-size: 1rem;
-  }
-  .portfolio-filter-mobile .filter-inner .search-buttons .filter-button:hover {
-    background-color: #f9f9f9;
-  }
 }
 
 .single-item {
@@ -2093,4 +1770,202 @@ footer .copyright {
   font-family: "Arvo", serif;
   font-weight: 400;
   font-size: 1.4rem;
+}
+
+.blog-item {
+  margin-bottom: 35px;
+}
+
+.blog-item .image {
+  float: left;
+}
+
+.blog-item .image img {
+  max-width: 100%;
+}
+
+.blog-item .inner {
+  min-height: 220px;
+  position: relative;
+}
+
+.blog-item .inner h3, .blog-item .inner p {
+  color: #383838;
+}
+
+.blog-item .inner h3 {
+  margin-top: 0;
+}
+
+.blog-item .inner p {
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blog-item .inner .date {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.blog-item .inner .search {
+  position: absolute;
+  bottom: 5px;
+  left: 12px;
+}
+
+.search-input hr {
+  margin-top: 20px;
+}
+
+.search-input input {
+  width: 70%;
+  float: left;
+  margin-right: 5px;
+  border-radius: 0;
+}
+
+.search-input button {
+  color: #000;
+  border-radius: 0;
+}
+
+@media (min-width: 765px) {
+  .blog-filters-desktop {
+    padding: 15px;
+    background-color: rgba(249, 249, 249, 0.42);
+  }
+}
+
+@media (max-width: 765px) {
+  .blog-filters-desktop {
+    display: none;
+  }
+}
+
+.blog-filters-mobile {
+  display: none;
+}
+
+@media (max-width: 765px) {
+  .blog-filters-mobile {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin-top: 100px;
+  }
+  .blog-filters-mobile h2 {
+    color: #383838;
+  }
+  .blog-filters-mobile .inner-main {
+    position: relative;
+    height: 40px;
+    padding-left: 15px;
+  }
+  .blog-filters-mobile .inner-main .title {
+    font-family: "Arvo", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #00122d;
+  }
+  .blog-filters-mobile .inner-main .filterMobileBtn {
+    color: #383838;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    border-radius: 0;
+    padding: 5px 26px 0;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 1.3rem;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+  }
+  .blog-filters-mobile .inner-main .filterMobileBtn:hover {
+    color: #383838;
+    background-color: #ccc;
+  }
+}
+
+.search-bar {
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  padding: 0px 18px;
+  min-height: 38px;
+}
+
+.search-bar input {
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.search-bar .search-btn {
+  background-color: transparent;
+  color: #383838;
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+  .search-bar .search-btn {
+    display: none;
+  }
+  .search-input input {
+    width: 100%;
+  }
+}
+
+.filter-inner {
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.filter-inner hr {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #d4d4d4;
+}
+
+.filter-inner .search-input hr {
+  margin-top: 20px;
+}
+
+.filter-inner .search-input input {
+  width: 70%;
+  float: left;
+  margin-right: 5px;
+  border-radius: 0;
+}
+
+.filter-inner .search-input button {
+  color: #000;
+  border-radius: 0;
+}
+
+.filter-inner .search-buttons .title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.filter-inner .search-buttons .filter-button {
+  font-weight: 300;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+  padding: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 1rem;
+}
+
+.filter-inner .search-buttons .filter-button:hover {
+  background-color: #f9f9f9;
 }

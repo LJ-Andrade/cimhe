@@ -1,9 +1,8 @@
+<a id="contacto" class="anchor"></a>
 <section class="container-fluid contact-section">
 	<div class="container wow animated fadeIn">
 		<div class="row inner">
 			<div class="col-md-12 contact-form">
-			{{-- <h1>CONTACTANOS !</h1> --}}
-			{{--  <img src="{{asset('webimages/logos/main-logo.png')}}" class="wow animated zoomIn" data-wow-delay="1.5s" data-wow-duration="3s">  --}}
 				<div class="col-md-6 text-center">
 					<h1>Contactanos</h1>
 					{!! Form::open(['id' => 'MainContactForm', 'method' => 'POST']) !!}
@@ -50,6 +49,10 @@
 						<div class="divisor"></div>
 						<span class="text">Tel.: (011) 5648-7952</span> <br>
 						<span class="text">Cel.: (011) 156294-4460 | ID.: 54*819*781</span>
+						<div class="divisor"></div>
+						<i class="ion-android-mail"></i>
+						<span class="text">comercial@cimhe.com</span>
+						
 					</div>
 					<div class="inner-data">
 						<span class="title">Socio Gerente Técnico</span> <br>
