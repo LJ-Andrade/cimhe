@@ -35,7 +35,11 @@
                         </div>
                         <div class="col-md-9 col-sm-8 col-xs-12 inner">
                             <a href="{!! route('web.portfolio.article',$article->slug ) !!}">
-                                <h3 class="title"> {{ $article->title }} </h3>
+                                @if(strlen(strip_tags($article->title)) > 140)
+                                    <h3 class="title"> {{ substr(strip_tags($article->title), 0 , 140) }} ...</h3>
+                                @else
+                                    <h3 class="title"> {{ $article->title }} </h3>
+                                @endif
                             <p>
                                 @if(strlen(strip_tags($article->content)) > 450)
                                     {{ substr(strip_tags($article->content), 0 , 450) }} ...<b> Ver más...</b>
@@ -45,18 +49,21 @@
                                 @endif
                             </p>
                             </a>
-                            
                             <div class="search">
+                                @if(!$categories->isEmpty())
                                 <span>Categoría: 
                                 <a href="{{ route('web.search.category', $article->category->name ) }}">
                                     <span>{{ $article->category->name }}</span>
                                 </a> | 
+                                @endif
+                                @if(!$tags->isEmpty())
                                 </span>Etiquetas: 
                                 @foreach($article->tags as $tag)
                                     <a href="{{ route('web.search.tag', $tag->name ) }}">
                                         <span>{!! $tag->name !!}</span>
                                     </a>
                                 @endforeach
+                                @endif
                             </div>
                             <div class="date">
                                 <span><i class="ion-ios-clock-outline"></i> {{ $article->created_at->diffForHumans() }}</span>

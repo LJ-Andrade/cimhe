@@ -88,7 +88,11 @@
 									@endif
 								</td>
 								<td class="show-link max-text"><a href="{{ url('vadmin/portfolio/'.$item->id) }}">{{ $item->title }}</a></td>
+								@if($item->category != null)
 								<td>{{ $item->category->name }}</td>
+								@else
+								<td></td>
+								@endif
 								<td class="w-200">{{ transDateT($item->created_at) }}</td>
 								<td class="w-50 pad0 centered">
 									@if($item->status == '1')

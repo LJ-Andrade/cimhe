@@ -26,6 +26,7 @@
                 font-size: 1rem
                 overflow: hidden
                 text-overflow: ellipsis
+                padding-bottom: 25px
             .date
                 position: absolute
                 bottom: 5px
@@ -41,6 +42,8 @@
 .blog-article
     position: relative
     margin-bottom: 150px
+    .inner
+        margin-top: 20px
     .image 
         float: left
         margin-right: 20px
@@ -57,7 +60,7 @@
     .date
         position: absolute
         right: 16px
-        top: 0
+        top: -15px
 
 @media (max-width: 991px)
     .blog-list 
@@ -141,18 +144,23 @@
         color: #000
         border-radius: 0
 
+// FIlters Desktop
 @media (min-width: 768px)
     .blog-filters-desktop
         padding: 15px
         background-color: rgba(#f9f9f9,0.42)
+        span.badge
+            padding: 2px 6px
+            margin-top: -2px
     
 @media (max-width: 991px)
 	.blog-filters-desktop
 		display: none
 
+
+// FIlters Mobile
 .blog-filters-mobile
 	display: none
-
 
 @media (max-width: 991px)
 	.blog-filters-mobile
@@ -193,7 +201,7 @@
     .blog-filters-mobile
         margin-top: 94px
         
-
+// Search Input
 .search-bar
     border: 1px solid #ccc
     border-radius: 40px
@@ -214,7 +222,7 @@
     .search-input input
         width: 100%
 
-// Filters
+// Filters Components
 .filter-inner
     text-align: center
     background-color: $color2

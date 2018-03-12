@@ -10,7 +10,7 @@
 	<b>Categorías: </b><br>
 	@foreach($categories as $category)
 	<a href="{{ route('web.search.category', $category->name ) }}">
-		{{ $category->name }} <span class="badge">{{ $category->article->count() }}</span>
+		{{ $category->name }} <span class="badge maincolor-back">{{ $category->article->count() }}</span>
 	</a>
 	@endforeach
 	<hr class="softhr">
