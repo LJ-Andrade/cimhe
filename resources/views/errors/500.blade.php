@@ -13,7 +13,7 @@
             <h1>La página que está buscando no existe</h1>
             <hr class="softhr">
             <a href="{{ url('/') }}"><button class="button btnHollowGreen">Volver al inicio</button></a>
-            <a href="{{ route('web.portfolio') }}"><button class="button btnHollowGreen">Ir al PORTFOLIO</button></button></a>
+            {{-- <a href="{{ route('web.portfolio') }}"><button class="button btnHollowGreen">Ir al PORTFOLIO</button></button></a> --}}
         </div>
     </div>
 

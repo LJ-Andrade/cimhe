@@ -1,5 +1,5 @@
 @extends('layouts.web.main')
-@section('title', 'Cimhe | Inicio')
+@section('title', 'Cimhe | Profesionales')
 
 @section('styles')
     {{-- Slider --}}
@@ -7,40 +7,13 @@
 @endsection
 
 @section('content')
-
-    <div id="ActualSection" data-section="home"></div> {{-- JS Anchor --}}
-    {{-- Home Parallax --}}
-    {{-- <div  class="main-home" data-parallax="scroll">
-        <div class="main-info wow animated fadeIn" data-wow-delay="0s" data-wow-duration="1s">
-            <img src="{{ asset('webimages/logos/main-logo.png') }}">
-            <h1>Desarrollo Web y Diseño Gráfico</h1>
-            <div class="actions">
-                <a href="{{ route('web.portfolio') }}"><button class="button btnHollowGreyTrans">Nuestro Portfolio</button></a>
-                <a href="{{ url('/#contact') }}"><button class="button btnHollowGreen">Contactanos</button></a>
-            </div>
-        </div>
-    </div> --}}
-    <div class="top-space"></div>
-    {{-- Main Section --}}
-    <section class="main-home">
-        <div class="container inner">
+    <div class="top-space-big"></div>
+    <div class="container-fluid top-banner">
+        <div class="container">
             <div class="row">
-                <h2>Ciencia e Ingeniería Móvil del Hormigón Elaborado</h2>
-                <div class="h2">Ciencia e Ingeniería Móvil del Hormigón Elaborado</div>
-                <div class="title">
-                    Laboratorio de Ensayos <br>
-                    Hormigón y Suelos
-                </div>
-                <hr class="shorthr">
-                <div class="clearfix"></div>
-                <div class="text">
-                    Es una empresa que cuenta con un plantel de profesionales <br>
-                    y técnicos con experiencia de más de 10 años en la <br>
-                    Tecnología del Hormigón.
-                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <section class="small-section maincolor-back">
         <div class="container">
@@ -50,7 +23,7 @@
         </div>
     </section>
 
-    <section class="small-section profesionales-section-1 grey-back">
+    <section class="small-section profesionales-section-1 enum-items-left grey-back">
         <div class="container">
             <div class="row">
                 <h2>Prof. Ing. Humberto M. Balzamo</h2>

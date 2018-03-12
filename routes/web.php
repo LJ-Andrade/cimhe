@@ -14,7 +14,7 @@
 
 Route::get('/', function(){ return view('web/web'); });
 Route::get('profesionales', function(){ return view('web/profesionales'); });
-
+Route::get('laboratorio', function(){ return view('web/laboratorio'); });
 /*
 |--------------------------------------------------------------------------
 | Store
@@ -157,6 +157,7 @@ Route::group(['prefix' => 'vadmin', 'middleware' => 'admin'], function(){
     Route::post('update_catalog_price/{id}', 'Catalog\ArticlesController@updatePrice');
     Route::post('update_catalog_discount/{id}', 'Catalog\ArticlesController@updateDiscount');
     Route::get('panel-de-control', ['as' => 'storeControlPanel', 'uses' => 'VadminController@storeControlPanel']);
+
     
     Route::resource('cat_categorias', 'Catalog\CategoriesController');
     Route::resource('cat_tags', 'Catalog\TagsController');
@@ -169,6 +170,13 @@ Route::group(['prefix' => 'vadmin', 'middleware' => 'admin'], function(){
     Route::resource('shippings', 'Catalog\ShippingsController');
     // Payments Methods
     Route::resource('payments', 'Catalog\PaymentsController');
+   
+    // -- IMAGE CATALOG--
+    Route::resource('catalogoimg', 'Catalogimg\ArticlesController');
+
+    Route::resource('catimg_categorias', 'Catalogimg\CategoriesController');
+    Route::resource('catimg_tags', 'Catalogimg\TagsController');
+    Route::post('catimg_article_status/{id}', 'Catalogimg\ArticlesController@updateStatus');
 
     // -- SUPPORT --
     Route::get('docs', function(){ return view('vadmin.support.docs'); });
@@ -205,6 +213,9 @@ Route::prefix('vadmin')->middleware('admin')->group(function () {
     Route::post('destroy_portfolio_image', 'Portfolio\ImagesController@destroy');
     Route::post('destroy_shippings', 'Catalog\ShippingsController@destroy');
     Route::post('destroy_payments', 'Catalog\PaymentsController@destroy');
+    Route::post('destroy_catalogoimg', 'Catalogimg\ArticlesController@destroy');
+    Route::post('destroy_catimg_categorias', 'Catalogimg\CategoriesController@destroy');
+    Route::post('destroy_catimg_tags', 'Catalogimg\TagsController@destroy');
 });
 
 
@@ -215,4 +226,5 @@ Route::prefix('vadmin')->middleware('admin')->group(function () {
 */
 Route::get('404', ['as' => '404', 'uses' => 'ErrorController@notfound']);
 Route::get('500', ['as' => '500', 'uses' => 'ErrorController@fatal']);
+
 

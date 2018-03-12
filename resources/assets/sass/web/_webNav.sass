@@ -54,6 +54,16 @@
     display: none
 
 
+.navbar-default .navbar-nav>.active>a, 
+    background-color: transparent
+    border-bottom: 1px solid $color3
+    color: $color3
+    &:focus,&:hover,&:active
+        background-color: transparent
+        border-bottom: 1px solid $color2
+        color: $color2
+
+
 @media (max-width: 768px)
     .navbar-default .navbar-nav>li>a 
         &:hover

@@ -842,6 +842,33 @@
   }
 }
 
+.enum-items-left .item {
+  width: 100%;
+}
+
+.enum-items-left .item img {
+  float: left;
+  margin-right: 10px;
+  max-height: 100%;
+}
+
+.enum-items-left .item p {
+  margin-top: 5px;
+}
+
+.enum-items-col .item img {
+  float: left;
+  margin-right: 10px;
+  max-height: 100%;
+}
+
+.enum-items-col .item p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 5px;
+  padding-left: 40px;
+}
+
 .anchor {
   display: block;
   position: relative;
@@ -1137,6 +1164,12 @@ h4 {
   font-weight: 400;
 }
 
+h5 {
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  font-weight: 300;
+}
+
 hr {
   border-top: 1px solid #00122d;
 }
@@ -1306,6 +1339,18 @@ ul {
 
 .navbar-collapse .nav-mobile-extra {
   display: none;
+}
+
+.navbar-default .navbar-nav > .active > a {
+  background-color: transparent;
+  border-bottom: 1px solid #00c9ef;
+  color: #00c9ef;
+}
+
+.navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:active {
+  background-color: transparent;
+  border-bottom: 1px solid #f9f9f9;
+  color: #f9f9f9;
 }
 
 @media (max-width: 768px) {
@@ -1515,20 +1560,6 @@ ul {
   font-size: 1rem;
 }
 
-.profesionales-section-1 .inner .item {
-  width: 100%;
-}
-
-.profesionales-section-1 .inner .item img {
-  float: left;
-  margin-right: 10px;
-  max-height: 100%;
-}
-
-.profesionales-section-1 .inner .item p {
-  margin-top: 5px;
-}
-
 .single-item {
   background-color: #fff;
   padding: 25px;
@@ -1568,6 +1599,36 @@ ul {
   }
   .single-item h1 {
     font-size: 2rem;
+  }
+}
+
+.laboratorio-1 .horiz-items {
+  margin-top: 40px;
+}
+
+.laboratorio-1 .horiz-items .inner img {
+  width: 90px;
+}
+
+.laboratorio-1 .horiz-items .inner p {
+  color: #fff;
+}
+
+.laboratorio .row {
+  margin-bottom: 50px;
+}
+
+.laboratorio .enum-items-col .item p {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+@media (max-width: 991px) {
+  .laboratorio-1 .horiz-items .inner {
+    margin-bottom: 20px;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
   }
 }
 

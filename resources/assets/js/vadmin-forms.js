@@ -28,15 +28,16 @@ $(".SlugInput").keyup(function(){
     var regExp   = /\s+/g;
     Text         = Text.replace(/[&\/\\#,¡!´#+()$~%.'":*?<>{}]/g,'');
     Text         = Text.replace(regExp,'-');
-    Text         = Text.replace('ñ', 'n') ;
-    Text         = Text.replace('á', 'a') ;
-    Text         = Text.replace('é', 'e') ;
-    Text         = Text.replace('í', 'i') ;
-    Text         = Text.replace('ó', 'o') ;
-    Text         = Text.replace('ú', 'u') ;
-    
+    Text         = Text.replace('ñ', 'n');
+    Text         = Text.replace('á', 'a');
+    Text         = Text.replace('é', 'e');
+    Text         = Text.replace('í', 'i');
+    Text         = Text.replace('ó', 'o');
+    Text         = Text.replace('ú', 'u');
+    Text         = Text.replace('º', ' ');
     $(".SlugInput").val(Text);   
 });
+
 
 // --------- Slug AutoFillnput from title --------- //
 $("#TitleInput").keyup(function(event) {
@@ -46,12 +47,12 @@ $("#TitleInput").keyup(function(event) {
     var regExp   = /\s+/g;
     Text         = Text.replace(/[&\/\\#,¡!´#+()$~%.'":*?<>{}]/g,'');
     Text         = Text.replace(regExp,'-');
-    Text         = Text.replace('ñ', 'n') ;
-    Text         = Text.replace('á', 'a') ;
-    Text         = Text.replace('é', 'e') ;
-    Text         = Text.replace('í', 'i') ;
-    Text         = Text.replace('ó', 'o') ;
-    Text         = Text.replace('ú', 'u') ;
+    Text         = Text.replace('ñ', 'n');
+    Text         = Text.replace('á', 'a');
+    Text         = Text.replace('é', 'e');
+    Text         = Text.replace('í', 'i');
+    Text         = Text.replace('ó', 'o');
+    Text         = Text.replace('ú', 'u');
     $(".SlugInput").val(Text);   
 });
 

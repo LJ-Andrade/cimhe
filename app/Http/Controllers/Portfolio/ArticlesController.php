@@ -109,7 +109,8 @@ class ArticlesController extends Controller
 
         $path = public_path("webimages/portfolio/"); 
         $article = new Article($request->all());
-
+        $validSlug = slug_maker($article->slug);
+        $article->slug = $validSlug;
         $article->user_id = auth()->guard('user')->user()->id;
         $article->save();
 

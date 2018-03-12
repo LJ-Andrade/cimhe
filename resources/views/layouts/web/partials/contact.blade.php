@@ -64,6 +64,9 @@
 						<div class="divisor"></div>
 						<span class="text">Cel.: (011) 11-3488-0466</span> <br>
 						<span class="text">ID: 819*3226</span>
+						<div class="divisor"></div>
+						<i class="ion-android-mail"></i>
+						<span class="text">hbalzamo@cimhe.com</span>
 					</div>
 					<div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 inner-data">
 						<span class="title">Gerente Calidad</span> <br>

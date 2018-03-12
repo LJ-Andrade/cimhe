@@ -116,7 +116,36 @@
 				</li>
 			</ul>
 		</li> --}}
-
+		
+		{{-- Img Catalog --}}
+		{{-- <li class="nav-item has-sub {{ Menu::activeMenu('catalogoimg') }}"><a href="#"><i class="icon-image"></i>
+			<span data-i18n="nav.menu_levels.main" class="menu-title">Catálogo de Imágenes</span></a>
+			<ul class="menu-content" style="">
+				<li class="{{ Menu::activeMenu('catalogoimg') }}"><a href="{{ route('catalogoimg.index') }}" class="menu-item">
+					<i class="icon-list"></i> Listado</a></li>
+				<li class="{{ Menu::activeMenu('catalogoimg') }}"><a href="{{ route('catalogoimg.create') }}" class="menu-item">
+					<i class="icon-plus-round"></i> Nuevo Item</a></li>
+				<li class="has-sub is-shown"><a href="#" data-i18n="nav.menu_levels.second_level_child.main" class="menu-item">Categorías</a>
+					<ul class="menu-content" style="">
+						<li class="is-shown {{ Menu::activeMenu('cat_categorias') }}">
+							<a href="{{ route('catimg_categorias.index') }}" data-i18n="nav.menu_levels.second_level_child.third_level" class="menu-item">
+								<i class="icon-list"></i> Listado</a></li>
+						<li class="is-shown {{ Menu::activeMenu('cat_categorias') }}">
+							<a href="{{ route('catimg_categorias.create') }}" data-i18n="nav.menu_levels.second_level_child.third_level" class="menu-item">
+								<i class="icon-plus-round"></i> Nueva Categoría</a></li>
+					</ul>
+				</li>
+				<li class="has-sub is-shown {{ Menu::activeMenu('catimg_tags') }}"><a href="#" data-i18n="nav.menu_levels.second_level_child.main" class="menu-item">
+					Etiquetas</a>
+					<ul class="menu-content" style="">
+						<li class="is-shown {{ Menu::activeMenu('catimg_tags') }}"><a href="{{ route('catimg_tags.index') }}" data-i18n="nav.menu_levels.second_level_child.third_level" class="menu-item">
+							<i class="icon-list"></i> Listado</a></li>
+						<li class="is-shown {{ Menu::activeMenu('catimg_tags') }}"><a href="{{ route('catimg_tags.create') }}" data-i18n="nav.menu_levels.second_level_child.third_level" class="menu-item">
+							<i class="icon-plus-round"></i> Nueva Etiqueta</a></li>
+					</ul>
+				</li>
+			</ul> 
+		</li> --}}
 		{{--  CATALOGO  --}}
 		{{-- <li class="nav-item has-sub {{ Menu::activeMenu('catalogo') }}"><a href="#"><i class="icon-clipboard"></i>
 			<span data-i18n="nav.menu_levels.main" class="menu-title">Catálogo</span></a>
@@ -153,8 +182,8 @@
 							<i class="icon-plus-round"></i> Nuevo Atributo</a></li>
 					</ul>
 				</li>
-			</ul> --}}
-		</li>
+			</ul> 
+		</li>--}}
 
 		<li class="nav-item has-sub {{ Menu::activeMenu('portfolio') }}"><a href="#"><i class="icon-briefcase2"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Noticias</span></a>
 			<ul class="menu-content" style="">
