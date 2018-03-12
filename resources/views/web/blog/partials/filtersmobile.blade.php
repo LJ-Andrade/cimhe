@@ -28,7 +28,7 @@
 		<hr>
 			<div class="title">Etiquetas</div>
 			@foreach($tags as $tag)
-				<a href="{{ route('web.search.category', $category->name ) }}"> 
+				<a href="{{ route('web.search.tag', $tag->name ) }}"> 
 					<button class="btn filter-button"> 
 					{{ $tag->name }}</button>
 				</a>

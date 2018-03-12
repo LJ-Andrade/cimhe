@@ -18,7 +18,7 @@
 	<hr class="softhr">
 	<b>Etiquetas: </b><br>
 	@foreach($tags as $tag)
-	<a href="{{ route('web.search.category', $category->name ) }}"> 
+	<a href="{{ route('web.search.tag', $tag->name ) }}"> 
 		{{ $tag->name }}
 	</a>
 	@endforeach

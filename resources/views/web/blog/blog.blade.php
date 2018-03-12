@@ -60,7 +60,7 @@
                                 </span>Etiquetas: 
                                 @foreach($article->tags as $tag)
                                     <a href="{{ route('web.search.tag', $tag->name ) }}">
-                                        <span>{!! $tag->name !!}</span>
+                                        <span>{!! $tag->name !!}</span>xxx
                                     </a>
                                 @endforeach
                                 @endif
