@@ -13,8 +13,11 @@
 				<div class="card-body collapse in">
 					<div class="card-block">
 						<div class="card-text">
+								<h5>Estamos desarrollando:</h5>
 							<p>
-								Gestione el contenido de su web
+								- Sección "Galería de Imágenes"<br>
+								- Puesta a punto<br>
+								- Corrección de errores
 							</p>
 							
 							

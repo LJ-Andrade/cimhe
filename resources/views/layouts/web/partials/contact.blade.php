@@ -3,7 +3,7 @@
 	<div class="container wow animated fadeIn">
 		<div class="row inner">
 			<div class="col-md-12 contact-form">
-				<div class="col-md-6 text-center">
+				<div class="col-md-4 text-center">
 					<h1>Contactanos</h1>
 					{!! Form::open(['id' => 'MainContactForm', 'method' => 'POST']) !!}
 						<div class="form-group">
@@ -38,8 +38,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 contact-data">
-					<div class="inner-data">
+				<div class="col-md-8 contact-data">
+					<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 inner-data">
 						<span class="title">Socio Gerente Comercial</span> <br>
 						<span class="sub-title">José Tomás Adorno</span> <br>
 						<div class="icons">
@@ -54,7 +54,7 @@
 						<span class="text">comercial@cimhe.com</span>
 						
 					</div>
-					<div class="inner-data">
+					<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 inner-data">
 						<span class="title">Socio Gerente Técnico</span> <br>
 						<span class="sub-title">Ingeniero Humberto Balzamo</span> <br>
 						<div class="icons">
@@ -65,7 +65,7 @@
 						<span class="text">Cel.: (011) 11-3488-0466</span> <br>
 						<span class="text">ID: 819*3226</span>
 					</div>
-					<div class="inner-data">
+					<div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 inner-data">
 						<span class="title">Gerente Calidad</span> <br>
 						<span class="sub-title">Ingeniero Jesus Rojas</span> <br>
 						<div class="icons">

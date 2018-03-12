@@ -1,19 +1,20 @@
 @extends('layouts.web.main')
-
-@section('title', 'Studio Vimana | Portfolio')
+@section('title', 'Cimhe | Noticias')
 
 @section('styles')
 @endsection
 
 @section('content')
     <div class="top-space-big"></div>
+    <div class="container-fluid top-banner banner-news">
+    </div>
     <div class="container">
         @include('web.blog.partials.filtersmobile')
     </div>
-    <div class="container">
-        <h1>NOTICIAS</h1>
-        <hr>
+    <div class="container blog-list">
         <div class="row ">
+            <h1>NOTICIAS</h1>
+            <hr class="softhr">
             @if(! count($articles))
                 <div class="container">
                     <h2>No se encontraron artículos</h2>
@@ -24,25 +25,26 @@
             
             <div class="col-md-9">
                 @foreach($articles as $article)
-                <div class="row blog-item">
-                    <a href="{!! route('web.portfolio.article',$article->slug ) !!}">
-                        <div class="col-md-3 image pad0">
+                    <div class="row blog-item">
+                        <div class="col-md-3 col-sm-4 col-xs-12 image pad0">
                             @if (count($article->images) >= 1)
                                 <img src="{{ asset('webimages/portfolio/'. $article->images->first()->name ) }}" class="img-responsive" alt="">
                             @else
                                 <img src="{{ asset('webimages/main/default.jpg') }}" class="img-responsive" alt="">
                             @endif
                         </div>
-                        <div class="col-md-9 inner">
-                            <h3 class="title"> {{ $article->title }} </h3>
+                        <div class="col-md-9 col-sm-8 col-xs-12 inner">
+                            <a href="{!! route('web.portfolio.article',$article->slug ) !!}">
+                                <h3 class="title"> {{ $article->title }} </h3>
                             <p>
                                 @if(strlen(strip_tags($article->content)) > 450)
-                                    {{ substr(strip_tags($article->content), 0 , 450) }} ...
+                                    {{ substr(strip_tags($article->content), 0 , 450) }} ...<b> Ver más...</b>
                                     {{-- {{ strip_tags(substr($article->content, 0, 300)) }} --}}
                                 @else
                                     {{ strip_tags($article->content) }}
                                 @endif
                             </p>
+                            </a>
                             
                             <div class="search">
                                 <span>Categoría: 
@@ -50,19 +52,17 @@
                                     <span>{{ $article->category->name }}</span>
                                 </a> | 
                                 </span>Etiquetas: 
-                                    @foreach($article->tags as $tag)
-                                        <a href="{{ route('web.search.tag', $tag->name ) }}">
-                                            <span>{!! $tag->name !!}</span>
-                                        </a>
-                                    @endforeach
+                                @foreach($article->tags as $tag)
+                                    <a href="{{ route('web.search.tag', $tag->name ) }}">
+                                        <span>{!! $tag->name !!}</span>
+                                    </a>
+                                @endforeach
                             </div>
                             <div class="date">
-                                <span class="text">{{ $article->created_at->diffForHumans() }}</span>
+                                <span><i class="ion-ios-clock-outline"></i> {{ $article->created_at->diffForHumans() }}</span>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="clear"></div>
+                    </div>
                 @endforeach
             </div>
             <div class="col-md-3">
@@ -70,9 +70,7 @@
             </div>
         </div>
         {!! $articles->render(); !!}
-    </div>
-    <div class="container">
-        <hr>
+        <hr class="softhr">
     </div>
     @include('layouts.web.partials.contact')
     @include('layouts.web.partials.foot')

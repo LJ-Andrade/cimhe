@@ -43,7 +43,7 @@
                 {{-- <a><a href="">LABORATORIO</a></a> --}}
                 <li><a href="{{ url('profesionales') }}">PROFESIONALES</a></li>
                 {{-- <li><a href="">FOTOS</a></li> --}}
-                {{-- <li><a href="{{ url('noticias') }}">NOTICIAS</a></li> --}}
+                <li><a href="{{ url('noticias') }}">NOTICIAS</a></li>
                 <li><a class="contacto" href="{{ url('/#contacto') }}">CONTACTO</a></li>   
             </ul>
             <div class="nav-mobile-extra">

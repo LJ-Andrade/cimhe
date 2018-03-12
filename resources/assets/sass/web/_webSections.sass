@@ -33,8 +33,27 @@
 			font-weight: 400
 			color: #fff
 
+.top-banner
+	background: url(../webimages/main/top-banner.png)
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center center
+	position: relative
+	height: 250px
+	color: #fff
+	margin-top: -45px
 
-@media (max-width:990px) and (min-width:768px)
+.banner-news
+	background: url(../webimages/main/bannernoticias2.jpg)
+	
+@media (max-width: 768px)
+	.top-banner
+		display: none
+
+@media (max-width: 991px) and (min-width: 768px)
+	.top-banner
+		height: 180px
+		margin-top: 98px
 	.main-home
 	.nav-container
 		@include flex-column
@@ -60,6 +79,8 @@
 
 	.top-space
     	height: 74px
+
+
 
 
 //--------- SECOND SECTION ------------- //

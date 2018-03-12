@@ -3,9 +3,8 @@
 		<span class="title">Noticias</span>
 		<button class="Show-Mobile-Filter btn filterMobileBtn"> <b><i class="ion-android-search"></i></b></button>
 	</div>
-	<div class="Fiter-Inner filter-inner animated fadeIn Hidden">
-		<hr>
-		<h2>Buscador</h2>
+	<div class="row Fiter-Inner filter-inner animated fadeIn Hidden">
+		<h2>Buscar</h2>
 		<div class="search-input">
 			{!! Form::open(['route' => 'web.portfolio', 'method' => 'GET', 'class' => '']) !!}
 				<div class="form-group search-bar">
@@ -15,8 +14,8 @@
 			{!! Form::close() !!}
 		</div>
 		<div class="search-buttons">
-		<hr>
-			<div class="title">Categoría</div>
+			<hr>
+			<div class="title">Categorías</div>
 			
 			@foreach($categories as $category)
 				<a href="{{ route('web.search.category', $category->name ) }}"> 
@@ -27,7 +26,7 @@
 		</div>
 		<div class="search-buttons">
 		<hr>
-			<div class="title">Tags</div>
+			<div class="title">Etiquetas</div>
 			@foreach($tags as $tag)
 				<a href="{{ route('web.search.category', $category->name ) }}"> 
 					<button class="btn filter-button"> 

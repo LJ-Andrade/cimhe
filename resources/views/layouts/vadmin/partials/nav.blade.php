@@ -118,7 +118,7 @@
 		</li> --}}
 
 		{{--  CATALOGO  --}}
-		<li class="nav-item has-sub {{ Menu::activeMenu('catalogo') }}"><a href="#"><i class="icon-clipboard"></i>
+		{{-- <li class="nav-item has-sub {{ Menu::activeMenu('catalogo') }}"><a href="#"><i class="icon-clipboard"></i>
 			<span data-i18n="nav.menu_levels.main" class="menu-title">Catálogo</span></a>
 			<ul class="menu-content" style="">
 				<li class="{{ Menu::activeMenu('catalogo') }}"><a href="{{ route('catalogo.index') }}" class="menu-item">
@@ -153,7 +153,7 @@
 							<i class="icon-plus-round"></i> Nuevo Atributo</a></li>
 					</ul>
 				</li>
-			</ul>
+			</ul> --}}
 		</li>
 
 		<li class="nav-item has-sub {{ Menu::activeMenu('portfolio') }}"><a href="#"><i class="icon-briefcase2"></i><span data-i18n="nav.menu_levels.main" class="menu-title">Noticias</span></a>
@@ -198,7 +198,8 @@
 			<i data-toggle="tooltip" data-placement="right" data-original-title="Support" class="icon-ellipsis icon-ellipsis"></i>
 		</li>
 		<li class="nav-item"><a href="{{ url('/') }}" target="_blank"><i class="icon-feed"></i><span class="menu-title">Web</span></a></li>
-		<li class="nav-item"><a href="{{ url('/tienda') }}" target="_blank"><i class="icon-cart4"></i><span class="menu-title">Catálogo</span></a></li>
+		{{-- <li class="nav-item"><a href="{{ url('/tienda') }}" target="_blank"><i class="icon-cart4"></i><span class="menu-title">Catálogo</span></a></li> --}}
+		<li class="nav-item"><a href="{{ url('/noticias') }}" target="_blank"><i class="icon-newspaper"></i><span class="menu-title">Blog | Noticias</span></a></li>
 
 		<li class="navigation-header"><span data-i18n="nav.category.support">Ayuda</span>
 			<i data-toggle="tooltip" data-placement="right" data-original-title="Support" class="icon-ellipsis icon-ellipsis"></i>

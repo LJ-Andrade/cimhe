@@ -4,31 +4,130 @@
 //                                    //
 ////////////////////////////////////////
 
-.blog-item
-    margin-bottom: 35px
-    .image
-        float: left
-        img
-            max-width: 100%
-    .inner
-        min-height: 220px
+.blog-list
+    margin-top: 15px
+    .blog-item
+        margin-bottom: 35px
+        @include transition(0.2s)
         position: relative
-        h3,p
-            color: #383838
-        h3
-            margin-top: 0
-        p
-            font-size: 1rem
-            overflow: hidden
-            text-overflow: ellipsis
+        .inner
+            min-height: 220px
+            position: relative
+            .image
+                border: 1px solid red
+                float: left
+                img
+                    max-width: 100%
+            h3,p
+                color: #383838
+            h3
+                margin-top: 5px
+            p
+                font-size: 1rem
+                overflow: hidden
+                text-overflow: ellipsis
+            .date
+                position: absolute
+                bottom: 5px
+                right: 5px
+            .search
+                position: absolute
+                bottom: 5px
+                left: 12px
+        &:hover
+            background-color: rgba(#f9f9f9,0.45)
+
+
+.blog-article
+    position: relative
+    margin-bottom: 150px
+    .image 
+        float: left
+        margin-right: 20px
+        margin-bottom: 15px
+        img
+            width: 340px
+    p
+        text-align: justify
+        padding-bottom: 50px
+    .search
+        position: absolute
+        bottom: 5px
+        right: 0
+    .date
+        position: absolute
+        right: 16px
+        top: 0
+
+@media (max-width: 991px)
+    .blog-list 
+        h1
+            display: none
+        .blog-item 
+            .inner
+                p
+                    font-size: .9rem
+                .date
+                    bottom: 4px
+                    right: 20px
+                .search
+                    bottom: 4px
+            .image img
+                max-width: 240px
+    .blog-article
+        h1
+            display: none
         .date
-            position: absolute
-            bottom: 5px
-            right: 5px
-        .search
-            position: absolute
-            bottom: 5px
-            left: 12px
+            position: relative
+            margin-left: 20px
+
+
+@media (max-width: 768px)
+    .blog-list 
+        .blog-item 
+            .image 
+                @include flex-center
+                img
+                    width: 768px
+                    max-width: 100%
+
+@media (max-width: 768px) and (min-width: 330px)
+    .blog-list 
+        .blog-item
+            .image 
+                max-height: 250px
+                overflow: hidden
+                img
+                    max-width: 100%
+
+@media (max-width: 500px)
+    .blog-list 
+        .blog-item
+            margin-bottom: 50px
+            .inner
+                min-height: 0
+                p
+                    white-space: nowrap
+                    overflow: hidden !important
+                    text-overflow: ellipsis
+                    margin-bottom: 20px
+                .date,.search
+                    position: relative
+                    bottom: 0
+                    left: 0
+                .date
+                    margin-top: 10px
+                    border-bottom: 1px solid #ccc
+
+@media (max-width: 1200px) and (min-width: 991px)
+    .blog-list .blog-item .inner
+        min-height: 192px
+        p
+            font-size: 0.8rem
+        
+@media (max-width: 991px) and (min-width: 768px)
+    .blog-list .blog-item .inner
+        min-height: 240px
 
 .search-input
     hr
@@ -42,24 +141,25 @@
         color: #000
         border-radius: 0
 
-@media (min-width: 765px)
+@media (min-width: 768px)
     .blog-filters-desktop
         padding: 15px
         background-color: rgba(#f9f9f9,0.42)
     
-@media (max-width: 765px)
+@media (max-width: 991px)
 	.blog-filters-desktop
 		display: none
 
 .blog-filters-mobile
 	display: none
 
-@media (max-width: 765px)
+
+@media (max-width: 991px)
 	.blog-filters-mobile
 		display: block
 		position: relative
 		padding: 0
-		margin-top: 100px
+		margin-top: 20px
 		h2
 			color: #383838
 		.inner-main
@@ -88,6 +188,12 @@
 				&:hover
 					color: #383838
 					background-color: #ccc
+
+@media (max-width: 768px)
+    .blog-filters-mobile
+        margin-top: 94px
+        
+
 .search-bar
     border: 1px solid #ccc
     border-radius: 40px
@@ -111,14 +217,19 @@
 // Filters
 .filter-inner
     text-align: center
-    background-color: #fff
+    background-color: $color2
     padding: 10px
+    margin-top: 20px
+    border: 1px solid #ccc
+    position: fixed
+    z-index: 9999
+    width: 100%
+    height: 100%
     hr
         margin-top: 10px
         margin-bottom: 20px
         border: 0
         border-top: 1px solid #d4d4d4
-        // border-top: 1px solid rgb(84, 87, 116)
     .search-input
         hr
             margin-top: 20px

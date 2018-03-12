@@ -40,7 +40,7 @@ class ArticlesController extends Controller
 
         $categories = Category::orderBy('id','ASC')->pluck('name','id');
 
-        return view('vadmin.blog.index')
+        return view('vadmin.portfolio.index')
             ->with('articles', $articles)
             ->with('categories', $categories);
 
@@ -49,7 +49,7 @@ class ArticlesController extends Controller
     public function show($id)
     {
         $article = Article::find($id);
-        return view('vadmin.blog.show')->with('article', $article);
+        return view('vadmin.portfolio.show')->with('article', $article);
     }
 
     /*
