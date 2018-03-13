@@ -14,25 +14,25 @@
 		@slot('actions')
 			{{-- Actions --}}
 			<div class="list-actions">
-				<a href="{{ route('cat_tags.create') }}" class="btn btnBlue"><i class="icon-plus-round"></i>  Nueva Etiqueta</a>
+				<a href="{{ route('catimg_tags.create') }}" class="btn btnBlue"><i class="icon-plus-round"></i>  Nueva Etiqueta</a>
 				<button id="SearchFiltersBtn" class="btn btnBlue"><i class="icon-ios-search-strong"></i></button>
 				{{-- Edit --}}
 				<a href="#" id="EditBtn" class="btn btnGreen Hidden"><i class="icon-pencil2"></i> Editar</a>
 				<input id="EditId" type="hidden">
 				{{-- Delete --}}
 				{{--  THIS VALUE MUST BE THE NAME OF THE SECTION CONTROLLER  --}}
-				<input id="ModelName" type="hidden" value="cat_tags">
+				<input id="ModelName" type="hidden" value="catimg_tags">
 				<button id="DeleteBtn" class="btn btnRed Hidden"><i class="icon-bin2"></i> Eliminar</button>
 				<input id="RowsToDeletion" type="hidden" name="rowstodeletion[]" value="">
 				{{-- If Search --}}
 				@if(isset($_GET['name']))
-				<a href="{{ url('vadmin/cat_tags') }}"><button type="button" class="btn btnGrey">Mostrar Todos</button></a>
-				<div class="results">{{ $tags->total() }} resultados de búsqueda</div>
+				<a href="{{ url('vadmin/catimg_tags') }}"><button type="button" class="btn btnGrey">Mostrar Todos</button></a>
+				{{-- <div class="results">{{ $tags->total() }} resultados de búsqueda</div> --}}
 				@endif
 			</div>
 		@endslot
 		@slot('searcher')
-			@include('vadmin.catalog.tags.searcher')
+			@include('vadmin.catalogimg.tags.searcher')
 		@endslot
 	@endcomponent
 @endsection
@@ -58,7 +58,7 @@
 		<div class="row">
 			@component('vadmin.components.list')
 				@slot('actions', '')
-				@slot('title', 'Etiquetas')
+				@slot('title', 'Etiquetas de la galería')
 					@if(!$tags->count() == '0')
 					@slot('tableTitles')
 						<th></th>

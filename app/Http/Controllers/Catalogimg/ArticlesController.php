@@ -120,11 +120,12 @@ class ArticlesController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $this->validate($request,[
-            'name'                 => 'required|min:4|max:250|unique:catalog_articles',
-            'code'                 => 'unique:catalog_articles,code',
+            'name'                 => 'required|min:4|max:250|unique:catalogimg_articles',
+            'code'                 => 'unique:catalogimg_articles,code',
             'category_id'          => 'required',
-            'slug'                 => 'required|alpha_dash|min:4|max:255|unique:catalog_articles,slug',
+            'slug'                 => 'required|alpha_dash|min:4|max:255|unique:catalogimg_articles,slug',
             'image'                => 'image',
 
         ],[
@@ -157,7 +158,6 @@ class ArticlesController extends Controller
         $number = '2';
 
         $article->save();
-        $article->atribute1()->sync($request->atribute1);
         $article->tags()->sync($request->tags);
  
         try {

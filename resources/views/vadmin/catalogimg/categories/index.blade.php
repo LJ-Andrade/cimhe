@@ -1,5 +1,5 @@
 @extends('layouts.vadmin.main')
-@section('title', 'Vadmin | Categorías')
+@section('title', 'Vadmin | Galería - Categorías')
 {{-- STYLE INCLUDES --}}
 @section('styles')
 @endsection
@@ -26,8 +26,8 @@
 				<input id="RowsToDeletion" type="hidden" name="rowstodeletion[]" value="">
 				{{-- If Search --}}
 				@if(isset($_GET['name']))
-				<a href="{{ url('vadmin/categoriesimg') }}"><button type="button" class="btn btnGrey">Mostrar Todos</button></a>
-				<div class="results">{{ $categories->total() }} resultados de búsqueda</div>
+				<a href="{{ route('catimg_categorias.index')  }}"><button type="button" class="btn btnGrey">Mostrar Todos</button></a>
+				{{-- <div class="results">{{ $categories->total() }} resultados de búsqueda</div> --}}
 				@endif
 			</div>
 		@endslot
@@ -58,7 +58,7 @@
 		<div class="row">
 			@component('vadmin.components.list')
 				@slot('actions', '')
-				@slot('title', 'Categorías')
+				@slot('title', 'Categorías de la Galería')
 					@if(!$categories->count() == '0')
 					@slot('tableTitles')
 						<th></th>

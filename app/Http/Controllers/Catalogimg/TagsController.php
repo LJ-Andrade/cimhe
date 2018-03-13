@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Catalogimg;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\CatalogTag;
+use App\CatalogimgTag;
 
 class TagsController extends Controller
 {
@@ -24,7 +24,7 @@ class TagsController extends Controller
             $tags = CatalogimgTag::orderBy('name','ASC')->paginate(15);
         }
 
-        return view('vadmin.catalog.tags.index')->with('tags', $tags);
+        return view('vadmin.catalogimg.tags.index')->with('tags', $tags);
     }
 
     public function show($id)
@@ -40,7 +40,7 @@ class TagsController extends Controller
 
     public function create()
     {
-        return view('vadmin.catalog.tags.create');
+        return view('vadmin.catalogimg.tags.create');
     }
 
     public function store(Request $request)
@@ -55,7 +55,7 @@ class TagsController extends Controller
         $Tag = new CatalogimgTag($request->all());
         $Tag->save();
 
-        return redirect()->route('cat_tags.index')->with('message','Etiqueta creada');
+        return redirect()->route('catimg_tags.index')->with('message','Etiqueta creada');
     }
 
     /*
@@ -66,8 +66,8 @@ class TagsController extends Controller
 
     public function edit($id)
     {
-        $tag = CatalogTag::find($id);
-        return view('vadmin.catalog.tags.edit')->with('tag', $tag);
+        $tag = CatalogimgTag::find($id);
+        return view('vadmin.catalogimg.tags.edit')->with('tag', $tag);
     }
 
     public function update(Request $request, $id)
@@ -75,7 +75,7 @@ class TagsController extends Controller
         $tag = CatalogimgTag::find($id);
 
         $this->validate($request,[
-            'name' => 'required|min:4|max:250|unique:catalog_tags,name,'.$tag->id,
+            'name' => 'required|min:4|max:250|unique:catalogimg_tags,name,'.$tag->id,
         ],[
             'name.required' => 'Debe ingresar un nombre a la etiqueta',
             'name.unique'   => 'La etiqueta ya existe'
@@ -84,7 +84,7 @@ class TagsController extends Controller
         $tag->fill($request->all());
         $tag->save();
 
-        return redirect()->route('cat_tags.index')->with('message','Etiqueta editada');
+        return redirect()->route('catimg_tags.index')->with('message','Etiqueta editada');
     } 
 
     /*

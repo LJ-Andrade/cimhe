@@ -50,7 +50,7 @@
                 <hr>
                 <div class="row item-inline">            
                     <div>
-                        <button class="btn btnBlue" data-toggle="modal" data-target="#SuelosModal">Presupuestar Suelos</button>
+                        <button class="btn btnBlue" data-toggle="modal" data-target="#SuelosModal">Presupuestar Suelos</button> <br>
                         <button class="btn btnBlue" data-toggle="modal" data-target="#HormigonModal">Presupuestar Hormigón</button>
                     </div>
                     <div class="inner">

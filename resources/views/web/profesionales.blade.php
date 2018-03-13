@@ -165,7 +165,7 @@
                     <div class="col-md-12 pad0 item">
                         <img src="webimages/main/punto.png" alt="">
                         <p>{{ $item }}</p>
-                    </div> 
+                    </div> <br>
                     <?php } unset($items);  ?>
                 </div>    
                 <div class="row inner">

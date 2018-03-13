@@ -19,11 +19,8 @@
         @component('vadmin.components.container')
             @slot('title')
                 </b><h1>{!! $article->name !!}</h1>
-				<p class="text-muted">Código: #{!! $article->code !!} </p>
             @endslot
             @slot('content')
-				<b>Descripción:</b> <p>{!! $article->description !!}</p>
-				<hr class="softhr">
 				<div class="row">
 					<div class="col-md-3">
 						<h2><i class="icon-star-full"></i> Imágen Destacada</h2>
@@ -63,17 +60,12 @@
 				<br>
 				<b> Precio c/ Desc.: </b> <span class="custom-badge btnGreen"> $ {{ $article->price - ($article->price * $article->offer) / 100 }}</span>
 				<hr class="softhr">
-				<b>Cualidades:</b>
-				@foreach($article->atribute1 as $atribute1)
-				<span class="custom-badge btnRed">{!! $atribute1->name !!}</span>
-				@endforeach <br>
-				<b>Propiedad: </b> <span class="custom-badge btnBlue">{{ $article->textile }}</span>
-				<hr class="softhr">
+				
 				<b>Categoría:</b> <span class="custom-badge btnBlue">{!! $article->category->name !!}</span> |
 				<b>Etiquetas:</b>
-				@foreach($article->tags as $tag)
+				{{-- @foreach($article->tags as $tag)
 				<span class="custom-badge btnRed">{!! $tag->name !!}</span>
-				@endforeach
+				@endforeach --}}
 				<hr class="softhr">
 				
 				<b>Url - Dirección web amigable (Slug):</b> <span class="badge">{!! $article->slug !!}</span>

@@ -67,13 +67,13 @@ class CategoriesController extends Controller
 
     public function edit($id)
     {
-        $category = CatalogCategory::find($id);
+        $category = CatalogimgCategory::find($id);
         return view('vadmin.catalogimg.categories.edit')->with('category', $category);
     }
 
     public function update(Request $request, $id)
     {
-        $category = CatalogCategory::find($id);
+        $category = CatalogimgCategory::find($id);
 
         $this->validate($request,[
             'name'          => 'required|min:4|max:250|unique:catalog_categories,name,'.$category->id,

@@ -8,7 +8,7 @@
 	@component('vadmin.components.header')
 		@slot('breadcrums')
 			<li class="breadcrumb-item"><a href="{{ url('vadmin')}}">Inicio</a></li>
-			<li class="breadcrumb-item"><a href="{{ route('cat_categorias.index')}}">Listado de categorías</a></li>
+			<li class="breadcrumb-item"><a href="{{ route('catimg_categorias.index')}}">Listado de categorías</a></li>
 			<li class="breadcrumb-item active">Edición de categoría</li>
 		@endslot
 		@slot('actions')
@@ -26,14 +26,14 @@
 	<div class="inner-wrapper">
 		{!! Form::model($category, [
 				'method' => 'PATCH',
-				'url' => ['vadmin/cat_categorias', $category->id],
+				'url' => ['vadmin/catimg_categorias', $category->id],
 				'files' => true,
 				'class' => 'row big-form mw450', 
 				'data-parsley-validate' => ''
 			]) !!}
-			@include('vadmin.catalog.categories.form')
+			@include('vadmin.catalogimg.categories.form')
 			<div class="form-actions right">
-				<a href="{{ route('cat_categorias.index')}}">
+				<a href="{{ route('catimg_categorias.index')}}">
 					<button type="button" class="btn btnRed">
 						<i class="icon-cross2"></i> Cancelar
 					</button>
@@ -54,10 +54,6 @@
 @endsection
 
 @section('custom_js')
-	<script>
-		$('.CatalogLi').addClass('open');
-		$('.CatalogCategoriesLi').addClass('open');
-	</script>
 @endsection
 
 

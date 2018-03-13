@@ -66,7 +66,7 @@
 						<span class="text">ID: 819*3226</span>
 						<div class="divisor"></div>
 						<i class="ion-android-mail"></i>
-						<span class="text">hbalzamo@cimhe.com</span>
+						<span class="text">hbalzamo@gmail.com</span>
 					</div>
 					<div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 inner-data">
 						<span class="title">Gerente Calidad</span> <br>

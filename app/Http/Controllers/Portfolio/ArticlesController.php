@@ -171,6 +171,8 @@ class ArticlesController extends Controller
 
         $article   = Article::find($id);
         $article->fill($request->all());
+        $validSlug = slug_maker($article->slug);
+        $article->slug = $validSlug;
         $article->save();
 
         // Sync() fills pivote table. Gets un array.

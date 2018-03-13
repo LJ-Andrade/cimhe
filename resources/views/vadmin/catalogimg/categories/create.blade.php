@@ -13,7 +13,7 @@
 		@endslot
 		@slot('actions')
 			<div class="list-actions">
-				<h1>Nueva categoría</h1>
+				<h1>Nueva categoría de la Galería</h1>
 			</div>
 		@endslot
 	@endcomponent
@@ -40,7 +40,7 @@
 			<div class="col-md-7">
 				@component('vadmin.components.infoContainer')
 					@slot('text')
-					Las <b>categorías</b> siven para organizar el contenido del catálogo. Permiten una mejor segmentación del contenido.
+					Las <b>categorías</b> siven para organizar el contenido de la galería. Permiten una mejor segmentación del contenido.
 					Se utilizan palabras o frases para agrupar artículos de igual temática.
 					Esto permitirá luego que los usuarios filtren los items en los buscadores de la web según sus preferencias. <br><br>
 					@endslot

@@ -67,14 +67,11 @@
 				@slot('title', 'Listado de Items')
 					@if(!$articles->count() == '0')
 					@slot('tableTitles')
-						<th class="w-50">
+						<th class="w-50"></th>
 						<th></th>
-						<th>Cód.</th>
 						<th>Título</th>
-						<th>Stock</th>
-						<th>Precio</th>
-						<th>Oferta (%)</th>
 						<th>Categoría</th>
+						<th>Etiquetas</th>
 						<th>Estado</th>
 					@endslot
 					@slot('tableContent')
@@ -89,44 +86,19 @@
 								</td>
 								<td class="thumb">
 									@if($item->thumb != '' || $item->thumb != null)
-										<img src="{{ asset('webimages/catalogo/'. $item->thumb ) }}">
+										<img src="{{ asset('webimages/catalogoimg/'. $item->thumb ) }}">
 									@else
-										<img src="{{ asset('webimages/gen/catalog-gen.jpg') }}">
+										<img src="{{ asset('webimages/main/gen/catalog-gen.jpg') }}">
 									@endif
 								</td>
-								<td class="w-50">#{{ $item->code }}</td>
-								<td class="show-link max-text"><a href="{{ url('vadmin/catalogo/'.$item->id) }}">{{ $item->name }}</a></td>
-								{{--  STOCK  --}}
-								<td class="Modificable-Stock-Input modificable-input">
-									@if($item->stock > $item->stockmin)
-										<input class="UpdateStockInput List-Input Hidden" type="number" name="stock">
-										<div class="DisplayStockData">{{ $item->stock }}</div>
-										<div class="UpdateStockBtn action-button Hidden" data-id="{{ $item->id }}"><i class="icon-checkmark2"></i></div>
-									@else
-										<input class="UpdateStockInput List-Input Hidden" type="number" name="stock">
-										<div class="DisplayStockData custom-badge btnRed">{{ $item->stock }}</div>
-										<div class="UpdateStockBtn action-button Hidden" data-id="{{ $item->id }}"><i class="icon-checkmark2"></i></div>
-									@endif
-								</td>
-								{{--  PRICE  --}}
-								<td class="Modificable-Price-Input modificable-input">
-									<input class="UpdatePriceInput List-Input Hidden" type="text" name="price">
-									<span class="Extra-Data">$ </span><span class="DisplayPriceData">{{ $item->price }}</span>
-									<div class="UpdatePriceBtn action-button Hidden" data-id="{{ $item->id }}"><i class="icon-checkmark2"></i></div>
-								</td>
-								{{--  Discount PERCENT and PRICE  --}}
-								<td class="Modificable-Discount-Input modificable-input">
-									@if($item->discount == '0')
-									<input class="UpdateDiscountInput List-Input Hidden" type="text" name="price">
-									<span class="Extra-Data">-</span>
-									@else
-									<input class="UpdateDiscountInput List-Input Hidden" type="text" name="price">
-									<span class="Extra-Data">%</span><span class="DisplayDiscountData">{{ $item->discount }}</span><span class="Extra-Data"> ($ {{ calcValuePercentNeg($item->price, $item->discount) }})</span>
-									@endif
-									<div class="UpdateDiscountBtn action-button Hidden" data-id="{{ $item->id }}"><i class="icon-checkmark2"></i></div>
-								</td>
+								<td class="show-link max-text"><a href="{{ url('vadmin/catalogoimg/'.$item->id) }}">{{ $item->name }}</a></td>
 								{{--  DATE   --}}
 								<td class="w-200">{{ $item->category->name }}</td>
+								<td class="w-200">
+									{{-- @foreach($item->tags as $tag)
+										{{ $tag->name }}
+									@endforeach	 --}}
+								</td>
 								<td class="w-50 pad0 centered">
 									@if($item->status == '1')
 										<label class="switch">

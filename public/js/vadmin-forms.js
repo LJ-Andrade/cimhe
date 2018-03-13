@@ -122,6 +122,7 @@ $("#TitleInput").keyup(function (event) {
     Text = Text.replace('í', 'i');
     Text = Text.replace('ó', 'o');
     Text = Text.replace('ú', 'u');
+    Text = Text.replace('º', ' ');
     $(".SlugInput").val(Text);
 });
 

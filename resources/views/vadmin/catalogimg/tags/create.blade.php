@@ -13,7 +13,7 @@
 		@endslot
 		@slot('actions')
 			<div class="list-actions">
-				<h1>Nueva Etiqueta</h1>
+				<h1>Nueva Etiqueta de la Galería</h1>
 			</div>
 		@endslot
 	@endcomponent
@@ -23,10 +23,10 @@
 	<div class="inner-wrapper">
 		<div class="row">
 			<div class="col-md-5">
-			{!! Form::open(['route' => 'cat_tags.store', 'method' => 'POST', 'files' => true, 'class' => 'row big-form mw450', 'data-parsley-validate' => '']) !!}	
-				@include('vadmin.catalog.tags.form')
+			{!! Form::open(['route' => 'catimg_tags.store', 'method' => 'POST', 'files' => true, 'class' => 'row big-form mw450', 'data-parsley-validate' => '']) !!}	
+				@include('vadmin.catalogimg.tags.form')
 				<div class="form-actions right">
-					<a href="{{ route('cat_tags.index')}}">
+					<a href="{{ route('catimg_tags.index')}}">
 						<button type="button" class="btn btnRed">
 							<i class="icon-cross2"></i> Cancelar
 						</button>
@@ -56,10 +56,6 @@
 @endsection
 
 @section('custom_js')
-	<script>
-		$('.CatalogTagsLi').addClass('open');
-		$('.CatalogTagsNew').addClass('active');
-	</script>
 @endsection
 
 
