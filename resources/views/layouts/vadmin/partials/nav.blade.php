@@ -118,7 +118,7 @@
 		</li> --}}
 		
 		{{-- Img Catalog --}}
-		{{-- <li class="nav-item has-sub {{ Menu::activeMenu('catalogoimg') }}"><a href="#"><i class="icon-image"></i>
+		<li class="nav-item has-sub {{ Menu::activeMenu('catalogoimg') }}"><a href="#"><i class="icon-image"></i>
 			<span data-i18n="nav.menu_levels.main" class="menu-title">Galería</span></a>
 			<ul class="menu-content" style="">
 				<li class="{{ Menu::activeMenu('catalogoimg') }}"><a href="{{ route('catalogoimg.index') }}" class="menu-item">
@@ -145,7 +145,7 @@
 					</ul>
 				</li>
 			</ul> 
-		</li> --}}
+		</li>
 		{{--  CATALOGO  --}}
 		{{-- <li class="nav-item has-sub {{ Menu::activeMenu('catalogo') }}"><a href="#"><i class="icon-clipboard"></i>
 			<span data-i18n="nav.menu_levels.main" class="menu-title">Catálogo</span></a>

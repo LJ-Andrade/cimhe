@@ -783,7 +783,7 @@
 }
 
 .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
-  background-color: #ea5050;
+  background-color: #00122d;
   border: 0;
   border-radius: 0 !important;
 }
@@ -793,7 +793,7 @@
 }
 
 .pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
-  color: #ea5050;
+  color: #00122d;
 }
 
 .color-circle {
@@ -2282,4 +2282,18 @@ footer .copyright {
 
 .filter-inner .search-buttons .filter-button:hover {
   background-color: #f9f9f9;
+}
+
+.gallery-list a {
+  color: #383838;
+}
+
+.gallery-list .inner {
+  margin-bottom: 20px;
+}
+
+.gallery-list .inner .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

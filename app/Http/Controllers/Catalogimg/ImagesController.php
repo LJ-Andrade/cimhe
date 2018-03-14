@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Catalogimg;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\CatalogimgImage;
+use File;
 
-class ImagesimgController extends Controller
+class ImagesController extends Controller
 {
     public function index()
     {
@@ -20,12 +21,15 @@ class ImagesimgController extends Controller
 	
 	public function destroy(Request $request)
 	{
+		$path = 'webimages/catalogoimg/';
+
 		try {
 			$record = CatalogimgImage::find($request->id);
 			$record->delete();
-				return response()->json([
-					'success'   => true,
-				]);  
+			File::Delete(public_path( $path . $record->name));
+			return response()->json([
+				'success'   => true,
+			]);  
 				
 			} catch (\Exception $e) {
 				return response()->json([

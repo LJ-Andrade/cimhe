@@ -15,6 +15,7 @@
 Route::get('/', function(){ return view('web/web'); });
 Route::get('profesionales', function(){ return view('web/profesionales'); });
 Route::get('laboratorio', function(){ return view('web/laboratorio'); });
+
 /*
 |--------------------------------------------------------------------------
 | Store
@@ -79,11 +80,11 @@ Route::get('laboratorio', function(){ return view('web/laboratorio'); });
 
 /*
 |--------------------------------------------------------------------------
-| Web / Portfolio 
+| Web / Blog y Galería
 |--------------------------------------------------------------------------
 */
 
-Route::get('noticias', ['as'   => 'web.portfolio',	'uses' => 'WebController@portfolio']);
+Route::get('noticias', ['as' => 'web.portfolio', 'uses' => 'WebController@portfolio']);
 // Show Article / Catalogue
 Route::get('article/{slug}', ['uses' => 'WebController@showWithSlug', 'as'   => 'web.portfolio.article'])->where('slug', '[\w\d\-\_]+');
 // Article Searcher
@@ -92,6 +93,8 @@ Route::get('tag/{name}', ['uses' => 'WebController@searchTag', 'as'   => 'web.se
 Route::post('main_contact_mailsender', 'WebController@mainContactMailSender');
 Route::post('suelos_mailsender', 'WebController@suelosMailSender');
 Route::post('hormigon_mailsender', 'WebController@hormigonMailSender');
+
+Route::get('galeria', ['as' => 'web.galeria', 'uses' => 'WebController@gallery']);
 
 /*
 |--------------------------------------------------------------------------
@@ -162,7 +165,6 @@ Route::group(['prefix' => 'vadmin', 'middleware' => 'admin'], function(){
     Route::resource('cat_categorias', 'Catalog\CategoriesController');
     Route::resource('cat_tags', 'Catalog\TagsController');
     Route::post('cat_article_status/{id}', 'Catalog\ArticlesController@updateStatus');
-    Route::post('deleteArticleImg/{id}', 'Portfolio\ArticlesController@deleteArticleImg');
     // Atribute 1
     Route::resource('cat_atribute1', 'Catalog\CatalogAtribute1Controller');
     Route::post('catalog_make_thumb/{id}', 'Catalog\ArticlesController@makeThumb');
@@ -211,6 +213,7 @@ Route::prefix('vadmin')->middleware('admin')->group(function () {
     Route::post('destroy_cat_atribute1', 'Catalog\CatalogAtribute1Controller@destroy');
     Route::post('destroy_product_image', 'Catalog\ImagesController@destroy');
     Route::post('destroy_portfolio_image', 'Portfolio\ImagesController@destroy');
+    Route::post('destroy_catalogimg_image', 'Catalogimg\ImagesController@destroy');
     Route::post('destroy_shippings', 'Catalog\ShippingsController@destroy');
     Route::post('destroy_payments', 'Catalog\PaymentsController@destroy');
     Route::post('destroy_catalogoimg', 'Catalogimg\ArticlesController@destroy');

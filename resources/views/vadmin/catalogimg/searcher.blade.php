@@ -1,6 +1,6 @@
 <div id="SearchFilters" class="search-filters">
     {{-- Search --}}
-    {!! Form::open(['id' => 'SearchForm', 'method' => 'GET', 'route' => 'catalogo.index', 'class' => 'form-inline', 'role' => 'search']) !!} 
+    {!! Form::open(['id' => 'SearchForm', 'method' => 'GET', 'route' => 'catalogoimg.index', 'class' => 'form-inline', 'role' => 'search']) !!} 
         <div class="form-group">
             {!! Form::label('code', 'Código') !!} <br>  
             {!! Form::text('code', null, ['id' => 'SearchInput', 'class' => 'form-control', 'aria-describedby' => 'search']) !!}

@@ -29,7 +29,7 @@
     <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="form-group">
             {!! Form::label('tags', 'Etiquetas') !!}
-            {!! Form::select('tags[]', $tags, null, ['class' => ' Select-Tags form-control', 'multiple', 'required' => '']) !!}
+            {!! Form::select('tags[]', $tags, null, ['class' => 'Select-Tags form-control', 'multiple', 'required' => '']) !!}
         </div>
     </div>
     {{-- Status--}}
@@ -46,9 +46,9 @@
         @component('vadmin.components.catalogthumbnail')
             @slot('thumbnail')
                 @if(isset($article) && $article->thumb != '')
-                    <img class="Featured-Image-Container" src="{{ asset('webimages/catalogo/'.$article->thumb) }}">
+                    <img class="Featured-Image-Container" src="{{ asset('webimages/catalogoimg/'.$article->thumb) }}">
                 @else
-                    <img class="Featured-Image-Container" src="{{ asset('images/gen/default.jpg') }}">
+                    <img class="Featured-Image-Container" src="{{ asset('webimages/main/gen/catalog-gen.jpg') }}">
                 @endif
             @endslot
         @endcomponent
@@ -59,9 +59,9 @@
             <ul>
                 @foreach($article->images->reverse() as $image)
                 <li id="Img{{ $image->id }}">	
-                    <img src="{{ asset('webimages/catalogo/'.$image->name) }}">
+                    <img src="{{ asset('webimages/catalogoimg/'.$image->name) }}">
                     <div class="overlayItemCenter">
-                        <i class="Delete-Product-Img icon-ios-trash-outline delete-img" data-imgid="{{ $image->id }}"></i>
+                        <i class="Delete-Catalogimg-Img icon-ios-trash-outline delete-img" data-imgid="{{ $image->id }}"></i>
                     </div>
                 </li>
                 @endforeach

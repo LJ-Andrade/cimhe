@@ -1,5 +1,6 @@
 @extends('layouts.vadmin.main')
-@section('title', 'Vadmin | Catálogo de Imágenes')
+@section('title', 'VADmin | Catálogo de Imágenes')
+
 {{-- STYLE INCLUDES --}}
 @section('styles')
 @endsection
@@ -21,12 +22,12 @@
 				<input id="EditId" type="hidden">
 				{{-- Delete --}}
 				{{--  THIS VALUE MUST BE THE NAME OF THE SECTION CONTROLLER  --}}
-				<input id="ModelName" type="hidden" value="catalogo">
+				<input id="ModelName" type="hidden" value="catalogoimg">
 				<button id="DeleteBtn" class="btn btnRed Hidden"><i class="icon-bin2"></i> Eliminar</button>
 				<input id="RowsToDeletion" type="hidden" name="rowstodeletion[]" value="">
 				{{-- If Search --}}
-				@if(isset($_GET['code']) || isset($_GET['title']) || isset($_GET['category']))
-				<a href="{{ url('vadmin/catalogo') }}"><button type="button" class="btn btnGrey">Mostrar Todos</button></a>
+				@if(isset($_GET['title']) || isset($_GET['category']))
+				<a href="{{ url('vadmin/catalogoimg') }}"><button type="button" class="btn btnGrey">Mostrar Todos</button></a>
 				@endif
 			</div>
 		@endslot
@@ -55,13 +56,13 @@
 			@component('vadmin.components.list')
 			
 				@slot('actions')
-					@if(isset($_GET['code']) || isset($_GET['title']) || isset($_GET['category']))
+					{{-- @if(isset($_GET['code']) || isset($_GET['title']) || isset($_GET['category']))
 						<a href="{{ route('vadmin.exportCatalogListPdf', ['params' => http_build_query($_GET)]) }}" data-toggle="tooltip" title="Exportar a PDF"><i class="icon-file-pdf"></i></a>
 						<a href="{{ route('vadmin.exportCatalogListXls', ['params' => http_build_query($_GET)]) }}" data-toggle="tooltip" title="Exportar a XLS"><i class="icon-file-excel"></i></a>
 					@else
 						<a href="{{ route('vadmin.exportCatalogListPdf', ['params' => 'all']) }}" data-toggle="tooltip" title="Exportar a PDF"><i class="icon-file-pdf"></i></a>
 						<a href="{{ route('vadmin.exportCatalogListXls', ['params' => 'all']) }}" data-toggle="tooltip" title="Exportar a XLS"><i class="icon-file-excel"></i></a>
-					@endif
+					@endif --}}
 				@endslot
 
 				@slot('title', 'Listado de Items')
@@ -91,13 +92,13 @@
 										<img src="{{ asset('webimages/main/gen/catalog-gen.jpg') }}">
 									@endif
 								</td>
-								<td class="show-link max-text"><a href="{{ url('vadmin/catalogoimg/'.$item->id) }}">{{ $item->name }}</a></td>
+								<td class="show-link max-text"><a href="{{ url('vadmin/catalogoimg/'.$item->id) }}">#{{ $item->id }} - {{ $item->name }}</a></td>
 								{{--  DATE   --}}
 								<td class="w-200">{{ $item->category->name }}</td>
 								<td class="w-200">
-									{{-- @foreach($item->tags as $tag)
+									@foreach($item->tags as $tag)
 										{{ $tag->name }}
-									@endforeach	 --}}
+									@endforeach	
 								</td>
 								<td class="w-50 pad0 centered">
 									@if($item->status == '1')
@@ -159,7 +160,7 @@
 			} else {
 				console.log("Pausar");
 				var id     = cbx.data('id');
-				var route = "{{ url('/vadmin/cat_article_status') }}/"+id+"";
+				var route = "{{ url('/vadmin/catimg_article_status') }}/"+id+"";
 				updateStatus(id, route, '0');
 			}
 		});
@@ -169,7 +170,7 @@
 			if (cbx[0].checked) {
 				var id = cbx.data('id');
 				console.log("Activar");
-				var route = "{{ url('/vadmin/cat_article_status') }}/"+id+"";
+				var route = "{{ url('/vadmin/catimg_article_status') }}/"+id+"";
 				updateStatus(id, route, '1');
 			} else {
 				//console.log("Error en checkbox");

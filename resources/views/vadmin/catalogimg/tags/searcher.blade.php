@@ -1,7 +1,7 @@
 <div id="SearchFilters" class="search-filters">
     {{-- Search --}}
     <div class="row">
-    {!! Form::open(['id' => 'SearchForm', 'method' => 'GET', 'route' => 'cat_tags.index', 'class' => 'form-inline col-md-4 col-sm-12', 'role' => 'search']) !!} 
+    {!! Form::open(['id' => 'SearchForm', 'method' => 'GET', 'route' => 'catimg_tags.index', 'class' => 'form-inline col-md-4 col-sm-12', 'role' => 'search']) !!} 
         <div class="form-group">
             {!! Form::label('name', 'Nombre') !!} <br>  
             {!! Form::text('name', null, ['class' => 'form-control', 'aria-describedby' => 'search']) !!}

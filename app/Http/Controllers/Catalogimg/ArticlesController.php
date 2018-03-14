@@ -207,7 +207,6 @@ class ArticlesController extends Controller
     public function edit($id)
     {   
         $tags       = CatalogimgTag::orderBy('name', 'DESC')->pluck('name', 'id');
-        $atribute1  = CatalogimgAtribute1::orderBy('name', 'DESC')->pluck('name', 'id');
         $article    = CatalogimgArticle::find($id);
         $categories = CatalogimgCategory::orderBy('name', 'DESC')->pluck('name', 'id');
         $article->each(function($article){
@@ -217,8 +216,7 @@ class ArticlesController extends Controller
         return view('vadmin.catalogimg.edit')
             ->with('categories', $categories)
             ->with('article', $article)
-            ->with('tags', $tags)
-            ->with('atribute1', $atribute1);
+            ->with('tags', $tags);
     }
 
     public function update(Request $request, $id)
@@ -227,7 +225,6 @@ class ArticlesController extends Controller
 
         $this->validate($request,[
             'name'                 => 'required|min:4|max:250|unique:catalog_articles,name,'.$article->id,
-            'code'                 => 'unique:catalog_articles,code,'.$article->id,
             'category_id'          => 'required',
             'slug'                 => 'required|alpha_dash|min:4|max:255|unique:catalog_articles,slug,'.$article->id,
             'image'                => 'image',
@@ -237,7 +234,6 @@ class ArticlesController extends Controller
             'name.min'             => 'El título debe tener al menos 4 caracteress',
             'name.max'             => 'El título debe tener como máximo 250 caracteress',
             'name.unique'          => 'El título ya existe en otro artículo',
-            'code.unique'          => 'El código está utilizado por otro producto',
             'category_id.required' => 'Debe ingresar una categoría',
             'slug.required'        => 'Se requiere un slug',
             'slug.min'             => 'El slug debe tener 4 caracteres como mínimo',
@@ -256,8 +252,9 @@ class ArticlesController extends Controller
                
         $article->thumb = $article->id.'-0'.$extension;
         $article->save();
-        $article->atribute1()->sync($request->atribute1);
-        $article->tags()->sync($request->tags);
+        if($article->tags() != null){
+            $article->tags()->sync($request->tags);
+        }
         
         if(!$article->images->isEmpty()){
             $number = $article->images->last()->name;
@@ -267,8 +264,7 @@ class ArticlesController extends Controller
         } else {
             $number = '1';
         }
-
-                
+   
         try {
             if($thumbnail){
                 $thumb = \Image::make($thumbnail);
@@ -318,47 +314,6 @@ class ArticlesController extends Controller
             ]);
     }
 
-    public function updateStock(Request $request, $id)
-    {   
-        $item          = CatalogimgArticle::find($id);
-        $item->stock   = $request->value;
-        $item->save();
-
-        return response()->json([
-            "response" => '1',
-            "newstock" => $item->stock,
-            "action"   => $request->action
-        ]);
-    }
-
-    public function updatePrice(Request $request, $id)
-    {   
-        $item          = CatalogimgArticle::find($id);
-        $item->price   = $request->value;
-        $item->save();
-
-        return response()->json([
-            "response" => '1',
-            "newprice" => $item->price,
-            "action"   => $request->action
-        ]);
-    }
-
-    public function updateDiscount(Request $request, $id)
-    {   
-        $item          = CatalogimgArticle::find($id);
-        $item->discount   = $request->value;
-        $item->save();
-
-        return response()->json([
-            "response" => '1',
-            "newdiscount" => $item->discount,
-            "action"   => $request->action
-        ]);
-    }
-
-
-
     /*
     |--------------------------------------------------------------------------
     | DESTROY
@@ -374,16 +329,19 @@ class ArticlesController extends Controller
             try {
                 foreach ($ids as $id) {
                     $record = CatalogimgArticle::find($id);
-                    $record->tags()->detach();
-                    $record->atribute1()->detach();
                     
-                    $images = $record->images;
+                    if($record->tags() != null){
+                        $record->tags()->detach();
+                    }
+                    
+                    $record->images()->delete();
+                    
                     File::Delete(public_path( $path . $record->thumb));
-                    foreach ($images as $image) {
+                    foreach ($record->images as $image) {
                         File::Delete(public_path( $path . $image->name));
                     }
 
-                    $delete = $record->delete();
+                    $record->delete();
                 }
                 return response()->json([
                     'success'   => true,
@@ -397,12 +355,14 @@ class ArticlesController extends Controller
         } else {
             try {
                 $record = CatalogimgArticle::find($id);
-                $record->tags()->detach();
-                $record->atribute1()->detach();
-                
-                $images = $record->images;
+                if($record->tags() != null){
+                    $record->tags()->detach();
+                }
+
+                $record->images()->delete();
+
                 File::Delete(public_path( $path . $record->thumb));
-                foreach ($images as $image) {
+                foreach ($record->images as $image) {
                     File::Delete(public_path( $path . $image->name));
                 }
 

@@ -82,8 +82,9 @@
 		<!-- BEGIN PAGE LEVEL JS-->
 		{{-- <script src="{{ asset('vadmin-ui/app-assets/js/scripts/pages/dashboard-lite.js') }}" type="text/javascript"></script> --}}
 		<script src="{{ asset('plugins/sweetalert/sweetalert2.min.js') }}" type="text/javascript"></script>
-		<script src="{{ asset('js/vadmin-ui.js') }}" type="text/javascript"></script>
-		<script src="{{ asset('js/vadmin-functions.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('js/vadmin.js') }}" type="text/javascript"></script>
+		{{-- <script src="{{ asset('js/vadmin-ui.js') }}" type="text/javascript"></script> --}}
+		{{-- <script src="{{ asset('js/vadmin-functions.js') }}" type="text/javascript"></script> --}}
 		@include('vadmin.components.appjs')
 		<!-- END PAGE LEVEL JS-->
 		@yield('scripts')

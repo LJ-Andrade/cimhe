@@ -7,6 +7,9 @@ use App\Article;
 use App\Category;
 use App\Tag;
 use App\Contact;
+use App\CatalogimgArticle;
+use App\CatalogimgCategory;
+use App\CatalogimgTag;
 use Mail;
 use App\Mail\WebContactMail;
 
@@ -25,10 +28,28 @@ class WebController extends Controller
 	
 	/*
     |--------------------------------------------------------------------------
+    | Gallery
+    |--------------------------------------------------------------------------
+	*/
+
+	public function gallery(Request $request)
+	{
+		$articles = CatalogimgArticle::search($request->title)->orderBy('id', 'DESC')->where('status', '1')->paginate(12);
+		
+		$categories = CatalogimgCategory::all();
+		$tags = CatalogimgTag::all();
+		return view('web.galeria.galeria')
+			->with('articles', $articles)
+			->with('categories', $categories)
+			->with('tags', $tags);
+	}
+
+	/*
+    |--------------------------------------------------------------------------
     | BLOG
     |--------------------------------------------------------------------------
 	*/
-	
+
 	public function portfolio(Request $request)
 	{
         $articles = Article::search($request->title)->orderBy('id', 'DESC')->where('status', '1')->paginate(12);

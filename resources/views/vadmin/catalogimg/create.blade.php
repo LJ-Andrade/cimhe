@@ -2,19 +2,19 @@
 @section('title', 'VADmin | Nuevo Item')
 
 @section('styles')
-	{!! Html::style('plugins/texteditor/trumbowyg.min.css') !!}
-	{!! Html::style('plugins/jqueryFileUploader/jquery.fileuploader.css') !!}
-	{{-- {!! Html::style('plugins/jqueryfiler/themes/jquery.filer-dragdropbox-theme.css') !!} --}}
-	{!! Html::style('plugins/jqueryfiler/jquery.filer.css') !!}
-	{!! Html::style('plugins/chosen/chosen.min.css') !!}
-	{!! Html::style('plugins/colorpicker/spectrum.css') !!}
+	{{ Html::style('plugins/texteditor/trumbowyg.min.css') }}
+	{{ Html::style('plugins/jqueryFileUploader/jquery.fileuploader.css') }}
+	{{ Html::style('plugins/jqueryfiler/themes/jquery.filer-dragdropbox-theme.css') }} 
+	{{ Html::style('plugins/jqueryfiler/themes/jquery.filer-dragdropbox-theme.css') }}
+	{{ Html::style('plugins/jqueryfiler/jquery.filer.css') }}
+	{{ Html::style('plugins/chosen/chosen.min.css') }}
 @endsection
 
 @section('header')
 	@component('vadmin.components.header')
 		@slot('breadcrums')
 			<li class="breadcrumb-item"><a href="{{ url('vadmin')}}">Inicio</a></li>
-			<li class="breadcrumb-item"><a href="{{ route('catalogo.index')}}">Listado de Items</a></li>
+			<li class="breadcrumb-item"><a href="{{ route('catalogoimg.index')}}">Listado de Items</a></li>
 			<li class="breadcrumb-item active">Creación</li>
 		@endslot
 		@slot('actions')
@@ -47,42 +47,24 @@
 
 @section('scripts')
 	<script type="text/javascript" src="{{ asset('plugins/texteditor/trumbowyg.min.js')}} "></script>
-	{{-- <script type="text/javascript" src="{{ asset('plugins/jqueryfiler/jquery.filer.min.js')}} "></script> --}}
-	<script type="text/javascript" src="{{ asset('plugins/chosen/chosen.jquery.min.js') }}" ></script>
-	<script type="text/javascript" src="{{ asset('plugins/validation/parsley.min.js') }}" ></script>
-	<script type="text/javascript" src="{{ asset('plugins/validation/es/parsley-es.min.js') }}" ></script>
-	<script type="text/javascript" src="{{ asset('plugins/jqueryFileUploader/jquery.fileuploader.min.js')}} "></script>
-	<script type="text/javascript" src="{{ asset('plugins/colorpicker/spectrum.js')}} "></script>
-	<script type="text/javascript" src="{{ asset('plugins/colorpicker/jquery.spectrum-es.js')}} "></script>
+	<script type="text/javascript" src="{{ asset('plugins/jqueryfiler/jquery.filer.min.js')}} "></script> 
+	<script type="text/javascript" src="{{ asset('plugins/chosen/chosen.jquery.min.js') }}" ></script> 
+	<script type="text/javascript" src="{{ asset('plugins/validation/parsley.min.js') }}" ></script> 
+	<script type="text/javascript" src="{{ asset('plugins/validation/es/parsley-es.min.js') }}" ></script> 
+	<script type="text/javascript" src="{{ asset('plugins/jqueryFileUploader/jquery.fileuploader.min.js')}} "></script> 
 	<script type="text/javascript" src="{{ asset('js/vadmin-forms.js') }}" ></script>
 	@include('vadmin.components.bladejs')
 @endsection
 
 @section('custom_js')
-	
 	<script>
-		//$('.CatalogLi').addClass('open');
-		//$('.CatalogNew').addClass('active');
 		// ------------------- Textarea Text Editor --------------------------- //
 		// Path to icons
 		$.trumbowyg.svgPath = '{{ asset('plugins/texteditor/icons.svg') }}';
 		// Init
 		$('.Textarea-Editor').trumbowyg();
 
-		// ----------------------- Color Picker --------------------------------//
-		// Add Color Selector
-		$(".ColorPicker").spectrum({
-			color: "#fff",
-			change: function(color) {
-				// var div = ;
-				var hex = color.toHexString(); // #ff0000
-				// alert(div);
-				$('.ColorPickerList').append("<div class='picked-color' style='background-color:"+ hex +"'><input type='hidden' name='color[]' value='"+ hex +"'></div>");
-				console.log(hex);
-			}
-		});
 	</script>
-
 @endsection
 
 

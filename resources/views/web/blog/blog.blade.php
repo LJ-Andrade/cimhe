@@ -26,15 +26,17 @@
             <div class="col-md-9">
                 @foreach($articles as $article)
                     <div class="row blog-item">
-                        <div class="col-md-3 col-sm-4 col-xs-12 image pad0">
-                            @if (count($article->images) >= 1)
-                                <img src="{{ asset('webimages/portfolio/'. $article->images->first()->name ) }}" class="img-responsive" alt="">
-                            @else
-                                <img src="{{ asset('webimages/main/default.jpg') }}" class="img-responsive" alt="">
-                            @endif
-                        </div>
+                        <a href="{{ route('web.portfolio.article',$article->slug ) }}">
+                            <div class="col-md-3 col-sm-4 col-xs-12 image pad0">
+                                @if (count($article->images) >= 1)
+                                    <img src="{{ asset('webimages/portfolio/'. $article->images->first()->name ) }}" class="img-responsive" alt="">
+                                @else
+                                    <img src="{{ asset('webimages/main/default.jpg') }}" class="img-responsive" alt="">
+                                @endif
+                            </div>
+                        </a>
                         <div class="col-md-9 col-sm-8 col-xs-12 inner">
-                            <a href="{!! route('web.portfolio.article',$article->slug ) !!}">
+                            <a href="{{ route('web.portfolio.article',$article->slug ) }}">
                                 @if(strlen(strip_tags($article->title)) > 140)
                                     <h3 class="title"> {{ substr(strip_tags($article->title), 0 , 140) }} ...</h3>
                                 @else
