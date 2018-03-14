@@ -218,11 +218,10 @@ $ph-weight: 400
 			color: $color1
 .contact-form
 	form
+		margin-top: 25px
 		// background-color: rgba(206, 206, 206, 0.2)
 		// @include box-shadow-floor
 		color: #383838
-		>.col-md-6
-			padding: 0
 		.form-group
 			margin-bottom: 0
 		// Chrome/Opera/Safari
@@ -255,12 +254,13 @@ $ph-weight: 400
 		background-color: transparent
 		box-shadow: none
 		border-radius: 0
-		border: 1px solid $color1
+		border: 1px solid #bdbdbd
 		font-size: 1.2rem
 		margin-bottom: 10px
 	textarea
-		height: 155px
+		height: 140px
 	.contactBtn
+		margin-top: 25px
 		font-size: 1.5rem
 		color: #fff
 		font-family: $font2
@@ -294,7 +294,15 @@ $ph-weight: 400
 				text-align: center
 				img
 					float: none
-			
+
+@media (min-width: 991px)
+	.contact-form
+		form
+			.left
+				padding-right: 4px
+			.right
+				padding-left: 4px
+
 
 .contact-map
 	margin-bottom: -10px

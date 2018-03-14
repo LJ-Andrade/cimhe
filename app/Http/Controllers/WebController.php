@@ -25,7 +25,7 @@ class WebController extends Controller
     {
         return view('web/web');
 	}
-	
+
 	/*
     |--------------------------------------------------------------------------
     | Gallery

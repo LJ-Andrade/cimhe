@@ -63,7 +63,7 @@
         {!! $articles->render(); !!}
         <hr class="softhr">
     </div>
-    {{-- @include('layouts.web.partials.contact') --}}
+    @include('layouts.web.partials.contact')
     @include('layouts.web.partials.foot')
 
 @endsection

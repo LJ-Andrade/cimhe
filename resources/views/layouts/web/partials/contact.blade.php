@@ -1,24 +1,36 @@
 <a id="contacto" class="anchor"></a>
-<section class="container-fluid contact-section">
+<section class="container-fluid contact-section 
+	{{-- Give Grey Back in this sections --}}
+	@if(Menu::activeMenu('galeria')) == 'active')
+		grey-back
+	@endif
+	@if(Menu::activeMenu('noticias')) == 'active')
+		grey-back
+	@endif
+	">
 	<div class="container wow animated fadeIn">
 		<div class="row inner">
 			<div class="col-md-12 contact-form">
-				<div class="col-md-4 text-center">
+				<div class="col-md-12 text-center">
 					<h1>Contactanos</h1>
 					{!! Form::open(['id' => 'MainContactForm', 'method' => 'POST']) !!}
-						<div class="form-group">
-							{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'required']) !!}
+						<div class="col-md-6 left">
+							<div class="form-group">
+								{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'required']) !!}
+							</div>
+							<div class="form-group">
+								{!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'TELÉFONO', 'required']) !!}
+							</div>
+							<div class="form-group">
+								{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-MAIL', 'required']) !!}
+							</div>
 						</div>
-						<div class="form-group">
-							{!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'TELÉFONO', 'required']) !!}
+						<div class="col-md-6 right">
+							<div class="form-group">
+								{!! Form::textarea('message', null, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'CONSULTA / MENSAJE']) !!}
+							</div>
+							{{ csrf_field() }}
 						</div>
-						<div class="form-group">
-							{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-MAIL', 'required']) !!}
-						</div>
-						<div class="form-group">
-							{!! Form::textarea('message', null, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'CONSULTA / MENSAJE']) !!}
-						</div>
-						{{ csrf_field() }}
 						<button type="submit" class="MainFormBtn btn btnBlue contactBtn">Enviar</button>
 					{!! Form::close() !!}
 					<div id="ResponsesMainContactForm">
@@ -37,9 +49,10 @@
 							Gracias.
 						</div>
 					</div>
+				<hr class="softhr">
 				</div>
-				<div class="col-md-8 contact-data">
-					<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 inner-data">
+				<div class="col-md-12 contact-data">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 inner-data">
 						<span class="title">Socio Gerente Comercial</span> <br>
 						<span class="sub-title">José Tomás Adorno</span> <br>
 						<div class="icons">
@@ -54,7 +67,7 @@
 						<span class="text">comercial@cimhe.com</span>
 						
 					</div>
-					<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 inner-data">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 inner-data">
 						<span class="title">Socio Gerente Técnico</span> <br>
 						<span class="sub-title">Ingeniero Humberto Balzamo</span> <br>
 						<div class="icons">
@@ -68,7 +81,7 @@
 						<i class="ion-android-mail"></i>
 						<span class="text">hbalzamo@gmail.com</span>
 					</div>
-					<div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 inner-data">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 inner-data">
 						<span class="title">Gerente Calidad</span> <br>
 						<span class="sub-title">Ingeniero Jesus Rojas</span> <br>
 						<div class="icons">
@@ -91,21 +104,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="horiz-items">
-				<div class="col-md-4 col-sm-6 col-xs-12 inner">
+				<div class="col-md-4 col-sm-4 col-xs-12 inner">
 					<img src="{{ asset('webimages/main/contacto1.png') }}" alt="">
 					<p>
 						Tel.: (011) 4757-6985 <br>
 						Radio ID: 819*3226
 					</p>
 				</div>
-				<div class="col-md-4 col-sm-6 col-xs-12 inner">
+				<div class="col-md-4 col-sm-4 col-xs-12 inner">
 					<img src="{{ asset('webimages/main/contacto2.png') }}" alt="">
 					<p>
 						hbalzamo@gmail.com <br>
 						contable@cimhe.com <br>
 					</p>
 				</div>
-				<div class="col-md-4 col-sm-6 col-xs-12 inner">
+				<div class="col-md-4 col-sm-4 col-xs-12 inner">
 					<img src="{{ asset('webimages/main/contacto3.png') }}" alt="">
 					<p>
 						San Roque 2470 <br>
