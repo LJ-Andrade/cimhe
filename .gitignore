@@ -3,6 +3,7 @@
 /public/storage
 /public/images/users
 /public/webimages/catalogo
+/public/webimages/catalogoimg
 /public/webimages/portfolio
 /storage/*.key
 /vendor
