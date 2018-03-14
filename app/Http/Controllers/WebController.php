@@ -34,14 +34,20 @@ class WebController extends Controller
 
 	public function gallery(Request $request)
 	{
-		$articles = CatalogimgArticle::search($request->title)->orderBy('id', 'DESC')->where('status', '1')->paginate(12);
+		$articles = CatalogimgArticle::search($request->name)->orderBy('id', 'DESC')->where('status', '1')->paginate(12);
 		$categories = CatalogimgCategory::all();
 		$tags = CatalogimgTag::all();
+		if($request->name != null){
+			$searchInfo = 'Búsqueda: '. $request->name;
+		} else {
+			$searchInfo = null;
+		}
 
 		return view('web.galeria.galeria')
 			->with('articles', $articles)
 			->with('categories', $categories)
-			->with('tags', $tags);
+			->with('tags', $tags)
+			->with('searchInfo', $searchInfo);
 	}
 
 	
@@ -57,6 +63,56 @@ class WebController extends Controller
 			->with('tags', $tags);
     }
 
+	public function searchCatalogimgCategory($name)
+	{
+		$category = CatalogimgCategory::SearchCategory($name)->first();
+		$articles = $category->articles()->paginate(12);
+		// $articles->each(function($articles){
+		// 		$articles->category;
+		// 		$articles->images;
+		// });
+		$searchInfo = 'Categoría: '. $name;
+		
+		$categories = CatalogimgCategory::all();
+		$tags = CatalogimgTag::all();
+		
+		return view('web.galeria.galeria')
+			->with('articles', $articles)
+			->with('categories', $categories)
+			->with('tags', $tags)
+			->with('searchInfo', $searchInfo);
+	}
+
+	public function searchCatalogimgTag($name)
+    {
+        $tag = CatalogimgTag::SearchTag($name)->first();
+        $articles = $tag->articles()->paginate(12);
+
+		$searchInfo = 'Etiqueta: '.$name;
+		
+		$categories = CatalogimgCategory::all();
+		$tags = CatalogimgTag::all();
+
+		return view('web.galeria.galeria')
+			->with('articles', $articles)
+			->with('categories', $categories)
+			->with('tags', $tags)
+			->with('searchInfo', $searchInfo);
+    }
+
+	
+    public function viewCatalogimgArticle($id)
+    {
+        $article = CatalogimgArticle::find($id);
+        $categories = CatalogimgCategory::all();
+		$tags = CatalogimgTag::all();
+
+		return view('web.galeria.galeria')
+			->with('articles', $articles)
+			->with('categories', $categories)
+			->with('tags', $tags);
+	}
+	
 
 	/*
     |--------------------------------------------------------------------------

@@ -16,13 +16,11 @@
 		<div class="search-buttons">
 			<hr>
 			<div class="title">Categorías</div>
-			
-			{{-- @foreach($categories as $category)
-				<a href="{{ route('web.search.category', $category->name ) }}"> 
-					<button class="btn filter-button"> 
-					{{ $category->name }} <span class="badge">{{ $category->article->count() }}</span></button>
+			@foreach($categories as $category)
+				<a href="{{ route('web.search.catalogimgcategory', $category->name ) }}">
+					{{ $category->name }} <span> ({{ $category->articles->count() }})</span> <br>
 				</a>
-			@endforeach --}}
+			@endforeach
 		</div>
 		<div class="search-buttons">
 		<hr>

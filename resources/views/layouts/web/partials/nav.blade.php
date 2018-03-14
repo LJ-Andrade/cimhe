@@ -42,7 +42,7 @@
                 @endif
                 <li class="{{ Menu::activeMenu('laboratorio') }}"><a href="{{ url('laboratorio') }}">LABORATORIO</a></li>
                 <li class="{{ Menu::activeMenu('profesionales') }}"><a href="{{ url('profesionales') }}">PROFESIONALES</a></li>
-                {{-- <li><a href="">FOTOS</a></li> --}}
+                <li class="{{ Menu::activeMenu('galeria') }}"><a href="{{ url('galeria') }}">FOTOS</a></li>
                 <li class="{{ Menu::activeMenu('noticias') }}"><a href="{{ url('noticias') }}">NOTICIAS</a></li>
                 <li><a class="contacto" href="{{ url('/#contacto') }}">CONTACTO</a></li>   
             </ul>

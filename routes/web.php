@@ -96,6 +96,8 @@ Route::post('hormigon_mailsender', 'WebController@hormigonMailSender');
 
 Route::get('galeria', ['as' => 'web.galeria', 'uses' => 'WebController@gallery']);
 Route::get('galeria/{slug}', ['uses' => 'WebController@showCatalogimgWithSlug', 'as'   => 'web.catalogoimg.item'])->where('slug', '[\w\d\-\_]+');
+Route::get('galeria_categorias/{name}', ['uses' => 'WebController@searchCatalogimgCategory', 'as'   => 'web.search.catalogimgcategory']);
+Route::get('galeria_etiqueta/{name}', ['uses' => 'WebController@searchCatalogimgTag', 'as'   => 'web.search.catalogimgtag']);
 
 /*
 |--------------------------------------------------------------------------

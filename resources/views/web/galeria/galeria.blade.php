@@ -14,6 +14,9 @@
     <div class="container blog-list">
         <div class="row ">
             <h1>Galería de Fotos</h1>
+            @if(isset($searchInfo) || $searchInfo == null)
+                {{ $searchInfo }}
+            @endif
             <hr class="softhr">
             @if(!count($articles))
                 <div class="container">
@@ -30,9 +33,13 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 item">
                             <div class="image">
                                 @if (count($article->images) >= 1)
-                                    <img src="{{ asset('webimages/catalogoimg/'. $article->images->first()->name ) }}" class="img-responsive" alt="">
+                                    @if($article->thumb == null)
+                                        <img src="{{ asset('webimages/main/gen/catalog-gen.jpg') }}" class="img-responsive" alt="">
+                                    @else
+                                        <img src="{{ asset('webimages/catalogoimg/'.$article->thumb) }}" class="img-responsive" alt="">
+                                    @endif
                                 @else
-                                    <img src="{{ asset('webimages/main/gen/catalog-default.jpg') }}" class="img-responsive" alt="">
+                                    <img src="{{ asset('webimages/main/gen/catalog-gen.jpg') }}" class="img-responsive" alt="">
                                 @endif
                                 <div class="overlay">
                                     <button class="btn"> Ver más...</button>

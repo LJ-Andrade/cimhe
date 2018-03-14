@@ -9,20 +9,14 @@
 	</div>
 	<b>Categorías: </b><br>
 	@foreach($categories as $category)
-	{{-- <a href="{{ route('web.search.category', $category->name ) }}">
-		{{ $category->name }} <span> ({{ $category->article->count() }})</span> <br>
-	</a> --}}
-	<a href="#">
-		{{ $category->name }}<br>
+	<a href="{{ route('web.search.catalogimgcategory', $category->name ) }}">
+		{{ $category->name }} <span> ({{ $category->articles->count() }})</span> <br>
 	</a>
 	@endforeach
 	<hr class="softhr">
 	<b>Etiquetas: </b><br>
 	@foreach($tags as $tag)
-	{{-- <a href="{{ route('web.search.tag', $tag->name ) }}"> 
-		{{ $tag->name }}
-	</a> --}}
-	<a href="#"> 
+	<a href="{{ route('web.search.catalogimgtag', $tag->name ) }}"> 
 		{{ $tag->name }}
 	</a>
 	@endforeach

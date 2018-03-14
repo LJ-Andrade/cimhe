@@ -2302,6 +2302,7 @@ footer .copyright {
 
 .gallery-list .item .image img {
   max-width: 100%;
+  width: 100%;
 }
 
 .gallery-list .item .image .overlay {
