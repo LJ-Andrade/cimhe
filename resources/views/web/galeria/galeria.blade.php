@@ -26,21 +26,27 @@
             <div class="col-md-9">
                 <div class="row gallery-list">
                 @foreach($articles as $article)
-                    {{-- <a href="{{ route('web.catalogoimg.article',$article->slug ) }}"> --}}
-                        <div class="col-md-4 col-sm-4 col-xs-12 inner">
+                    <a href="{{ route('web.catalogoimg.item',$article->slug ) }}">
+                        <div class="col-md-4 col-sm-4 col-xs-12 item">
+                            <div class="image">
+                                @if (count($article->images) >= 1)
+                                    <img src="{{ asset('webimages/catalogoimg/'. $article->images->first()->name ) }}" class="img-responsive" alt="">
+                                @else
+                                    <img src="{{ asset('webimages/main/gen/catalog-default.jpg') }}" class="img-responsive" alt="">
+                                @endif
+                                <div class="overlay">
+                                    <button class="btn"> Ver más...</button>
+                                </div>
+                            </div>
                             @if(strlen(strip_tags($article->name)) > 140)
                                 <div class="title"> {{ substr(strip_tags($article->name), 0 , 140) }} ...</div>
                             @else
                                 <div class="title"> {{ $article->name }} </div>
                             @endif
-                            @if (count($article->images) >= 1)
-                                <img src="{{ asset('webimages/catalogoimg/'. $article->images->first()->name ) }}" class="img-responsive" alt="">
-                            @else
-                                <img src="{{ asset('webimages/main/gen/catalog-default.jpg') }}" class="img-responsive" alt="">
-                            @endif
                         </div>
-                    {{-- </a> --}}
+                    </a>
                 @endforeach
+
                 </div>
             </div>
             <div class="col-md-3">
@@ -50,7 +56,7 @@
         {!! $articles->render(); !!}
         <hr class="softhr">
     </div>
-    @include('layouts.web.partials.contact')
+    {{-- @include('layouts.web.partials.contact') --}}
     @include('layouts.web.partials.foot')
 
 @endsection

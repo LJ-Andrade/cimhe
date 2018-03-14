@@ -35,14 +35,28 @@ class WebController extends Controller
 	public function gallery(Request $request)
 	{
 		$articles = CatalogimgArticle::search($request->title)->orderBy('id', 'DESC')->where('status', '1')->paginate(12);
-		
 		$categories = CatalogimgCategory::all();
 		$tags = CatalogimgTag::all();
+
 		return view('web.galeria.galeria')
 			->with('articles', $articles)
 			->with('categories', $categories)
 			->with('tags', $tags);
 	}
+
+	
+    public function showCatalogimgWithSlug($slug) {
+
+        $article = CatalogimgArticle::where('slug', '=', $slug)->first();
+		$categories = CatalogimgCategory::all();
+		$tags = CatalogimgTag::all();
+
+		return view('web.galeria.item')
+			->with('article', $article)
+			->with('categories', $categories)
+			->with('tags', $tags);
+    }
+
 
 	/*
     |--------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 @extends('layouts.web.main')
-@section('title', 'StudioVimana | Inicio')
+@section('title', 'Error 404')
 
 @section('styles')
     

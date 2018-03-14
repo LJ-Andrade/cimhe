@@ -95,6 +95,7 @@ Route::post('suelos_mailsender', 'WebController@suelosMailSender');
 Route::post('hormigon_mailsender', 'WebController@hormigonMailSender');
 
 Route::get('galeria', ['as' => 'web.galeria', 'uses' => 'WebController@gallery']);
+Route::get('galeria/{slug}', ['uses' => 'WebController@showCatalogimgWithSlug', 'as'   => 'web.catalogoimg.item'])->where('slug', '[\w\d\-\_]+');
 
 /*
 |--------------------------------------------------------------------------
