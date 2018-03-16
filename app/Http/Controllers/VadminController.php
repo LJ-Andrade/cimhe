@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
-use App\Cart;
 use App\User;
+use App\CatalogimgArticle;
+use App\Article;
 use Mail;
-use App\Mail\SendMail;
+use App\Mail\WebContactMail;
 
 class VadminController extends Controller
 {   
@@ -18,7 +19,11 @@ class VadminController extends Controller
     
     public function index(Request $request)
     {
-        return view('vadmin.vadmin');
+        $catalogimgAmmount = CatalogimgArticle::all()->count(); 
+        $portfolioAmmount =  Article::all()->count();
+        return view('vadmin.vadmin')
+            ->with('articlesAmmount', $catalogimgAmmount)
+            ->with('portfolioAmmount', $portfolioAmmount);
     }
 
     public function storeControlPanel(Request $request)
@@ -159,19 +164,35 @@ class VadminController extends Controller
         }
     }
 
-    public function sendMail()
+    // public function sendMail()
+    // {
+    //     //dd('Ok, estoy en mail');
+    //     $subject = 'Asunto de la notificación';
+    //     $content = 'Pruebita';
+
+    //     try {
+    //         Mail::to(APP_EMAIL_1)->send(new SendMail($subject, $content));
+            
+    //         return redirect('vadmin')->with('message','Mail Enviado');
+    //     } catch (\Exception $e) {
+    //         dd($e);
+    //         return view('vadmin.vadmin')->with('error', 'Ha ocurrido un error '. $e);
+    //     }
+    // }
+    
+    public function techSupport(Request $request)
     {
-        //dd('Ok, estoy en mail');
-        $subject = 'Asunto de la notificación';
-        $content = 'Pruebita';
-
+        $subject = 'Consulta de Soporte Técnico desde cimhe.com';
+        $data = $request->all();
+        $view = 'vadmin.components.mailSupport';
+        
         try {
-            Mail::to(APP_EMAIL_1)->send(new SendMail($subject, $content));
+            Mail::to('info@vimana.studio')->send(new WebContactMail($subject, $data, $view));
+            return redirect()->back()->with('message','Consulta enviada, pronto nos pondremos en contacto');
 
-            return redirect('vadmin')->with('message','Mail Enviado');
         } catch (\Exception $e) {
             dd($e);
-            return view('vadmin.vadmin')->with('error', 'Ha ocurrido un error '. $e);
+            return redirect()->back()->with('error', 'Ha ocurrido un error '. $e);
         }
     }
 }

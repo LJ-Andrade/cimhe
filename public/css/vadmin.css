@@ -759,6 +759,15 @@ hr {
   border: 1px solid #d4d4d4 !important;
 }
 
+.dash-item1 {
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+.dash-item1:hover {
+  background-color: #f9f9f9;
+}
+
 .btn {
   -webkit-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
@@ -1228,6 +1237,19 @@ ul.pagination li.disabled {
 
 .full-loader .loader-text {
   width: 90px;
+}
+
+.violation {
+  text-align: center;
+}
+
+.violation .message {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.violation img {
+  width: 333px;
 }
 
 .dashboard {

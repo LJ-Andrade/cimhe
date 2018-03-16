@@ -192,48 +192,55 @@ class UserController extends Controller
         }
     }
 
-
     /*
     |--------------------------------------------------------------------------
     | DESTROY
     |--------------------------------------------------------------------------
     */
 
-
     public function destroy(Request $request)
     {   
-        
-        $ids = json_decode('['.str_replace("'",'"',$request->id).']', true);
-        
-        if(is_array($ids)) {
-            try {
-                foreach ($ids as $id) {
-                    $record = User::find($id);
-                    $record->delete();
-                }
-                return response()->json([
-                    'success'   => true,
-                ]); 
-            }  catch (\Exception $e) {
-                return response()->json([
-                    'success'   => false,
-                    'error'    => 'Error: '.$e
-                ]);    
-            }
+        if($request->id == '1'){
+            return response()->json([
+                'success' => true,
+                'violation' => true,
+                'message' => 'No puedes eliminar a mi creador'
+            ]);  
+            die();
         } else {
-            try {
-                $record = User::find($id);
-                $record->delete();
+            
+            $ids = json_decode('['.str_replace("'",'"',$request->id).']', true);
+            
+            if(is_array($ids)) {
+                try {
+                    foreach ($ids as $id) {
+                        $record = User::find($id);
+                        $record->delete();
+                    }
                     return response()->json([
                         'success'   => true,
-                    ]);  
-                    
-                } catch (\Exception $e) {
+                    ]); 
+                }  catch (\Exception $e) {
                     return response()->json([
                         'success'   => false,
                         'error'    => 'Error: '.$e
                     ]);    
                 }
+            } else {
+                try {
+                    $record = User::find($id);
+                    $record->delete();
+                        return response()->json([
+                            'success'   => true,
+                        ]);  
+                        
+                    } catch (\Exception $e) {
+                        return response()->json([
+                            'success'   => false,
+                            'error'    => 'Error: '.$e
+                        ]);    
+                    }
+            }
         }
     }
 }

@@ -413,6 +413,10 @@
 .disabled-input-modificable-on
 	border: 1px solid #d4d4d4 !important
 	
+.dash-item1
+	@include transition(0.2s)
+	&:hover
+		background-color: #f9f9f9
 //////////////////////////////////////
 //                                  //
 //            BUTTONS               //
@@ -808,3 +812,11 @@ ul.pagination li.disabled
 	color: #383838
 	.loader-text
 		width: 90px
+
+.violation
+	text-align: center
+	.message
+		font-size: 1.5rem
+		margin-bottom: 20px
+	img
+		width: 333px

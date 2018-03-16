@@ -94,7 +94,6 @@
 			//$(document).on('submit', 'form', function(){
 			//	$('#FullLoader').removeClass('Hidden');
 			//});
-
 			var count = 0;
 			setInterval(function(){
 				count++;

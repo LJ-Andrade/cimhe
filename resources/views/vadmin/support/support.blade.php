@@ -1,6 +1,7 @@
 @extends('layouts.vadmin.main')
 {{-- PAGE TITLE --}}
-@section('title', 'Vadmin | Documentación')
+@section('title', 'Vadmin | Soporte Técnico')
+
 @section('header')
 	@component('vadmin.components.header')
 		@slot('breadcrums')
@@ -28,48 +29,43 @@
                                 Detallenos el evento y nos pondremos en contacto lo antes posible.
                             </p>
                         </div>
-                        <form class="form">
+                        {!! Form::open(['method' => 'POST', 'route' => 'vadmin.soporte']) !!}
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="eventRegInput1">Nombre</label>
-                                            <input type="text" id="eventRegInput1" class="form-control" placeholder="Ingrese su nombre" name="fullname">
+                                            <input type="text" class="form-control" name="name" placeholder="Ingrese su nombre" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="eventRegInput4">Email</label>
-                                            <input type="email" id="eventRegInput4" class="form-control" placeholder="Ingrese su E-mail" name="email">
+                                            <input type="email" class="form-control"  name="email" placeholder="Ingrese su E-mail" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="eventRegInput5">Número de Contacto</label>
-                                            <input type="tel" id="eventRegInput5" class="form-control" name="contact" placeholder="Ingrese su teléfono o celular">
+                                            <label for="eventRegInput5">Teléfono</label>
+                                            <input type="tel" class="form-control" name="phone" placeholder="Ingrese su teléfono o celular" required>
                                         </div>
                                     </div>
                                 </div>
                             <div class="form-group">
                                 <label for="eventRegInput5">Consulta o Mensaje</label>
-                                <textarea id="projectinput8" rows="5" class="form-control" name="comment" placeholder=""></textarea>
+                                <textarea id="projectinput8" rows="5" class="form-control" name="message" placeholder="Detalle aquí su problema. Sea lo más específico posible. En caso de ver algún número de error especifíquelo y en lo posible envienos vía mail una captura de pantalla del error" required></textarea>
                             </div>
-                            Por urgencias puede comunicarse al <code>15-3046-6598</code>
+                            Por urgencias puede comunicarse al <code>15-5809-0227</code>
                             <div class="form-actions center">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" onsubmit="showLoader()" class="btn btn-primary">
                                     <i class="icon-check2"></i> Enviar
                                 </button>
                             </div>
-                        </form>
+                            {{ csrf_field() }}
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-@endsection
-
-@section('custom_js')
-	<script>
-	    $('.DocsLi').addClass('active');
-    </script>
 @endsection

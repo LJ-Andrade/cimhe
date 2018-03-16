@@ -8,26 +8,53 @@
 			<section id="global-settings" class="card">
 				{{-- --}}
 				<div class="card-header">
-					<h4 class="card-title">Bienvenid@ {{ Auth::user()->name }} a Vadmin</h4>
+					<h4 class="card-title">Bienvenid@ a Vadmin {{ Auth::user()->name }}</h4>
 				</div>
 				<div class="card-body collapse in">
 					<div class="card-block">
 						<div class="card-text">
-								<h5>Estamos desarrollando:</h5>
-							<p>
-								- Sección "Galería de Imágenes"<br>
-								- Puesta a punto<br>
-								- Corrección de errores
-							</p>
-							
-							
+							{{-- Dev Messages Here --}}
 						</div>
 					</div>
 				</div>
 			</section>
+			<div class="row match-height">
+				<a href="{{ route('portfolio.index') }}">
+					<div class="col-xl-4 col-lg-12">
+						<div class="card">
+							<div class="card-body dash-item1">
+								<div class="media">
+									<div class="p-2 text-xs-center blue-back media-left media-middle">
+										<i class="icon-newspaper font-large-2 white"></i>
+									</div>
+									<div class="p-2 media-body">
+										<h5>Noticias</h5>
+										<h5 class="text-bold-400">{{ $portfolioAmmount }}</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="{{ route('catalogoimg.index') }}">
+					<div class="col-xl-4 col-lg-12">
+						<div class="card">
+							<div class="card-body dash-item1">
+								<div class="media">
+									<div class="p-2 text-xs-center green-back media-left media-middle">
+										<i class="icon-images2 font-large-2 white"></i>
+									</div>
+									<div class="p-2 media-body">
+										<h5>Fotos</h5>
+										<h5 class="text-bold-400">{{ $articlesAmmount }}</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
 
-
-			</section>
 		</div>
 	<div id="Error"></div>
 @endsection

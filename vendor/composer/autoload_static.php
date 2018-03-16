@@ -440,7 +440,7 @@ class ComposerStaticInitd57fe5ee6a41a2231a4da748f7ebdf3a
         'App\\Http\\Controllers\\Catalog\\TagsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Catalog/TagsController.php',
         'App\\Http\\Controllers\\Catalogimg\\ArticlesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Catalogimg/ArticlesController.php',
         'App\\Http\\Controllers\\Catalogimg\\CategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Catalogimg/CategoriesController.php',
-        'App\\Http\\Controllers\\Catalogimg\\ImagesimgController' => __DIR__ . '/../..' . '/app/Http/Controllers/Catalogimg/ImagesController.php',
+        'App\\Http\\Controllers\\Catalogimg\\ImagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Catalogimg/ImagesController.php',
         'App\\Http\\Controllers\\Catalogimg\\TagsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Catalogimg/TagsController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CustomerAuth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomerAuth/ForgotPasswordController.php',

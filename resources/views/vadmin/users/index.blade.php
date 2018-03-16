@@ -34,6 +34,7 @@
 					{{--  <div class="results">{{ $items->total() }} resultados de búsqueda: </div>  --}}
 				@endif
 			</div>
+			
 		@endslot
 		@slot('searcher')
 			@include('vadmin.users.searcher')
@@ -115,7 +116,10 @@
 					@endif
 				@endslot
 			@endcomponent
-			
+			<div id="Violation" class="violation Hidden">
+				<div id="ViolationMessage" class="message"></div>
+				<img src="{{ asset('images/gral/notallowed.jpg') }}" alt="">
+			</div>
 			@if(isset($_GET['name']))
 				{!! $items->appends(['name' => $name])->render(); !!}
 			@elseif(isset($_GET['role']) || isset($_GET['group']))
@@ -128,18 +132,7 @@
 	</div>
 @endsection
 
-
-
 {{-- SCRIPT INCLUDES --}}
 @section('scripts')
 	@include('vadmin.components.bladejs')
-@endsection
-
-{{-- CUSTOM JS SCRIPTS--}}
-@section('custom_js')
-	<script>
-		$('.AdminLi').addClass('open');
-		$('.UsersLi').addClass('open');
-		$('.UsersList').addClass('active');
-	</script>
 @endsection

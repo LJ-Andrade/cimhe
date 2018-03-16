@@ -22,26 +22,28 @@
 
 	<div class="row">
 		@component('vadmin.components.container')
-			@slot('title', 'Editando a '. $user->name)
+			@slot('title', $user->name)
 			@slot('content')
-	
-			{!! Form::model($user, [
-				'method' => 'PATCH',
-				'url' => ['/vadmin/users', $user->id],
-				'files' => true
-			]) !!}
-			@include('vadmin.users.form')
-			<div class="form-actions right">
-				<a href="{{ route('users.index')}}">
-					<button type="button" class="btn btnRed">
-						<i class="icon-cross2"></i> Cancelar
-					</button>
-				</a>
-				<button type="submit" class="btn btnGreen">
-					<i class="icon-check2"></i> Guardar
-				</button>
-			</div>
-			{!! Form::close() !!}
+				<div class="form-body">
+					{!! Form::model($user, ['method' => 'PATCH', 'url' => ['/vadmin/users', $user->id], 'files' => true]) !!}
+						{{ csrf_field() }}
+						<div class="row">
+						@include('vadmin.users.form')
+						</div>
+						<div class="row">
+							<div class="form-actions right">
+								<a href="{{ route('users.index')}}">
+									<button type="button" class="btn btnRed">
+										<i class="icon-cross2"></i> Cancelar
+									</button>
+								</a>
+								<button type="submit" class="btn btnGreen">
+									<i class="icon-check2"></i> Guardar
+								</button>
+							</div>
+						</div>
+					{!! Form::close() !!}
+				</div>
 			@endslot
 		@endcomponent
 	</div>

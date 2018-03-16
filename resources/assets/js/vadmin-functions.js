@@ -114,7 +114,7 @@ deleteRecord = function(id, route, bigtext, smalltext) {
 					return true;
 				} else {
 					console.log(data);
-					alert_error('Ups!','Ha ocurrido un error (Puede que este registro tenga relación con otros items en el sistema). Debe eliminar primero los mismos.');
+					alert_error('Ups!','Ha ocurrido un error (Puede que este registro tenga relación con otros items en el sistema)');
 					return false;
 				}
 			},
@@ -131,6 +131,7 @@ deleteRecord = function(id, route, bigtext, smalltext) {
 	});
 
 }
+
 
 deleteAndReload = function(id, route, bigtext, smalltext) {
 	swal({
@@ -155,15 +156,21 @@ deleteAndReload = function(id, route, bigtext, smalltext) {
 				// $('#Main-Loader').removeClass('Hidden');
 			},
 			success: function(data){
+				console.log(data);
 				$('#BatchDeleteBtn').addClass('Hidden');
-				if (data.success == true) {
-					// alert_ok('Ok!','Eliminación completa');
+				if (data.success == true && data.violation == true) {
+					console.log(data.message);
+					$('#ViolationMessage').html(data.message);
+					$('#Violation').removeClass('Hidden');
+
+				} else if(data.success == true) {
 					location.reload();
 				} else {
 					console.log(data);
-					alert_error('Ups!','Ha ocurrido un error (Puede que este registro tenga relación con otros items en el sistema). Debe eliminar primero los mismos.');
+					alert_error('Ups!','Ha ocurrido un error (Puede que este registro tenga relación con otros items en el sistema)');
 					return false;
 				}
+				
 			},
 			error: function(data)
 			{
@@ -172,6 +179,7 @@ deleteAndReload = function(id, route, bigtext, smalltext) {
 			}
 		});
 	});
+
 
 }
 

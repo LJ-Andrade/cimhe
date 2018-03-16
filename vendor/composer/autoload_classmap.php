@@ -39,7 +39,7 @@ return array(
     'App\\Http\\Controllers\\Catalog\\TagsController' => $baseDir . '/app/Http/Controllers/Catalog/TagsController.php',
     'App\\Http\\Controllers\\Catalogimg\\ArticlesController' => $baseDir . '/app/Http/Controllers/Catalogimg/ArticlesController.php',
     'App\\Http\\Controllers\\Catalogimg\\CategoriesController' => $baseDir . '/app/Http/Controllers/Catalogimg/CategoriesController.php',
-    'App\\Http\\Controllers\\Catalogimg\\ImagesimgController' => $baseDir . '/app/Http/Controllers/Catalogimg/ImagesController.php',
+    'App\\Http\\Controllers\\Catalogimg\\ImagesController' => $baseDir . '/app/Http/Controllers/Catalogimg/ImagesController.php',
     'App\\Http\\Controllers\\Catalogimg\\TagsController' => $baseDir . '/app/Http/Controllers/Catalogimg/TagsController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CustomerAuth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/CustomerAuth/ForgotPasswordController.php',

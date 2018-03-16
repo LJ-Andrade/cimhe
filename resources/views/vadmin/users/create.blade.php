@@ -19,20 +19,35 @@
 		@component('vadmin.components.container')
 			@slot('title', 'Creación de Usuario')
 			@slot('content')
-			<form class="form" method="POST" action="{{ route('users.store') }}">
+			<div class="form-body">
+				<form class="form" method="POST" action="{{ route('users.store') }}">
 				{{ csrf_field() }}
-				@include('vadmin.users.form')
-				<div class="form-actions right">
-					<a href="{{ route('users.index')}}">
-						<button type="button" class="btn btnRed">
-							<i class="icon-cross2"></i> Cancelar
+					<div class="row">
+						@include('vadmin.users.form')
+						<div class="col-lg-4 col-md-12">
+							<div class="form-group">
+								{!! Form::label('password', 'Contraseña') !!}
+								{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Ingrese la contraseña', 'required' => '']) !!}
+							</div>
+
+							<div class="form-group">
+								{!! Form::label('password_confirmation', 'Confirme la contraseña') !!}
+								{!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'Confirme la contraseña', 'required' => '']) !!}
+							</div>
+						</div>
+					</div>
+					<div class="form-actions right">
+						<a href="{{ route('users.index')}}">
+							<button type="button" class="btn btnRed">
+								<i class="icon-cross2"></i> Cancelar
+							</button>
+						</a>
+						<button type="submit" class="btn btnGreen">
+							<i class="icon-check2"></i> Guardar
 						</button>
-					</a>
-					<button type="submit" class="btn btnGreen">
-						<i class="icon-check2"></i> Guardar
-					</button>
-				</div>
-            </form>
+					</div>
+            	</form>
+			</div>
 			@endslot
 		@endcomponent
 	</div>

@@ -13,3 +13,4 @@ $('#SearchFiltersBtn').on('click', function(){
 $('.Disabled-Input-Modificable').click(function(){
     $(this).addClass('disabled-input-modificable-on');
 });
+

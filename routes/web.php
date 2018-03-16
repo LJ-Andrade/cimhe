@@ -132,10 +132,28 @@ Route::group(['prefix'=> 'vadmin'], function() {
 | Vadmin - Sections
 |--------------------------------------------------------------------------
 */
+
 Route::get('sendmail', 'VadminController@sendMail');
 
-Route::group(['prefix' => 'vadmin', 'middleware' => 'admin'], function(){
+// Functions that all users can access
+Route::group(['prefix' => 'vadmin'], function(){
+    // -- SUPPORT --
+    Route::get('docs', function(){ return view('vadmin.support.docs'); });
+    Route::get('soporte', function(){ return view('vadmin.support.support'); });
+    Route::post('techSupport', ['as'=>'vadmin.soporte','uses'=>'VadminController@techSupport']);
 
+    // -- EXPORT --
+    Route::get('exportViewPdf/{view}/{params}/{model}/{filename}', ['as' => 'vadmin.exportViewPdf', 'uses' => 'invoiceController@exportViewPdf']);
+
+    Route::get('exportUsersListPdf/{params}', ['as' => 'vadmin.exportUsersListPdf', 'uses' => 'UserController@exportPdf']);
+    Route::get('exportUsersListXls/{params}', ['as' => 'vadmin.exportUsersListXls', 'uses' => 'UserController@exportXls']);
+
+    Route::get('exportCatalogListPdf/{params}', ['as' => 'vadmin.exportCatalogListPdf', 'uses' => 'Catalog\ArticlesController@exportPdf']);
+    Route::get('exportCatalogListXls/{params}', ['as' => 'vadmin.exportCatalogListXls', 'uses' => 'Catalog\ArticlesController@exportExcel']);
+});
+
+// En un futuro debe restringirse estas operaciones a usuarios que no sean admin
+Route::group(['prefix' => 'vadmin', 'middleware' => 'admin'], function(){
 
     //Route::get('/home', 'VadminController@index');
     Route::get('/', 'VadminController@index');
@@ -163,7 +181,6 @@ Route::group(['prefix' => 'vadmin', 'middleware' => 'admin'], function(){
     Route::post('update_catalog_price/{id}', 'Catalog\ArticlesController@updatePrice');
     Route::post('update_catalog_discount/{id}', 'Catalog\ArticlesController@updateDiscount');
     Route::get('panel-de-control', ['as' => 'storeControlPanel', 'uses' => 'VadminController@storeControlPanel']);
-
     
     Route::resource('cat_categorias', 'Catalog\CategoriesController');
     Route::resource('cat_tags', 'Catalog\TagsController');
@@ -175,27 +192,14 @@ Route::group(['prefix' => 'vadmin', 'middleware' => 'admin'], function(){
     Route::resource('shippings', 'Catalog\ShippingsController');
     // Payments Methods
     Route::resource('payments', 'Catalog\PaymentsController');
-   
+    
     // -- IMAGE CATALOG--
     Route::resource('catalogoimg', 'Catalogimg\ArticlesController');
-
+    
     Route::resource('catimg_categorias', 'Catalogimg\CategoriesController');
     Route::resource('catimg_tags', 'Catalogimg\TagsController');
     Route::post('catimg_article_status/{id}', 'Catalogimg\ArticlesController@updateStatus');
-
-    // -- SUPPORT --
-    Route::get('docs', function(){ return view('vadmin.support.docs'); });
-    Route::get('help', function(){ return view('vadmin.support.help'); });
-
-    // Exports
-    Route::get('exportViewPdf/{view}/{params}/{model}/{filename}', ['as' => 'vadmin.exportViewPdf', 'uses' => 'invoiceController@exportViewPdf']);
-
-    Route::get('exportUsersListPdf/{params}', ['as' => 'vadmin.exportUsersListPdf', 'uses' => 'UserController@exportPdf']);
-    Route::get('exportUsersListXls/{params}', ['as' => 'vadmin.exportUsersListXls', 'uses' => 'UserController@exportXls']);
     
-    Route::get('exportCatalogListPdf/{params}', ['as' => 'vadmin.exportCatalogListPdf', 'uses' => 'Catalog\ArticlesController@exportPdf']);
-    Route::get('exportCatalogListXls/{params}', ['as' => 'vadmin.exportCatalogListXls', 'uses' => 'Catalog\ArticlesController@exportExcel']);
-
 });
     
 /*
