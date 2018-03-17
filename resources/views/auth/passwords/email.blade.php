@@ -22,7 +22,7 @@
                     <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="control-label">E-Mail Address</label>
+                            <label for="email" class="control-label">Dirección E-Mail</label>
                             <input id="email" type="email" class="form-control round" name="email" value="{{ old('email') }}" required>
 
                             @if ($errors->has('email'))
