@@ -106,26 +106,26 @@ Route::get('galeria_etiqueta/{name}', ['uses' => 'WebController@searchCatalogimg
 */
 
 Auth::routes();
+// AUTH ROUTES
 Route::group(['prefix'=> 'vadmin'], function() {
-    
-    // Login Routes...
-        Route::get('login', ['as' => 'vadmin.login', 'uses' => 'Auth\LoginController@showLoginForm']);
-        Route::post('login', ['uses' => 'Auth\LoginController@login']);
-        Route::post('logout', ['as' => 'vadmin.logout', 'uses' => 'Auth\LoginController@logout']);
-    
-    // Registration Routes...
-        Route::get('register', ['as' => 'vadmin.register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
-        Route::post('register', ['uses' => 'Auth\RegisterController@register']);
-    
-    // Password Reset Routes...
-        Route::get('password/reset', ['as' => 'vadmin.password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
-        Route::post('password/email', ['as' => 'vadmin.password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
-        Route::get('password/reset/{token}', ['as' => 'vadmin.password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
-        Route::post('password/reset', ['uses' => 'Auth\ResetPasswordController@reset']);
-    });
+// Login Routes...
+    Route::get('login', ['as' => 'vadmin.login', 'uses' => 'Auth\LoginController@showLoginForm']);
+    Route::post('login', ['uses' => 'Auth\LoginController@login']);
+    Route::post('logout', ['as' => 'vadmin.logout', 'uses' => 'Auth\LoginController@logout']);
 
-    // Route::get('/home', 'VadminController@index');
-    // Route::get('/vadmin', 'VadminController@index');
+// Registration Routes...
+    Route::get('register', ['as' => 'vadmin.register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+    Route::post('register', ['uses' => 'Auth\RegisterController@register']);
+
+// VADMIN Password Reset Routes...
+    Route::get('password/reset', ['as' => 'vadmin.password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
+    Route::post('password/email', ['as' => 'vadmin.password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
+    Route::get('password/reset/{token}', ['as' => 'vadmin.password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
+    Route::post('password/reset', ['uses' => 'Auth\ResetPasswordController@reset']);
+});
+
+// Route::get('/home', 'VadminController@index');
+// Route::get('/vadmin', 'VadminController@index');
 
 /*
 |--------------------------------------------------------------------------

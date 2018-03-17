@@ -6,7 +6,7 @@
             <div class="row item-inline">            
                 <div class="inner">
                     <img src="{{ asset('webimages/main/supicon1.png') }}"/> 
-                    <span>Cel: (011) 5648-7952<br> Tel: 4757-6985</span> 
+                    <span>(011) 5648-7952<br>(011) 4757-6985</span> 
                 </div>
                 <div class="inner">
                     <img src="{{ asset('webimages/main/supicon2.png') }}"/>

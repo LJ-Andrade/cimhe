@@ -47,7 +47,7 @@
 	margin-bottom: 20px
 	.inner
 		border: 2px solid #f9f9f9
-		.image
+		.update-image
 			position: relative
 			padding: 25px 5px
 			background-color: #f9f9f9
@@ -66,7 +66,13 @@
 				.over-text
 					opacity: 1
 					pointer-events: none
-			img
+		.image
+			padding: 25px 5px
+			background-color: #f9f9f9
+			text-align: center
+			.over-text
+				display: none
+		.update-image img, .image img
 				border-radius: 50%
 				width: 230px
 				height: 230px
@@ -76,6 +82,10 @@
 				&:hover
 					cursor: pointer
 					opacity: 0.9
+		.image img
+			&:hover
+					opacity: 1
+					cursor: default
 					
 		.card-content
 			border: 1px solid #f9f9f9
@@ -813,6 +823,12 @@ ul.pagination li.disabled
 	.loader-text
 		width: 90px
 
+//////////////////////////////////////
+//                                  //
+//              OTHERS              //
+//                                  //
+//////////////////////////////////////
+
 .violation
 	text-align: center
 	.message
@@ -820,3 +836,26 @@ ul.pagination li.disabled
 		margin-bottom: 20px
 	img
 		width: 333px
+
+.main-copyright
+	position: absolute
+	bottom: 5px
+	right: 25px
+	.text
+		float: left
+		padding-top: 4px
+		font-style: italic
+		font-size: 1rem
+		font-weight: 600
+	a
+		color: $blue
+		margin-right: 10px
+	
+@media (max-width: 400px)
+	.main-copyright
+		position: absolute
+		left: 10px
+		text-align: center
+		.text
+			float: none
+			margin-bottom: 10px

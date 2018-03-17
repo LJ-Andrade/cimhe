@@ -77,6 +77,7 @@
 						@if(Auth::guard('user')->user()->role <= 2)
 						<th></th>
 						@endif
+						<th></th>
 						<th>Usuario</th>
 						<th>Nombre</th>
 						<th>Email</th>
@@ -101,7 +102,15 @@
 									</label>
 								</td>
 								@endif
+								<td class="thumb">
+									@if($item->avatar == '' || $item->avatar == null)
+										<img src="{{ asset('images/users/default.jpg') }}" class="CheckImg" alt="User Image">
+									@else
+										<img src="{{ asset('images/users/'.$item->avatar) }}" class="CheckImg" alt="User Image">
+									@endif
+								</td>
 								<td class="show-link"><a href="{{ url('vadmin/users/'.$item->id) }}">{{ $item->username }}</a></td>
+									
 								<td>{{ $item->name }}</td>
 								<td>{{ $item->email }}</td>
 								<td>{{ roleTrd($item->role) }}</td>
