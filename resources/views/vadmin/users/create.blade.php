@@ -20,11 +20,11 @@
 			@slot('title', 'Creación de Usuario')
 			@slot('content')
 			<div class="form-body">
-				<form class="form" method="POST" action="{{ route('users.store') }}">
-				{{ csrf_field() }}
+				{!! Form::open(['route' => 'users.store', 'method' => 'POST', 'files' => true]) !!}
+					{{ csrf_field() }}
 					<div class="row">
 						@include('vadmin.users.form')
-						<div class="col-lg-4 col-md-12">
+						<div class="col-lg-4 col-md-4">
 							<div class="form-group">
 								{!! Form::label('password', 'Contraseña') !!}
 								{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Ingrese la contraseña', 'required' => '']) !!}
@@ -46,7 +46,7 @@
 							<i class="icon-check2"></i> Guardar
 						</button>
 					</div>
-            	</form>
+            	{!! Form::close() !!}    
 			</div>
 			@endslot
 		@endcomponent
@@ -56,11 +56,5 @@
 @section('scripts')
 	<script type="text/javascript" src="{{ asset('plugins/validation/parsley.min.js') }}" ></script>
 	<script type="text/javascript" src="{{ asset('plugins/validation/es/parsley-es.min.js') }}" ></script>
-@endsection
-
-@section('custom_js')
-	<script>
-		$('.UsersLi').addClass('open');
-		$('.UsersNew').addClass('active');
-	</script>
+		@include('vadmin.components.bladejs')
 @endsection

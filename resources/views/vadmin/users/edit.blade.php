@@ -28,7 +28,7 @@
 					{!! Form::model($user, ['method' => 'PATCH', 'url' => ['/vadmin/users', $user->id], 'files' => true]) !!}
 						{{ csrf_field() }}
 						<div class="row">
-						@include('vadmin.users.form')
+							@include('vadmin.users.form')
 						</div>
 						<div class="row">
 							<div class="form-actions right">
@@ -53,10 +53,5 @@
 @section('scripts')
 	<script type="text/javascript" src="{{ asset('plugins/validation/parsley.min.js') }}" ></script>
 	<script type="text/javascript" src="{{ asset('plugins/validation/es/parsley-es.min.js') }}" ></script>
-@endsection
-
-@section('custom_js')
-	<script>
-		$('.UsersLi').addClass('open');
-	</script>
+	@include('vadmin.components.bladejs')
 @endsection

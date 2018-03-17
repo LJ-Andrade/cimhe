@@ -1471,6 +1471,13 @@ ul {
   color: #fff;
 }
 
+@media (max-width: 1200px) {
+  .main-home .inner h2 {
+    padding: 4px;
+    font-size: 1.4rem;
+  }
+}
+
 .top-banner {
   background: url(../webimages/main/top-banner.png);
   background-size: cover;
@@ -1817,6 +1824,50 @@ ul {
 
 .contact-section2 .horiz-items .inner p {
   color: #ffff;
+}
+
+.home-contact-form form {
+  margin-top: 0;
+  text-align: center;
+}
+
+.home-contact-form form input, .home-contact-form form textarea {
+  background-color: #fff;
+  border: 0;
+}
+
+.home-contact-form form .contactBtn {
+  margin: 0;
+  font-size: 1rem;
+  padding: 8px 20px;
+}
+
+.home-contact-form .form-responses-home {
+  background-color: #fff;
+  padding: 20px;
+  font-size: 1rem;
+  position: relative;
+}
+
+.home-contact-form .form-responses-home h2 {
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+.home-contact-form .form-responses-home i {
+  font-size: 1rem;
+  color: green;
+}
+
+.home-contact-form .form-responses-home hr {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .home-contact-form {
+    margin-top: 50px;
+    max-width: 400px;
+  }
 }
 
 @media (max-width: 768px) {

@@ -113,15 +113,26 @@ class UserController extends Controller
     {
         $user = new User($request->all());
         $this->validate($request,[
-            'name'           => 'required',
-            'email'          => 'min:3|max:250|required|unique:users,email',
-            'password'       => 'min:4|max:12listado-usuarios0|required|',
+            'name' => 'required',
+            'email' => 'min:3|max:250|required|unique:users,email',
+            'password' => 'min:4|max:12listado-usuarios0|required|',
+            'role' => 'required',
+            'group' => 'required'
             
         ],[
             'email.required' => 'Debe ingresar un email',
-            'email.unique'   => 'El email ya existe',
-            'password'       => 'Debe ingresar una contraseña',
+            'email.unique' => 'El email ya existe',
+            'password' => 'Debe ingresar una contraseña',
+            'role.required' => 'Debe ingresar un rol',
+            'role.group' => 'Debe pertenecer a un grupo'
         ]);
+        
+        if($request->file('avatar') != null){
+            $avatar   = $request->file('avatar');
+            $filename = $user->id.'.jpg';
+            Image::make($avatar)->encode('jpg', 80)->fit(300, 300)->save(public_path('images/users/'.$filename));
+            $user->avatar = $filename;
+        }
 
         $user->password = bcrypt($request->password);
         $user->save();
@@ -147,21 +158,29 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'username' => 'required|max:20|unique:users,username,'.$user->id,
             'email' => 'required|email|max:255|unique:users,email,'.$user->id,
-            'password' => 'required|min:6|confirmed',
-            
+            'role' => 'required',
+            'group' => 'required'
         ],[
             'name.required' => 'Debe ingresar un nombre',
             'username.required' => 'Debe ingresar un nombre de usuario',
             'username.unique' => 'El nombre de usuario ya está siendo utilizado',
             'email.required' => 'Debe ingresar un email',
             'email.unique' => 'El email ya existe',
-            'password.min' => 'El password debe tener al menos :min caracteres',
-            'password.required' => 'Debe ingresar una contraseña',
-            'password.confirmed' => 'Las contraseñas no coinciden',
+            'role.required' => 'Debe ingresar un rol',
+            'role.group' => 'Debe pertenecer a un grupo'
         ]);
 
+        
         $user->fill($request->all());
+        
         $user->password = bcrypt($request->password);
+        if($request->file('avatar') != null){
+            $avatar   = $request->file('avatar');
+            $filename = $user->id.'.jpg';
+            Image::make($avatar)->encode('jpg', 80)->fit(300, 300)->save(public_path('images/users/'.$filename));
+            $user->avatar = $filename;
+        }
+
         $user->save();
 
         return redirect('vadmin/users')->with('Message', 'Usuario '. $user->name .'editado correctamente');

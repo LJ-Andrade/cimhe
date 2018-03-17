@@ -95,11 +95,14 @@
 							<tr>
 								@if(Auth::guard('user')->user()->role <= 2)
 								<td>
+									@if($item->id == '1' || $item->id == '2')
+									@else
 									<label class="custom-control custom-checkbox list-checkbox">
 										<input type="checkbox" class="List-Checkbox custom-control-input row-checkbox" data-id="{{ $item->id }}">
 										<span class="custom-control-indicator"></span>
 										<span class="custom-control-description"></span>
 									</label>
+									@endif
 								</td>
 								@endif
 								<td class="thumb">

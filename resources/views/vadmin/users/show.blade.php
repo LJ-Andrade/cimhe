@@ -20,7 +20,7 @@
                  <span style="color: #977fe1">Perfil | </span>{{ $user->username }}
             @endslot
             @slot('content')
-                <div class="col-md-5">
+                <div class="col-md-5 col-sm-12 col-xs-12">
                     <div class="round-image-card">
                         <div class="inner">
                             <div class="{{ (Auth::guard('user')->user()->id == $user->id) ? "update-image" : "image"}}">
@@ -50,12 +50,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12 col-xs-12">
                     Miembro desde {{ $user->created_at->diffForHumans() }} <br>
                     {{ transDateT($user->created_at) }} <br><br>
-
                     @if(Auth::guard('user')->user()->id == $user->id)
-                    <button type="submit" class="btn btnGreen" id="ConfirmChange" value="Confirmar">Editar Usuario</button>
+                        <a href="{{ url('vadmin/users/'.$user->id.'/edit') }}" class="btn btnGreen" id="ConfirmChange" value="Confirmar">Editar Usuario</a>
                     @endif
                 </div>
             @endslot
@@ -63,27 +62,6 @@
     </div>
 @endsection
 
-@section('custom_js')
-	<script>
-    	$(document).ready(function() {
-			$('#Avatar').click(function(){
-				$('#ImageInput').click();
-			});       
-		});
-		function readURL(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-
-				reader.onload = function (e) {
-					$('.Image-Container').attr('src', e.target.result);
-                    $('.ActionContainer').removeClass('Hidden');
-				}
-					reader.readAsDataURL(input.files[0]);
-				}
-			}
-			$("#ImageInput").change(function(){
-			readURL(this);
-			$('.UpdateAvatarForm').removeClass('Hidden');
-		});
-	</script>
+@section('scripts')
+	@include('vadmin.components.bladejs')
 @endsection

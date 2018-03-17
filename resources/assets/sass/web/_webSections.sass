@@ -33,6 +33,13 @@
 			font-weight: 400
 			color: #fff
 
+@media (max-width: 1200px)
+	.main-home
+		.inner
+			h2
+				padding: 4px
+				font-size: 1.4rem
+
 .top-banner
 	background: url(../webimages/main/top-banner.png)
 	background-size: cover
@@ -285,6 +292,37 @@ $ph-weight: 400
 	.horiz-items
 		.inner p
 			color: #ffff
+	
+.home-contact-form
+	form
+		margin-top: 0
+		text-align: center
+		input, textarea
+			background-color: #fff
+			border: 0
+		.contactBtn
+			margin: 0
+			font-size: 1rem
+			padding: 8px 20px
+	
+	.form-responses-home
+		background-color: #fff
+		padding: 20px
+		font-size: 1rem
+		position: relative
+		h2
+			background-color: transparent
+			font-size: 1rem
+		i
+			font-size: 1rem
+			color: green
+		hr 
+			display: none
+
+@media (max-width: 991px)
+	.home-contact-form
+		margin-top: 50px
+		max-width: 400px
 
 @media (max-width: 768px)
 	.contact-section2

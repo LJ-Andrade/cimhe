@@ -7,35 +7,63 @@
 @endsection
 
 @section('content')
-    <div id="ActualSection" data-section="home"></div> {{-- JS Anchor --}}
-    {{-- Home Parallax --}}
-    {{-- <div  class="main-home" data-parallax="scroll">
-        <div class="main-info wow animated fadeIn" data-wow-delay="0s" data-wow-duration="1s">
-            <img src="{{ asset('webimages/logos/main-logo.png') }}">
-            <h1>Desarrollo Web y Diseño Gráfico</h1>
-            <div class="actions">
-                <a href="{{ route('web.portfolio') }}"><button class="button btnHollowGreyTrans">Nuestro Portfolio</button></a>
-                <a href="{{ url('/#contact') }}"><button class="button btnHollowGreen">Contactanos</button></a>
-            </div>
-        </div>
-    </div> --}}
     <div class="top-space"></div>
     {{-- Main Section --}}
     <section class="main-home">
         <div class="container inner">
             <div class="row">
-                <h2>Ciencia e Ingeniería Móvil del Hormigón Elaborado</h2>
-                <div class="h2">Ciencia e Ingeniería Móvil del Hormigón Elaborado</div>
-                <div class="title">
-                    Laboratorio de Ensayos <br>
-                    Hormigón y Suelos
+                <div class="col-lg-9 col-md-8">
+                    <h2>Ciencia e Ingeniería Móvil del Hormigón Elaborado</h2>
+                    <div class="h2">Ciencia e Ingeniería Móvil del Hormigón Elaborado</div>
+                    <div class="title">
+                        Laboratorio de Ensayos <br>
+                        Hormigón y Suelos
+                    </div>
+                    <hr class="shorthr">
+                    <div class="clearfix"></div>
+                    <div class="text">
+                        Es una empresa que cuenta con un plantel de profesionales <br>
+                        y técnicos con experiencia de más de 10 años en la <br>
+                        Tecnología del Hormigón.
+                    </div>
                 </div>
-                <hr class="shorthr">
-                <div class="clearfix"></div>
-                <div class="text">
-                    Es una empresa que cuenta con un plantel de profesionales <br>
-                    y técnicos con experiencia de más de 10 años en la <br>
-                    Tecnología del Hormigón.
+                <div class="col-lg-3 col-md-4">
+                    <div class="contact-form home-contact-form">
+                        {!! Form::open(['id' => 'MainContactForm', 'class' => '', 'method' => 'POST']) !!}
+                            <div class="form-group">
+                                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'required']) !!}
+                            </div>
+                            <div class="form-group">
+                                {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'TELÉFONO', 'required']) !!}
+                            </div>
+                            <div class="form-group">
+                                {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-MAIL', 'required']) !!}
+                            </div>
+                            <div class="form-group">
+                                {!! Form::textarea('message', null, ['size' => '30x5', 'class' => 'form-control', 'placeholder' => 'CONSULTA / MENSAJE']) !!}
+                            </div>
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <button type="submit" class="MainFormBtn btn btnBlue contactBtn">Enviar</button>
+                            </div>
+                        {!! Form::close() !!}
+                        <div id="ResponsesMainContactForm">
+                            <div id="FormResponse"></div>
+                            <div class="FormSuccess form-responses-home animated fadeIn text-center Hidden">
+                                <i class="success ion-checkmark-round"></i>
+                                <h2>Mensaje Enviado !</h2> 
+                                Gracias por contactarse con nosotros. <br>
+                                Nos estaremos comunicando a la brevedad.
+                                <hr class="softhr">
+                            </div>
+                            <div class="FormError form-responses-home animated text-center fadeIn Hidden">
+                                <i class="error ion-close-round"></i>
+                                <h2>Ha ocurrido un error !</h2> 
+                                Intente comunicarse directamente por mail o teléfono <br>
+                                Gracias.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

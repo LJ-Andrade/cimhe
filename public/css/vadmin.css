@@ -339,6 +339,10 @@ hr {
   cursor: default;
 }
 
+.round-image-card .inner button, .round-image-card .inner html [type="button"], .round-image-card .inner [type="reset"], .round-image-card .inner [type="submit"] {
+  -webkit-appearance: none;
+}
+
 .round-image-card .inner .card-content {
   border: 1px solid #f9f9f9;
   border-top: 0;
