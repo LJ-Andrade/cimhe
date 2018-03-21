@@ -103,7 +103,7 @@
 
     <section class="container-fluid section home-section-3">
         <div class="container">
-        <div class="row horiz-items">
+            <div class="row horiz-items">
                 <h1>Servicios</h1>
                 <hr>
                 <?php $items =  array(
@@ -129,7 +129,20 @@
             </div>
         </div>
     </section>
-    
+    <section class="home-section-3b">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-8 col-xs-12">
+                    <h3>
+                        Descarga nuestro catálogo de productos para laboratorio.
+                    </h3>
+                </div>
+                <div class="col-md-6 col-sm-4 col-xs-12 action">
+                    <a href="{{ asset('downloads/venta-insumos-para-laboratorio.docx') }}" class="btn btnHollowInv"><i class="ion-archive"></i> Descargar</a>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="container-fluid section section-container home-section-4">
         <div class="container">
             <div class="row">
