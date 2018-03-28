@@ -107,18 +107,22 @@
                 <h1>Servicios</h1>
                 <hr>
                 <?php $items =  array(
-                                    array(asset('webimages/main/icon1.png'), 'Tecnología del hormigón para el proyecto y construcción de obras civiles.'),
-                                    array(asset('webimages/main/icon2.png'), 'Inspección de obras de hormigón durante la construcción.'),
-                                    array(asset('webimages/main/icon3.png'), 'Asistencia y asesoramiento técnico.'),
-                                    array(asset('webimages/main/icon4.png'), 'Estudio de estructuras existentes deterioradas.'),
-                                    array(asset('webimages/main/icon5.png'), 'Diagnóstico de las causas del deterioro de estructuras.'),
-                                    array(asset('webimages/main/icon6.png'), 'Proyectos de reparación y rehabilitación de estructuras.'),
-                                    array(asset('webimages/main/icon15.png'), 'Estudios de hormigones y sus componentes.'),
-                                    array(asset('webimages/main/icon7.png'), 'Control de calidad y aceptación del hormigón en obra con laboratorio de campaña.'),
-                                    array(asset('webimages/main/icon8.png'), 'Realización de ensayos según normativa nacional e internacional.'),
-                                    array(asset('webimages/main/icon9.png'), 'Asesoramiento técnico de empresas fabricantes de hormigón y de empresas constructoras.'),
-                                    array(asset('webimages/main/icon10.png'), 'Auditorías de la calidad para la construcción de estructuras de hormigón.')
-                                ); 
+                                array(asset('webimages/main/icon1.png'),  'Tecnología del hormigón para el proyecto y construcción de obras civiles.'),
+                                array(asset('webimages/main/icon2.png'),  'Inspección de obras de hormigón durante la construcción.'),
+                                array(asset('webimages/main/icon3.png'),  'Asistencia y asesoramiento técnico.'),
+                                array(asset('webimages/main/icon4.png'),  'Estudio de estructuras existentes deterioradas.'),
+                                array(asset('webimages/main/icon5.png'),  'Diagnostico de las causas del deterioro de estructuras.'),
+                                array(asset('webimages/main/icon6.png'),  'Proyectos de reparación y rehabilitación de estructuras.'),
+                                array(asset('webimages/main/icon15.png'), 'Estudios de hormigones y sus componentes. Dosificación de Hormigón.'),
+                                array(asset('webimages/main/icon8.png'),  'Realización de ensayos según normativa nacional e internacional.'),
+                                array(asset('webimages/main/icon9.png'),  'Asesoramiento técnico de empresas fabricantes de hormigón y de empresas constructoras.'),
+                                array(asset('webimages/main/icon10.png'), 'Auditorías de la calidad para la construcción de estructuras de hormigón.'),
+                                array(asset('webimages/main/icon10.png'), 'Cálculo estructural en Hormigón Armado'),
+                                array(asset('webimages/main/icon10.png'), 'Estudios Geotécnicos, Estudios de Suelo,  Muestreo de Suelo.'),
+                                array(asset('webimages/main/icon10.png'), 'Laboratorio de Hormigón. Laboratorio de suelos, caracterización, proctor, CBR. '),
+                                array(asset('webimages/main/icon10.png'), 'Insumos de laboratorio, Venta de prensa de hormigón, prensa hidráulica motorizada, moldes de probetas, etc.'),
+                                array(asset('webimages/main/icon7.png'),  'Control de calidad y aceptación del hormigón en obra con laboratorio de campaña. Resistencia de hormigón, durabilidad y toma de probetas de hormigón.')
+                            ); 
                 foreach($items as $item){
                 ?>
                 <div class="col-md-4 col-sm-6 col-xs-12 inner">
@@ -138,7 +142,7 @@
                     </h3>
                 </div>
                 <div class="col-md-6 col-sm-4 col-xs-12 action">
-                    <a href="{{ asset('downloads/venta-insumos-para-laboratorio.docx') }}" class="btn btnHollowInv"><i class="ion-archive"></i> Descargar</a>
+                    <a href="{{ asset('downloads/venta-de-insumos-para-laboratorio.pdf') }}" class="btn btnHollowInv"><i class="ion-archive"></i> Descargar</a>
                 </div>
             </div>
         </div>

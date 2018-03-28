@@ -72,18 +72,24 @@
 
                 <div class="inner">
                     <?php $items =  array(
+
                                     'Estudios técnicos - económicos sobre hormigones y sus materiales componentes.',
-                                    'Ensayos destructivos y no destructivos.',
-                                    'Estudios especiales e investigaciones.',
-                                    'Ensayos de succión capilar NORMAS 1871',
-                                    'Desarrollo de piso sin junta (Hasta 1500 m2)',
                                     'Durabilidad. Acciones internas y externas.',
-                                    'Instalación y operación de laboratorios de obra.',
-                                    'Ensayos de pilotes. Marca PILETEST Modelo PET Eco.',
                                     'Cambios volumétricos.',
-                                    'Fisuración en estructuras.',
-                                    'Ensayos de penetración de agua bajo presión normas 1554.',
-                                    'Desarrollo de distintas dosificaciones de hormigones.'
+                                    'Ensayos no destructivos. Esclerometría IRAM 1694 y Ultrasonido IRAM 1683.',
+                                    'Extracción de Testigos.',
+                                    'Detección de armaduras de refuerzo en estructuras de hormigón.',
+                                    'Ensayo a Flexión de vigas.',
+                                    'Asistencia y toma de Probetas  en obra.',
+                                    'Almacenamiento en pileta de curado controlada por temperatura de probetas de hormigón. ',
+                                    'Figuración en estructuras.',
+                                    'Estudios especiales e investigaciones.',
+                                    'Instalación y operación de laboratorios de obra.',
+                                    'Ensayos de penetración de agua bajo presión Norma IRAM 1554.',
+                                    'Ensayos de succión capilar Norma IRAM 1871',
+                                    'Ensayos de pilotes. Marca PILETEST Modelo PET Eco.',
+                                    'Desarrollo de distintas dosificaciones de hormigones. ',
+                                    'Desarrollo de piso sin junta (Hasta 1500 m2)'
                                 ); 
                     foreach($items as $item){
                     ?>

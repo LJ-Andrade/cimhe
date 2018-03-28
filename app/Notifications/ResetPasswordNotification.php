@@ -49,10 +49,9 @@ class ResetPasswordNotification extends Notification
         return (new MailMessage)
             ->subject('Solicitud de restauración de contraseña')
             ->greeting('Hola '. $notifiable->name)
-            ->line('Recibes este email porque se ha solicitado restablecer la contraseña.')
+            ->line('Recibe este email porque ha solicitado restablecer la contraseña.')
             ->action('Restablecer Contraseña', url(config('app.url').route('password.reset', $this->token, false)))
-            ->line('Si no realizaste esta petición, puedes ignorar este email y nada habrá cambiado.')
+            ->line('Si no realizó esta petición, puede ignorar este email y nada habrá cambiado.')
             ->salutation('Muchas gracias.');
-
     }
 }

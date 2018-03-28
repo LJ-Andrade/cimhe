@@ -7,11 +7,6 @@
 |
 */
 
-// Route::get('/', [
-// 	'as'   => 'web',
-// 	'uses' => 'WebController@home',
-// ]);
-
 Route::get('/', function(){ return view('web/web'); });
 Route::get('profesionales', function(){ return view('web/profesionales'); });
 Route::get('laboratorio', function(){ return view('web/laboratorio'); });
@@ -21,62 +16,62 @@ Route::get('laboratorio', function(){ return view('web/laboratorio'); });
 | Store
 |--------------------------------------------------------------------------
 */
-    Route::get('tienda', ['as' => 'store', 'uses' => 'Store\StoreController@index']);
-    
-    Route::group(['prefix'=> 'tienda'], function() {        
-        // Customer Actions
-        Route::group(['middleware'=> 'customer'], function() {
-            // Cart
-            // Route::post('/cart', 'Store\CartDetailController@store');
-            Route::post('addtocart', ['as' => 'store.addtocart', 'uses' => 'Store\CartDetailController@store']);
-            Route::post('removefromcart', ['as' => 'store.removefromcart', 'uses' => 'Store\CartDetailController@destroy']);
-            Route::get('checkout', ['as' => 'store.checkout', 'uses' => 'Store\StoreController@checkout']);
-            Route::post('envio', ['as' => 'store.checkoutCustomerData', 'uses' => 'Store\StoreController@checkoutCustomerData']);
-            Route::get('envio', ['as' => 'store.checkoutShippingGet', 'uses' => 'Store\StoreController@checkoutShippingGet']);
-            Route::post('pago', ['as' => 'store.checkoutShipping', 'uses' => 'Store\StoreController@checkoutShipping']);
-            Route::get('pago', ['as' => 'store.checkoutPaymentGet', 'uses' => 'Store\StoreController@checkoutPaymentGet']);
-            Route::post('resumen', ['as' => 'store.checkoutPayment', 'uses' => 'Store\StoreController@checkoutPayment']);
-            Route::get('resumen', ['as' => 'store.checkoutReview', 'uses' => 'Store\StoreController@checkoutReview']);
-            
-            //Route::post('mp-connect', ['as' => 'store.getCreatePreference', 'uses' => 'MercadoPagoController@getCreatePreference']);
-            Route::post('mp-connect', ['as' => 'store.getCreatePreference', 'uses' => 'Store\StoreController@mpConnect']);
-            
-            // Sections    
-            Route::get('articulo/{id}', 'Store\StoreController@show');
-            Route::get('cuenta', ['as' => 'store.customer-account', 'uses' => 'Store\StoreController@customerAccount']);
-            Route::get('favoritos', ['as' => 'store.customer-wishlist', 'uses' => 'Store\StoreController@customerWishlist']);
-            Route::get('pedidos', ['as' => 'store.customer-orders', 'uses' => 'Store\StoreController@customerOrders']);
-            Route::get('pedido', ['as' => 'store.cartdetail', 'uses' => 'Store\StoreController@customerCartDetail']);
-            Route::get('carroactivo', ['as' => 'store.activecart', 'uses' => 'Store\StoreController@customerActiveCartDetail']);
+Route::get('tienda', ['as' => 'store', 'uses' => 'Store\StoreController@index']);
 
-            // Customers
-            Route::post('updateCustomer', ['as' => 'store.updateCustomer', 'uses' => 'Store\CustomerController@update']);
-            Route::get('updatePassword', ['as' => 'store.updatePassword', 'uses' => 'Store\StoreController@updatePassword']);
-            Route::post('updatePassword', ['as' => 'store.updatePassword', 'uses' => 'Store\CustomerController@updatePassword']);
-            
-        });
+Route::group(['prefix'=> 'tienda'], function() {        
+    // Customer Actions
+    Route::group(['middleware'=> 'customer'], function() {
+        // Cart
+        // Route::post('/cart', 'Store\CartDetailController@store');
+        Route::post('addtocart', ['as' => 'store.addtocart', 'uses' => 'Store\CartDetailController@store']);
+        Route::post('removefromcart', ['as' => 'store.removefromcart', 'uses' => 'Store\CartDetailController@destroy']);
+        Route::get('checkout', ['as' => 'store.checkout', 'uses' => 'Store\StoreController@checkout']);
+        Route::post('envio', ['as' => 'store.checkoutCustomerData', 'uses' => 'Store\StoreController@checkoutCustomerData']);
+        Route::get('envio', ['as' => 'store.checkoutShippingGet', 'uses' => 'Store\StoreController@checkoutShippingGet']);
+        Route::post('pago', ['as' => 'store.checkoutShipping', 'uses' => 'Store\StoreController@checkoutShipping']);
+        Route::get('pago', ['as' => 'store.checkoutPaymentGet', 'uses' => 'Store\StoreController@checkoutPaymentGet']);
+        Route::post('resumen', ['as' => 'store.checkoutPayment', 'uses' => 'Store\StoreController@checkoutPayment']);
+        Route::get('resumen', ['as' => 'store.checkoutReview', 'uses' => 'Store\StoreController@checkoutReview']);
+        
+        //Route::post('mp-connect', ['as' => 'store.getCreatePreference', 'uses' => 'MercadoPagoController@getCreatePreference']);
+        Route::post('mp-connect', ['as' => 'store.getCreatePreference', 'uses' => 'Store\StoreController@mpConnect']);
+        
+        // Sections    
+        Route::get('articulo/{id}', 'Store\StoreController@show');
+        Route::get('cuenta', ['as' => 'store.customer-account', 'uses' => 'Store\StoreController@customerAccount']);
+        Route::get('favoritos', ['as' => 'store.customer-wishlist', 'uses' => 'Store\StoreController@customerWishlist']);
+        Route::get('pedidos', ['as' => 'store.customer-orders', 'uses' => 'Store\StoreController@customerOrders']);
+        Route::get('pedido', ['as' => 'store.cartdetail', 'uses' => 'Store\StoreController@customerCartDetail']);
+        Route::get('carroactivo', ['as' => 'store.activecart', 'uses' => 'Store\StoreController@customerActiveCartDetail']);
 
-        Route::post('addArticleToFavs', ['as' => 'customer.addArticleToFavs', 'uses' => 'Store\StoreController@addArticleToFavs']);
-        Route::post('removeArticleFromFavs', ['as' => 'customer.removeArticleFromFavs', 'uses' => 'Store\StoreController@removeArticleFromFavs']);
-        Route::post('removeAllArticlesFromFavs', ['as' => 'customer.removeAllArticlesFromFavs', 'uses' => 'Store\StoreController@removeAllArticlesFromFavs']);
-
-        // Login Routes...
-        Route::get('login', ['as' => 'customer.login', 'uses' => 'CustomerAuth\LoginController@showLoginForm']);
-        Route::post('login', ['uses' => 'CustomerAuth\LoginController@login']);
-        Route::post('logout', ['as' => 'customer.logout', 'uses' => 'CustomerAuth\LoginController@logout']);
+        // Customers
+        Route::post('updateCustomer', ['as' => 'store.updateCustomer', 'uses' => 'Store\CustomerController@update']);
+        Route::get('updatePassword', ['as' => 'store.updatePassword', 'uses' => 'Store\StoreController@updatePassword']);
+        Route::post('updatePassword', ['as' => 'store.updatePassword', 'uses' => 'Store\CustomerController@updatePassword']);
         
-        // Registration Routes...
-        Route::get('register', ['as' => 'customer.register', 'uses' => 'CustomerAuth\RegisterController@showRegistrationForm']);
-        Route::post('register', ['uses' => 'CustomerAuth\RegisterController@register']);
-        
-        // Password Reset Routes...
-        Route::get('password/reset', ['as' => 'customer.password.reset', 'uses' => 'CustomerAuth\ForgotPasswordController@showLinkRequestForm']);
-        Route::post('password/email', ['as' => 'customer.password.email', 'uses' => 'CustomerAuth\ForgotPasswordController@sendResetLinkEmail']);
-        Route::get('password/reset/{token}', ['as' => 'customer.password.reset.token', 'uses' => 'CustomerAuth\ResetPasswordController@showResetForm']);
-        Route::post('password/reset', ['uses' => 'CustomerAuth\ResetPasswordController@reset']);
-        
-            
     });
+
+    Route::post('addArticleToFavs', ['as' => 'customer.addArticleToFavs', 'uses' => 'Store\StoreController@addArticleToFavs']);
+    Route::post('removeArticleFromFavs', ['as' => 'customer.removeArticleFromFavs', 'uses' => 'Store\StoreController@removeArticleFromFavs']);
+    Route::post('removeAllArticlesFromFavs', ['as' => 'customer.removeAllArticlesFromFavs', 'uses' => 'Store\StoreController@removeAllArticlesFromFavs']);
+
+    // Login Routes...
+    Route::get('login', ['as' => 'customer.login', 'uses' => 'CustomerAuth\LoginController@showLoginForm']);
+    Route::post('login', ['uses' => 'CustomerAuth\LoginController@login']);
+    Route::post('logout', ['as' => 'customer.logout', 'uses' => 'CustomerAuth\LoginController@logout']);
+    
+    // Registration Routes...
+    Route::get('register', ['as' => 'customer.register', 'uses' => 'CustomerAuth\RegisterController@showRegistrationForm']);
+    Route::post('register', ['uses' => 'CustomerAuth\RegisterController@register']);
+    
+    // Password Reset Routes...
+    Route::get('password/reset', ['as' => 'customer.password.reset', 'uses' => 'CustomerAuth\ForgotPasswordController@showLinkRequestForm']);
+    Route::post('password/email', ['as' => 'customer.password.email', 'uses' => 'CustomerAuth\ForgotPasswordController@sendResetLinkEmail']);
+    Route::get('password/reset/{token}', ['as' => 'customer.password.reset.token', 'uses' => 'CustomerAuth\ResetPasswordController@showResetForm']);
+    Route::post('password/reset', ['uses' => 'CustomerAuth\ResetPasswordController@reset']);
+    
+        
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -108,16 +103,16 @@ Route::get('galeria_etiqueta/{name}', ['uses' => 'WebController@searchCatalogimg
 Auth::routes();
 // AUTH ROUTES
 Route::group(['prefix'=> 'vadmin'], function() {
-// Login Routes...
+    // Login Routes...
     Route::get('login', ['as' => 'vadmin.login', 'uses' => 'Auth\LoginController@showLoginForm']);
     Route::post('login', ['uses' => 'Auth\LoginController@login']);
     Route::post('logout', ['as' => 'vadmin.logout', 'uses' => 'Auth\LoginController@logout']);
 
-// Registration Routes...
+    // Registration Routes...
     Route::get('register', ['as' => 'vadmin.register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
     Route::post('register', ['uses' => 'Auth\RegisterController@register']);
 
-// VADMIN Password Reset Routes...
+    // VADMIN Password Reset Routes...
     Route::get('password/reset', ['as' => 'vadmin.password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
     Route::post('password/email', ['as' => 'vadmin.password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
     Route::get('password/reset/{token}', ['as' => 'vadmin.password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
