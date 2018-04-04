@@ -839,24 +839,33 @@ ul.pagination li.disabled
 		width: 333px
 
 .main-copyright
-	position: absolute
-	bottom: 5px
-	right: 25px
-	.text
-		float: left
-		padding-top: 4px
-		font-style: italic
-		font-size: 1rem
-		font-weight: 600
-	a
-		color: $blue
-		margin-right: 10px
+	position: fixed
+	width: 100%
+	background-color: #ececec
+	bottom: 0
+	right: 0
+	padding: 5px
+	.inner
+		@include flex-center-right
+		.text
+			float: left
+			padding-top: 4px
+			font-style: italic
+			font-size: 1rem
+			font-weight: 600
+		a
+			color: $blue
+			margin-right: 10px
 	
 @media (max-width: 400px)
 	.main-copyright
 		position: absolute
 		left: 10px
 		text-align: center
-		.text
-			float: none
-			margin-bottom: 10px
+		padding: 0
+		.inner
+			.text
+				float: none
+				margin-bottom: 10px
+			img
+				padding-top: 5px

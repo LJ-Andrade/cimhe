@@ -92,7 +92,7 @@
 										<img src="{{ asset('webimages/main/gen/catalog-gen.jpg') }}">
 									@endif
 								</td>
-								<td class="show-link max-text"><a href="{{ url('vadmin/catalogoimg/'.$item->id) }}">#{{ $item->id }} - {{ $item->name }}</a></td>
+								<td class="show-link max-text"><a href="{{ url('vadmin/catalogoimg/'.$item->id) }}">{{ $item->name }}</a></td>
 								{{--  DATE   --}}
 								<td class="w-200">{{ $item->category->name }}</td>
 								<td class="w-200">

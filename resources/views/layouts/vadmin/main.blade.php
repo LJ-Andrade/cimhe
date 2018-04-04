@@ -55,16 +55,20 @@
 				</div>	
 			</div>
 		</div>
-		<div class="main-copyright">
-			<div class="text">Desarrollado por <a href="https://vimana.studio">Vimana Studio</a></div>
-			<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"></a>
-		</div>
 		{{-- 
 		<footer class="footer footer-static footer-light navbar-border">
 			<p class="clearfix text-muted text-sm-center mb-0 px-2"><span class="float-md-left d-xs-block d-md-inline-block">Copyright  &copy; 2017 <a href="https://pixinvent.com" target="_blank" class="text-bold-800 grey darken-2">PIXINVENT </a>, All rights reserved. </span><span class="float-md-right d-xs-block d-md-inline-block">Hand-crafted & Made with <i class="icon-heart5 pink"></i></span></p>
 		</footer>
 		--}}
 
+		<div class="main-copyright">
+			<div class="inner pull-right">
+				<div class="text">Desarrollado por <a href="https://vimana.studio">Vimana Studio</a></div>
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">
+				<img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"></a>
+			</div>
+		</div>
 		<!-- BEGIN VENDOR JS-->
 		<script src="{{ asset('vadmin-ui/app-assets/js/core/libraries/jquery.min.js') }}" type="text/javascript"></script>
 		<script src="{{ asset('vadmin-ui/app-assets/vendors/js/ui/tether.min.js') }}" type="text/javascript"></script>
