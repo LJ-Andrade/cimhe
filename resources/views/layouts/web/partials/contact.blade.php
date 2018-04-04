@@ -76,7 +76,7 @@
 						</div>
 						<div class="divisor"></div>
 						<span class="text">Cel.: (011) 11-3488-0466</span> <br>
-						<span class="text">ID: 819*3226</span>
+						<span class="text">ID: 819*129</span>
 						<div class="divisor"></div>
 						<i class="ion-android-mail"></i>
 						<span class="text">hbalzamo@gmail.com</span>
