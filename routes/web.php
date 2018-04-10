@@ -10,6 +10,7 @@
 Route::get('/', function(){ return view('web/web'); });
 Route::get('profesionales', function(){ return view('web/profesionales'); });
 Route::get('laboratorio', function(){ return view('web/laboratorio'); });
+Route::get('wmail', function(){ return redirect('https://accounts.zoho.com/signin'); });
 
 /*
 |--------------------------------------------------------------------------

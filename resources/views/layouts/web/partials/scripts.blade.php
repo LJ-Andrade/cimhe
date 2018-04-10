@@ -20,7 +20,7 @@
             });
         } else {
         }
-   });
+    });
 
     $(document).on('submit','#MainContactForm',function(e){
         e.preventDefault();
