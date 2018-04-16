@@ -228,7 +228,7 @@ class WebController extends Controller
             $data = $request->all();
             $view = 'vadmin.components.mailWebContact';
 
-            Mail::to(["comercial@cimhe.com", "cimhe.tecnica@gmail.com", "javzero1@gmail.com"])->send(new WebContactMail($subject, $data, $view));
+            Mail::to(["comercial@cimhe.com", "cimhe.tecnica@gmail.com"])->send(new WebContactMail($subject, $data, $view));
 			
 			return response()->json(['response' => 1,
 									 'error'    => '0',
