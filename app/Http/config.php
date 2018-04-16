@@ -9,7 +9,7 @@
     // Test
     define('APP_EMAIL_TEST','info@vimana.studio');
     define('APP_EMAIL_TEST2','dev@vimana.studio');
-
+    define('APP_EMAIL_GMAIL','javzero1@gmail.com');
     //define('APP_EMAIL_1','info@vimana.studio');
     //define('APP_EMAIL_2','javzero1@gmail.com');
     //define('APP_EMAIL_3','javzero@hotmail.com');
