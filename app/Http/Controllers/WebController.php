@@ -218,6 +218,7 @@ class WebController extends Controller
 
 	public function mainContactMailSender(Request $request)
     {
+
 		try{
 			$contact = new Contact();
 			$contact->fill($request->all());
@@ -227,10 +228,11 @@ class WebController extends Controller
             $data = $request->all();
             $view = 'vadmin.components.mailWebContact';
 
-            Mail::to(APP_EMAIL_1, APP_EMAIL_4, APP_EMAIL_GMAIL, APP_EMAIL_TEST)->send(new WebContactMail($subject, $data, $view));
+            Mail::to(["comercial@cimhe.com", "cimhe.tecnica@gmail.com", "javzero1@gmail.com"])->send(new WebContactMail($subject, $data, $view));
 			
 			return response()->json(['response' => 1,
-									 'error'    => '0']); 
+									 'error'    => '0',
+									 'message'   => 'Mail sended']); 
 		} catch(Exception $e) {
 			return response()->json(['response' => 0,
 									 'error'    => $e]); 
@@ -248,7 +250,7 @@ class WebController extends Controller
             $data = $request->all();
             $view = 'vadmin.components.mailSuelosContact';
 
-			Mail::to([APP_EMAIL_1, APP_EMAIL_2, APP_EMAIL_2])->send(new WebContactMail($subject, $data, $view));
+			Mail::to(["cimhe.hys@gmail.com", "cimhe.tecnica@gmail.com"])->send(new WebContactMail($subject, $data, $view));
 			
 			return response()->json(['response' => 1,
 									 'error'    => '0']); 
@@ -269,7 +271,7 @@ class WebController extends Controller
             $data = $request->all();
             $view = 'vadmin.components.mailHormigonContact';
 
-			Mail::to([APP_EMAIL_1, APP_EMAIL_3, APP_EMAIL_4])->send(new WebContactMail($subject, $data, $view));
+			Mail::to(["cimhe.tecnica@gmail.com", "cimhe.contable@gmail.com", "comercial@cimhe.com"])->send(new WebContactMail($subject, $data, $view));
 			
 			return response()->json(['response' => 1,
 									 'error'    => '0']); 

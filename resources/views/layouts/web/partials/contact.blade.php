@@ -12,8 +12,8 @@
 		<div class="row inner">
 			<div class="col-md-12 contact-form">
 				<div class="col-md-12 text-center">
-					<h1>Contactanos</h1>
-					{!! Form::open(['id' => 'MainContactForm', 'method' => 'POST']) !!}
+					{!! Form::open(['class' => 'MainContactForm', 'method' => 'POST']) !!}
+						<h1>Contactanos</h1>
 						<div class="col-md-6 left">
 							<div class="form-group">
 								{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'required']) !!}
@@ -33,8 +33,8 @@
 						</div>
 						<button type="submit" class="MainFormBtn btn btnBlue contactBtn">Enviar</button>
 					{!! Form::close() !!}
-					<div id="ResponsesMainContactForm">
-						<div id="FormResponse"></div>
+					<div class="ResponsesMainContactForm">
+						<div class="FormResponse"></div>
 						<div class="FormSuccess form-responses animated fadeIn text-center Hidden">
 							<i class="success ion-checkmark-round"></i>
 							<h2>Mensaje Enviado !</h2> 

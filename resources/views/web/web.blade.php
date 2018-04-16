@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4">
                     <div class="contact-form home-contact-form">
-                        {!! Form::open(['id' => 'MainContactForm', 'class' => '', 'method' => 'POST']) !!}
+                        {!! Form::open(['class' => 'MainContactFormHome', 'method' => 'POST']) !!}
                             <div class="form-group">
                                 {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'required']) !!}
                             </div>
@@ -47,8 +47,8 @@
                                 <button type="submit" class="MainFormBtn btn btnBlue contactBtn">Enviar</button>
                             </div>
                         {!! Form::close() !!}
-                        <div id="ResponsesMainContactForm">
-                            <div id="FormResponse"></div>
+                        <div class="ResponsesHomeContactForm">
+                            <div class="FormResponse"></div>
                             <div class="FormSuccess form-responses-home animated fadeIn text-center Hidden">
                                 <i class="success ion-checkmark-round"></i>
                                 <h2>Mensaje Enviado !</h2> 

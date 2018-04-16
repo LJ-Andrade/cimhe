@@ -22,12 +22,22 @@
         }
     });
 
-    $(document).on('submit','#MainContactForm',function(e){
+    $(document).on('submit','.MainContactFormHome',function(e){
         e.preventDefault();
         var data  = $(this).serialize();
         var route = "{{ url('main_contact_mailsender') }}";
-        var formdiv = $('#MainContactForm');
-        var responsediv = $('#ResponsesMainContactForm');
+        var formdiv = $('.MainContactFormHome');
+        var responsediv = $('.ResponsesHomeContactForm');
+        var contactBtn = $('.MainFormBtn');
+        send_mail(data, route, responsediv, formdiv, contactBtn);
+    });
+
+    $(document).on('submit','.MainContactForm',function(e){
+        e.preventDefault();
+        var data  = $(this).serialize();
+        var route = "{{ url('main_contact_mailsender') }}";
+        var formdiv = $('.MainContactForm');
+        var responsediv = $('.ResponsesMainContactForm');
         var contactBtn = $('.MainFormBtn');
         send_mail(data, route, responsediv, formdiv, contactBtn);
     });
@@ -60,6 +70,7 @@
 
     
     function send_mail(data, route, responsediv, formdiv, contactBtn){
+        
         var loader = '<div style="color: #fff; margin-left: 15px"> <img src="{{ asset("images/gral/loader-sm.svg") }}"/>  Enviando...</div>';
         var success = $('.FormSuccess');
         var error = $('.FormError');
@@ -73,13 +84,15 @@
                 contactBtn.html(loader);
             },
             success: function(data) {
-                formdiv.hide();
+                formdiv.addClass('Hidden');
                 responsediv.children('.FormSuccess').removeClass('Hidden');
+                //$('.ResponsesMainContactForm').children('.FormSuccess').removeClass('Hidden');
                 console.log(data);
             },
             error: function(data) {
-                formdiv.hide();
+                formdiv.addClass('Hidden');
                 responsediv.children('.FormError').removeClass('Hidden');
+                
                 //$('#Error').html(data.responseText);
                 console.log(data);
                 console.log(data.responseText);
