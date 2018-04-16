@@ -29,9 +29,9 @@
 						<div class="col-md-3">
 							<h2><i class="icon-star-full"></i> Imágen Destacada</h2>
 							@if($article->thumb != '')
-								<img class="Featured-Image-Container" src="{{ asset('webimages/catalogoimg/'.$article->thumb) }}">
+								<img class="Featured-Image-Container CheckImg" src="{{ asset('webimages/catalogoimg/'.$article->thumb) }}">
 							@else
-								<img class="Featured-Image-Container" src="{{ asset('webimages/main/gen/catalog-gen.jpg') }}">
+								<img class="Featured-Image-Container CheckImg" src="{{ asset('webimages/main/gen/catalog-gen.jpg') }}">
 							@endif
 						</div>
 						<div class="col-md-9">
@@ -41,7 +41,7 @@
 							<ul>
 								@foreach($article->images->reverse() as $image)
 								<li id="Img{{ $image->id }}">	
-									<img src="{{ asset('webimages/catalogoimg/'.$image->name) }}">
+									<img src="{{ asset('webimages/catalogoimg/'.$image->name) }}" class="CheckImg">
 									<div class="overlayItemCenter">
 										<i class="Delete-Product-Img icon-ios-trash-outline delete-img" data-imgid="{{ $image->id }}"></i>
 									</div>
