@@ -88,8 +88,13 @@ class UserController extends Controller
             return $items = User::searchname($query['name'])->orderBy('id', 'ASC')->get(); 
         }
 
-        if(isset($query['role']) || isset($query['group']) ){
+
+        if(isset($query['role']) && isset($query['group']) ){
             return $items = User::searchRoleGroup($query['role'], $query['group'])->orderBy('id', 'ASC')->get();
+        } elseif(isset($query['group'])){
+            return $items = User::searchRoleGroup($query['group'])->orderBy('id', 'ASC')->get();
+        } elseif(isset($query['role'])){
+            return $items = User::searchRoleGroup($query['role'])->orderBy('id', 'ASC')->get();
         } 
 
         $items = User::orderBy('id', 'ASC')->get(); 
@@ -129,7 +134,7 @@ class UserController extends Controller
         
         if($request->file('avatar') != null){
             $avatar   = $request->file('avatar');
-            $filename = $user->id.'.jpg';
+            $filename = $user->username.'.jpg';
             Image::make($avatar)->encode('jpg', 80)->fit(300, 300)->save(public_path('images/users/'.$filename));
             $user->avatar = $filename;
         }
@@ -176,7 +181,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
         if($request->file('avatar') != null){
             $avatar   = $request->file('avatar');
-            $filename = $user->id.'.jpg';
+            $filename = $user->username.'.jpg';
             Image::make($avatar)->encode('jpg', 80)->fit(300, 300)->save(public_path('images/users/'.$filename));
             $user->avatar = $filename;
         }
@@ -194,13 +199,11 @@ class UserController extends Controller
 
             $user     = User::findOrFail($request->id);
             $avatar   = $request->file('avatar');
-            $filename = $user->id.'.jpg';
+            $filename = $user->username.'.jpg';
             try{
                 Image::make($avatar)->encode('jpg', 80)->fit(300, 300)->save(public_path('images/users/'.$filename));
                 if ($user->avatar != "default.jpg") {
                     $path     = public_path('images/users/');
-                    //$lastpath = $user->avatar;
-                    //File::Delete($path . $lastpath);   
                 }
                 $user->avatar = $filename;
                 $user->save();
@@ -229,11 +232,13 @@ class UserController extends Controller
         } else {
             
             $ids = json_decode('['.str_replace("'",'"',$request->id).']', true);
-            
+            $path     = 'images/users/';
+
             if(is_array($ids)) {
                 try {
                     foreach ($ids as $id) {
                         $record = User::find($id);
+                        File::Delete(public_path($path . $record->username.'.jpg'));
                         $record->delete();
                     }
                     return response()->json([
@@ -248,6 +253,7 @@ class UserController extends Controller
             } else {
                 try {
                     $record = User::find($id);
+                    File::Delete(public_path($path . $record->username.'.jpg'));
                     $record->delete();
                         return response()->json([
                             'success'   => true,
