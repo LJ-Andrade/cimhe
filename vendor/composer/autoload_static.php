@@ -475,6 +475,7 @@ class ComposerStaticInitd57fe5ee6a41a2231a4da748f7ebdf3a
         'App\\Image' => __DIR__ . '/../..' . '/app/Image.php',
         'App\\Mail\\SendMail' => __DIR__ . '/../..' . '/app/Mail/SendMail.php',
         'App\\Mail\\WebContactMail' => __DIR__ . '/../..' . '/app/Mail/WebContactMail.php',
+        'App\\Notifications\\ResetPasswordNotification' => __DIR__ . '/../..' . '/app/Notifications/ResetPasswordNotification.php',
         'App\\Payment' => __DIR__ . '/../..' . '/app/Payment.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

@@ -74,6 +74,7 @@ return array(
     'App\\Image' => $baseDir . '/app/Image.php',
     'App\\Mail\\SendMail' => $baseDir . '/app/Mail/SendMail.php',
     'App\\Mail\\WebContactMail' => $baseDir . '/app/Mail/WebContactMail.php',
+    'App\\Notifications\\ResetPasswordNotification' => $baseDir . '/app/Notifications/ResetPasswordNotification.php',
     'App\\Payment' => $baseDir . '/app/Payment.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
