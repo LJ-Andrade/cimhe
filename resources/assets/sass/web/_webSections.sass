@@ -129,6 +129,10 @@
 		font-weight: 400
 	img
 		width: 200px
+	.owl-carousel .item img
+		width: auto
+		margin-right: 20px
+		float: left
 
 //--------- PROFESIONALES ------------- //
 .profesionales-section-1
@@ -192,6 +196,53 @@
 			margin-bottom: 20px
 			justify-content: left
 
+//--------- CIMHE SAS ------------- //
+.ing-ases-inpec
+	background: url(../webimages/cimhesas/fondo.jpg)
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center center
+	position: relative
+	padding: 80px 10px 110px
+	text-align: center
+	.horiz-items .inner
+		display: block
+		text-align: left
+		margin-bottom: 20px
+	h1
+		font-size: 3.5rem
+		color: #fff
+		margin-bottom: 40px
+	.horiz-items
+		p
+			color: #fff
+
+.capacitaciones
+	background: url(../webimages/cimhesas/fondo-2.jpg)
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center center
+	position: relative
+	padding: 80px 10px 110px
+	text-align: center
+	.horiz-items .inner
+		display: block
+		text-align: left
+		margin-bottom: 20px
+	h1
+		font-size: 3.5rem
+		color: $color1
+		margin-bottom: 40px
+	.horiz-items .inner
+		@include flex-column
+		p
+			color: $color1
+			font-weight: 600
+		img
+			filter: invert(1)
+
+.servicios-de-contratacion
+	padding: 25px 10px
 ////////////////////////////////////////
 //                                    //
 //              CONTACT               //

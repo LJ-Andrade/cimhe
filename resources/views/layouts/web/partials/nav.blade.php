@@ -40,7 +40,15 @@
                 @else
                     <li><a href="{{ url('/') }}">INICIO</a></li>    
                 @endif
-                <li class="{{ Menu::activeMenu('laboratorio') }}"><a href="{{ url('laboratorio') }}">LABORATORIO</a></li>
+                <li class="{{ Menu::activeMenu('laboratorio') }}"><a href="{{ url('laboratorio') }}">LABORATORIO - Old</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SERVICIOS <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="{{ Menu::activeMenu('cimhe-sas') }}"><a href="{{ url('cimhe-sas') }}">CIMHE SAS</a></li>
+                        <li class="{{ Menu::activeMenu('geotecnica') }}"><a href="{{ url('geotecnica') }}">GEOTÉCNICA</a></li>
+                        <li class="{{ Menu::activeMenu('insumos') }}"><a href="{{ url('insumos') }}">INSUMOS</a></li>
+                    </ul>
+                </li>
                 <li class="{{ Menu::activeMenu('profesionales') }}"><a href="{{ url('profesionales') }}">PROFESIONALES</a></li>
                 <li class="{{ Menu::activeMenu('galeria') }}"><a href="{{ url('galeria') }}">FOTOS</a></li>
                 <li class="{{ Menu::activeMenu('noticias') }}"><a href="{{ url('noticias') }}">NOTICIAS</a></li>

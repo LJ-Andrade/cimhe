@@ -104,6 +104,11 @@ $red1: rgb(235, 87, 87)
 	border-radius: 0
 	@include transition(0.3s)
 
+
+
+.btnXL
+	padding: 14px 40px
+
 .btnGreen
 	background-color: rgb(73, 164, 98)
 	margin: 2px 2px
@@ -119,6 +124,17 @@ $red1: rgb(235, 87, 87)
 	&:hover,&:active,&:focus
 		background-color: $color1
 		color: #fff
+
+.btnBlueDark
+	background-color: #00c9ef
+	margin: 2px 2px
+	font-size: 1.7rem
+	color: #000
+	font-family: $font2
+	&:hover,&:active,&:focus
+		background-color: $color1
+		color: #fff
+
 .btnRed
 	background-color: rgb(207, 86, 83)
 	margin: 2px 2px
@@ -408,7 +424,7 @@ $red1: rgb(235, 87, 87)
 	position: relative
 
 .softhr
-    border-top: 1px solid rgba(238, 238, 238, 0.48)
+	border-top: 1px solid rgba(238, 238, 238, 0.48)
 
 .shorthr
 	border-top: 2px solid #fff
@@ -751,6 +767,26 @@ $red1: rgb(235, 87, 87)
 			margin-top: 5px
 			padding-left: 40px
 
+
+.text-with-preimg
+	position: relative
+	.pre-img
+		position: absolute
+		left: 0
+		top: 0
+		max-width: 50px
+		@include flex-center
+		height: 100%
+	.text-offset
+		padding-left: 50px
+		font-weight: 300
+
+.medium-text
+	font-size: 1.4rem
+	font-weight: 400
+	line-height: 1.5rem
+
+
 //////////////////////////////////////
 //                                  //
 //             FIXES                //
@@ -927,6 +963,20 @@ $red1: rgb(235, 87, 87)
 @media (max-width: 300px)
 	.simple-slider
 		display: none
+
+
+.swiper-slide
+	text-align: left
+	padding: 0 55px
+	.text 
+		margin-top: 10px
+		p
+			font-size: 1.2rem
+			font-weight: 400
+	.left-image
+		max-width: 112px
+		float: left
+		margin-right: 10px
 
 //////////////////////////////////////
 //                                  //

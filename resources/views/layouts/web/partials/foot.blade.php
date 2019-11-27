@@ -16,6 +16,6 @@
 </div>
 <footer class="container-fluid">
 	<div class="container">
-		Desarrollado por <a href="https://vimana.studio">Vimana Studio</a> | {{ date('Y') }}
+		Desarrollado por <a href="https://vimanastudio.com.ar" target="_blank">Vimana Studio</a> | {{ date('Y') }}
 	</div>
 </footer>

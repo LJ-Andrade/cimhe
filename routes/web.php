@@ -10,8 +10,10 @@
 Route::get('/', function(){ return view('web/web'); });
 Route::get('profesionales', function(){ return view('web/profesionales'); });
 Route::get('laboratorio', function(){ return view('web/laboratorio'); });
+Route::get('cimhe-sas', function(){ return view('web/cimhesas'); });
+Route::get('geotecnica', function(){ return view('web/geotecnica'); });
+Route::get('insumos', function(){ return view('web/insumos'); });
 Route::get('wmail', function(){ return redirect('https://accounts.zoho.com/signin'); });
-
 /*
 |--------------------------------------------------------------------------
 | Store
@@ -79,6 +81,7 @@ Route::group(['prefix'=> 'tienda'], function() {
 | Web / Blog y Galería
 |--------------------------------------------------------------------------
 */
+
 
 Route::get('noticias', ['as' => 'web.portfolio', 'uses' => 'WebController@portfolio']);
 // Show Article / Catalogue
