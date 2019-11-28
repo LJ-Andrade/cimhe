@@ -12,7 +12,7 @@
 				</div>
 				<hr class="shorthr">
 				<div class="clearfix"></div>
-				<button class="btn btnXL btnBlueDark">Ir a Servicios</button>
+				<a href="{{ url('cimhe-sas') }}" class="btn btnXL btnBlueDark">Ir a Servicios</a>
 			</div>	
 		</div>
 	</div>

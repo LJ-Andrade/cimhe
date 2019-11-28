@@ -126,6 +126,11 @@
 
 @section('custom_js')
 	<script>
+        $( document ).ready(function() {
+			$('.MainOwlSlider').trigger('to.owl.carousel', 0);
+		});
+
+
 		$('.SliderOwlSmall').owlCarousel({
 			loop: true,
 			margin: 10,

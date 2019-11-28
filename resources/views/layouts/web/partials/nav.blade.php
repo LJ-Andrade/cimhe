@@ -40,7 +40,7 @@
                 @else
                     <li><a href="{{ url('/') }}">INICIO</a></li>    
                 @endif
-                <li class="{{ Menu::activeMenu('laboratorio') }}"><a href="{{ url('laboratorio') }}">LABORATORIO - Old</a></li>
+                {{-- <li class="{{ Menu::activeMenu('laboratorio') }}"><a href="{{ url('laboratorio') }}">LABORATORIO - Old</a></li> --}}
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SERVICIOS <span class="caret"></span></a>
                     <ul class="dropdown-menu">

@@ -172,7 +172,7 @@
 				<div class="container">
 					<div class="row">
 						<span class="text">Descarga nuestro catálogode productos <br> para laboratorio</span>
-						<a href="{{ url('#contacto')}}" class="btn btnWhiteMedium">Descargar</a>
+						<a href="https://cimhe.com/downloads/venta-de-insumos-para-laboratorio.pdf" class="btn btnWhiteMedium"><i class="ion-archive"></i> Descargar</a>
 					</div>
 				</div>	
 			</section>
