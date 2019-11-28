@@ -188,7 +188,7 @@
 					{{-- EndSlider --}}
 				</div>
 				<div class="col-md-6 enum-items-col">
-					<h2>Servicios de contrastacion en fuerza y masa. Prensa de ensayos, celdas de carga y balanza.</h2>
+					<h2>Servicios de contrastación en fuerza y masa. Prensa de ensayos, celdas de carga y balanza.</h2>
 					<div class="item">
 						<img src="{{ asset('webimages/main/punto.png') }}" alt="">
 						<p>Exploración en Hormigones Con Tecnología GPR (Ground Penetration Radar) 
@@ -207,20 +207,9 @@
 
 			<div class="row">
 				<div class="col-md-6 enum-items-col">
-					<h2>Servicios de contrastacion en fuerza y masa. Prensa de ensayos, celdas de carga y balanza.</h2>
-					<div class="item">
-						<img src="{{ asset('webimages/main/punto.png') }}" alt="">
-						<p>Exploración en Hormigones Con Tecnología GPR (Ground Penetration Radar) 
-						y Face Array Hasta 1.20 mts de Profundidad</p>
-					</div>
-					<div class="item">
-						<img src="{{ asset('webimages/main/punto.png') }}" alt="">
-						<p>Verificación y/o contrastación de celdas de carga a ser usadas axialmente en compresión</p>
-					</div>
-					<div class="item">
-						<img src="{{ asset('webimages/main/punto.png') }}" alt="">
-						<p>Verificación de Gatos Hidráulicos para ensayos de carga, tensión de anclajes. Veriﬁcación de Balanzas Electrónicas</img>
-					</div>
+					<h2>Exploración en hormigones <br> 
+						con tecnología GPR <br> (Ground Penetration Radar)<br> 
+						 y Face Array hasta 1.20mts de profundidad</h2>
 				</div>
 				<div class="col-md-6">
 					{{-- Slider --}}

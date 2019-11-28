@@ -3,7 +3,7 @@
 		<ul>
 			<li><a href="https://www.facebook.com/CIMHE-SRL-1915074345372139/" target="_blank">
 				<img src="{{ asset('webimages/main/redes1.png') }}" alt=""></li></a>
-			<li><a href="https://www.instagram.com/cimhesrl/" target="_blank">
+			<li><a href="https://www.instagram.com/cimhe_srl/" target="_blank">
 				<img src="{{ asset('webimages/main/redes2.png') }}" alt=""></li></a>
 			<li><a href="#" target="_blank">
 				<img src="{{ asset('webimages/main/redes3.png') }}" alt=""></li></a>

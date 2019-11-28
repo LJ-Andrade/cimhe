@@ -115,7 +115,6 @@
 					<img src="{{ asset('webimages/main/contacto2.png') }}" alt="">
 					<p>
 						hbalzamo@gmail.com <br>
-						contable@cimhe.com <br>
 					</p>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-12 inner">

@@ -8,7 +8,7 @@
 				<h2>Ciencia e Ingeniería Móvil del Hormigón Elaborado</h2>
 				<div class="title">
 					Laboratorio de Ensayos <br>
-					Hormigón y Suelos
+					de Hormigón
 				</div>
 				<hr class="shorthr">
 				<div class="clearfix"></div>
@@ -29,7 +29,7 @@
 				</div>
 				<hr class="shorthr">
 				<div class="clearfix"></div>
-				<button class="btn btnXL btnBlueDark">Ir a Servicios</button>
+				<a href="{{ url('insumos') }}" class="btn btnXL btnBlueDark">Ir a Servicios</a>
 			</div>
 		</div>
 	</div>
@@ -39,13 +39,13 @@
 			<div class="container">
 				<img style="width: auto" src="{{ asset('webimages/home/logo.jpg') }}" alt="">
 				<br><br>
-				<h2>Cimhe Geotecnica S.A.S.</h2>
+				<h2>Cimhe Geotécnica S.A.S.</h2>
 				<div class="title">
 					Laboratorio de Suelos <br> y Ensayos Especiales
 				</div>
 				<hr class="shorthr">
 				<div class="clearfix"></div>
-				<button class="btn btnXL btnBlueDark">Ir a Servicios</button>
+				<a href="{{ url('geotecnica') }}" class="btn btnXL btnBlueDark">Ir a Servicios</a>
 			</div>
 		</div>
 	</div>
