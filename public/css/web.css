@@ -119,6 +119,19 @@
   color: #fff;
 }
 
+.btnDark {
+  background-color: #00122d;
+  margin: 2px 2px;
+  font-size: 1.7rem;
+  color: #fff;
+  font-family: "Arvo", serif;
+}
+
+.btnDark:hover, .btnDark:active, .btnDark:focus {
+  background-color: #00c9ef;
+  color: #000;
+}
+
 .btnBlueDark {
   background-color: #00c9ef;
   margin: 2px 2px;
@@ -293,6 +306,18 @@
 
 .btnHollowSmall a {
   color: black;
+}
+
+.btnWhiteMedium {
+  background-color: #fff;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.btnWhiteMedium:hover {
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+  color: #000;
 }
 
 .tag {
@@ -1085,6 +1110,63 @@
   opacity: 1;
 }
 
+.main-slider {
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.main-slider .slider-cimhe {
+  background: url(../webimages/slider/banner-cimhe.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.main-slider .slider-geotermica {
+  background: url(../webimages/slider/banner-geotermica.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.main-slider .slider-insumos {
+  background: url(../webimages/slider/banner-insumos.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.main-slider .slider-inner {
+  padding: 90px 60px 60px;
+}
+
+.main-slider .slider-inner h2 {
+  display: inline;
+  background-color: #fff;
+  padding: 15px;
+  font-family: "Arvo", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.main-slider .slider-inner .h2 {
+  display: none;
+}
+
+.main-slider .slider-inner .title {
+  margin-top: 25px;
+  font-family: "Arvo", serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.main-slider .slider-inner .text {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #fff;
+}
+
 .simple-slider {
   position: relative;
   overflow: hidden;
@@ -1866,6 +1948,49 @@ ul {
 
 .servicios-de-contratacion {
   padding: 25px 10px;
+}
+
+/* INSUMOS */
+.laboratorio-mobil {
+  background: url(../webimages/cimhesas/fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 60px 20px;
+}
+
+.laboratorio-mobil h2 {
+  margin-top: 50px;
+  color: #fff;
+}
+
+.laboratorio-mobil .btn {
+  font-family: "Arvo", serif;
+}
+
+.fab-prens {
+  padding: 20px 10px;
+}
+
+.fab-prens .btn {
+  font-size: 1.2rem;
+}
+
+.fab-prens .text-content {
+  padding-top: 10px;
+}
+
+.download-catalog {
+  color: #fff;
+  padding: 25px 5px;
+}
+
+.download-catalog .text {
+  margin-right: 20px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: "Arvo", serif;
+  float: left;
 }
 
 .contact-section {

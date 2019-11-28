@@ -90,7 +90,7 @@
 						</div>
 						<div class="divisor"></div>
 						<span class="text">Cel.: 11 55 79 45 92</span> <br>
-						<span class="text">Cel.:+58 414 014 00 75</span>
+						<br>
 						<div class="divisor"></div>
 						<i class="ion-android-mail"></i>
 						<span class="text">cimhe.hys@gmail.com</span>

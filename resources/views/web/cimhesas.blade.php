@@ -8,16 +8,15 @@
 @endsection
 
 @section('content')
-    <div class="top-space"></div>
-    {{-- Main Section --}}
-    <section class="main-home">
-		<div class="container inner">
-			<div class="row">
-				@include('web.main-slider')
-			</div>
-		</div>
-	</section>
+	<div class="top-space"></div>
 	
+    {{-- Main Slider --}}
+    <div class="container-fluid main-slider">
+		<div class="row">
+			@include('web.main-slider')
+		</div>
+	</div>
+
 	<section class="small-section grey-back">
 		<div class="container enum-items-col">
 			<div class="row">
@@ -180,7 +179,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					{{-- Slider --}}
-					<div class="owl-carousel owl-theme">
+					<div class="SliderOwlSmall owl-carousel owl-theme">
 						<div class="item"><img src="{{ asset('webimages/cimhesas/slider1-a.jpg') }}" alt=""></div>
 						<div class="item"><img src="{{ asset('webimages/cimhesas/slider1-b.jpg') }}" alt=""></div>
 						<div class="item"><img src="{{ asset('webimages/cimhesas/slider1-c.jpg') }}" alt=""></div>
@@ -225,7 +224,7 @@
 				</div>
 				<div class="col-md-6">
 					{{-- Slider --}}
-					<div class="owl-carousel owl-theme">
+					<div class="SliderOwlSmall owl-carousel owl-theme">
 						<div class="item"><img src="{{ asset('webimages/cimhesas/slider2-a.jpg') }}" alt=""></div>
 						<div class="item"><img src="{{ asset('webimages/cimhesas/slider2-b.jpg') }}" alt=""></div>
 						<div class="item"><img src="{{ asset('webimages/cimhesas/slider2-c.jpg') }}" alt=""></div>
@@ -249,7 +248,7 @@
 
 @section('custom_js')
 	<script>
-		$('.owl-carousel').owlCarousel({
+		$('.SliderOwlSmall').owlCarousel({
 			loop: true,
 			margin: 10,
 			nav: false,

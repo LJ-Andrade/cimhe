@@ -125,6 +125,15 @@ $red1: rgb(235, 87, 87)
 		background-color: $color1
 		color: #fff
 
+.btnDark
+	background-color: $color1
+	margin: 2px 2px
+	font-size: 1.7rem
+	color: #fff
+	font-family: $font2
+	&:hover,&:active,&:focus
+		background-color: #00c9ef
+		color: #000
 .btnBlueDark
 	background-color: #00c9ef
 	margin: 2px 2px
@@ -255,6 +264,15 @@ $red1: rgb(235, 87, 87)
 	margin-bottom: 5px
 	a
 		color: black
+
+.btnWhiteMedium
+	background-color: #fff
+	font-size: 1.2rem
+	color: #000
+	&:hover
+		filter: brightness(0.8)
+		color: #000
+
 
 //////////////////////////////////////
 //                                  //
@@ -916,8 +934,47 @@ $red1: rgb(235, 87, 87)
 		.swiper-button-prev,.swiper-button-next
 			opacity: 1
 	
-
 /////////// Home Slider ////////////////
+
+.main-slider
+	padding: 0
+	background-color: #f9f9f9
+	.slider-cimhe
+		background: url(../webimages/slider/banner-cimhe.jpg)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+	.slider-geotermica
+		background: url(../webimages/slider/banner-geotermica.jpg)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+	.slider-insumos
+		background: url(../webimages/slider/banner-insumos.jpg)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+	.slider-inner
+		padding: 90px 60px 60px
+		h2
+			display: inline
+			background-color: #fff
+			padding: 15px
+			font-family: $font2
+			font-size: 1.6rem
+			font-weight: 600
+		.h2
+			display: none
+		.title
+			margin-top: 25px
+			font-family: $font2
+			font-size: 3rem
+			font-weight: 600
+			color: #fff
+		.text
+			font-size: 1.3rem
+			font-weight: 400
+			color: #fff
 
 .simple-slider
 	position: relative
@@ -976,7 +1033,10 @@ $red1: rgb(235, 87, 87)
 	.left-image
 		max-width: 112px
 		float: left
-		margin-right: 10px
+		margin-right: 10px 
+		
+
+
 
 //////////////////////////////////////
 //                                  //

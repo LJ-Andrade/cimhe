@@ -9,12 +9,18 @@
 
 @section('content')
     <div class="top-space"></div>
-    {{-- Main Section --}}
-    <section class="main-home">
+    
+    {{-- Main Slider --}}
+    <div class="container-fluid main-slider">
+        <div class="row">
+            @include('web.main-slider')
+        </div>
+    </div>
+    
+      {{-- <section class="main-home">
         <div class="container inner">
             <div class="row">
-                @include('web.main-slider')
-               {{--  <div class="col-lg-3 col-md-4">
+              <div class="col-lg-3 col-md-4">
                     <div class="contact-form home-contact-form">
                         {!! Form::open(['class' => 'MainContactFormHome', 'method' => 'POST']) !!}
                             <div class="form-group">
@@ -51,9 +57,9 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div> 
             </div>
-        </div>
+        </div>--}}
     </section>
 
     {{-- First Info --}}
@@ -87,7 +93,7 @@
     <section class="container-fluid section section-container home-section-4">
         <div class="container">
             <div class="row">
-                <div class="owl-carousel owl-theme">
+                <div class="SliderOwlSmall owl-carousel owl-theme">
                     <div class="item">
                         <img class="left-image" img src="{{ asset('webimages/home/logo-icon.jpg') }}" alt="">
                         <div class="text">
@@ -120,7 +126,7 @@
 
 @section('custom_js')
 	<script>
-		$('.owl-carousel').owlCarousel({
+		$('.SliderOwlSmall').owlCarousel({
 			loop: true,
 			margin: 10,
 			nav: true,
