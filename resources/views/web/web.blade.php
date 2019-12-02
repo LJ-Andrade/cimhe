@@ -97,11 +97,56 @@
                     <div class="item">
                         <img class="left-image" img src="{{ asset('webimages/home/logo-icon.jpg') }}" alt="">
                         <div class="text">
-                        <h2>Reactor Nuclear Carem</h2>
+                            <h2>Reactor Nuclear Carem</h2>
+                            <p>
+                                CIMHE S.R.L. instala laboratorio móvil en la Provincia de Santa Cruz, Pico Truncado.
+                                Se ejecutan trabajos de control de Hormigones y Suelos en el Parque Eólico Vientos Los Hércules, empresa Prodiel
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-1.jpg') }}" alt="">
+                        <div class="text">
+                        <h2>CIMHE</h2>
                         <p>
-                            CIMHE S.R.L. instala laboratorio móvil en la Provincia de Santa Cruz, Pico Truncado.
-                            Se ejecutan trabajos de control de Hormigones y Suelos en el Parque Eólico Vientos Los Hércules, empresa Prodiel
+                            forma parte de la Asociación Argentina del Hormigón Elaborado
                         </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-2.jpg') }}" alt="">
+                        <div class="text">
+                            <h2>CIMHE SRL</h2>
+                            <p>
+                                Instala Laboratorio Móvil en la Provincia de Santa Cruz, Pico Truncado. Se ejecutan trabajos de control de Hormigones y Suelos en el Parque Eólico Vientos Los Hércules, Empresa Prodiel.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-2.jpg') }}" alt="">
+                        <div class="text">
+                            <h2>CIMHE SRL</h2>
+                            <p>
+                                Instala Laboratorio Móvil en Bahía Blanca. Se ejecutan trabajos de control de Hormigones y Suelos en el Parque Eólico Vientos Del Secano y García del Rio, Empresa Prodiel.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-3.jpg') }}" alt="">
+                        <div class="text">
+                            <h2>CIMHE SRL</h2>
+                            <p>
+                                Nuestra Empresa se mantiene en sistema de evaluación constante y es asesorada por Andersen Ingeniería en términos de gestión.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-4.jpg') }}" alt="">
+                        <div class="text">
+                            <h2>CIMHE SRL</h2>
+                            <p>
+                                Grupo CIMHE, Invierte e incursiona en nuevos servicios, Instalación de Prensa para Ensayos a Tracción de Aceros y Polímeros, Georadares para la Evaluación de Estructuras de Hormigón 
+                            </p>
                         </div>
                     </div>
                 </div>
