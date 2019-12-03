@@ -4,17 +4,14 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>@yield('title')</title>
-
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="-" />
-		<meta name="keywords" content="-" />
+		<meta name="description" content="CIMHE y su grupo de organizaciones orientan sus servicios en materia de ensayos de laboratorio de hormigones, suelos y todos los materiales relacionados con obras civiles, incluyendo además la fabricación y comercialización de equipos para tal ﬁn. Nuestro grupo de empresas se inicia con CIMHE SRL habiendo orientado su objeto inicialmente en temas tecnología y control de Hormigones Elaborados. Seguidamente en búsque- da de crecimiento y producto de la demanda de servicios especiales, geotecnia, y equipos, se crean las derivaciones SAS Geotécnica e Insumos que ahora dirigimos y promocionamos en conjunto." />
+		<meta name="keywords" content="CIMHE y su grupo de organizaciones orientan sus servicios en materia de ensayos de laboratorio de hormigones, suelos y todos los materiales relacionados con obras civiles, incluyendo además la fabricación y comercialización de equipos para tal ﬁn. Nuestro grupo de empresas se inicia con CIMHE SRL habiendo orientado su objeto inicialmente en temas tecnología y control de Hormigones Elaborados. Seguidamente en búsque- da de crecimiento y producto de la demanda de servicios especiales, geotecnia, y equipos, se crean las derivaciones SAS Geotécnica e Insumos que ahora dirigimos y promocionamos en conjunto." />
 		<meta name="author" content="Vimana Studio" />
-
 		<meta name="theme-color" content="#0d1d41"><!-- Chrome, Firefox OS and Opera -->
 		<meta name="msapplication-navbutton-color" content="#0d1d41"><!-- Windows Phone -->
 		<meta name="apple-mobile-web-app-status-bar-style" content="#0d1d41"><!-- iOS Safari -->
 		<link rel="shortcut icon" href="{{ asset('webimages/main/punto.png') }}"><!-- Favicon -->
-
 		{{-- <meta property="og:url"         content="http://vimana.studio" />
 		<meta property="og:type"        content="article" />
 		<meta property="og:title"       content="Diseño Web y Diseño Gráfico" />
@@ -30,7 +27,6 @@
 		<link rel="stylesheet" async  type="text/css" href="{{ asset('plugins/ionicons/ionicons.min.css') }}"> 
 		@yield('styles')
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/web.css') }}">
-
 	</head>
 	<body>
 		<header>

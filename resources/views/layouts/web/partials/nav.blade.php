@@ -1,5 +1,3 @@
-
-
 <div class="navbar navbar-default navbar-fixed-top text-center" role="navigation">        
     <div class="container-fluid main-header">
         <div class="container">
@@ -41,7 +39,7 @@
                     <li><a href="{{ url('/') }}">INICIO</a></li>    
                 @endif
                 {{-- <li class="{{ Menu::activeMenu('laboratorio') }}"><a href="{{ url('laboratorio') }}">LABORATORIO - Old</a></li> --}}
-                <li class="dropdown">
+                <li class="dropdown {{ Menu::activeMenu('cimhe-sas')}} {{ Menu::activeMenu('geotecnica') }} {{  Menu::activeMenu('insumos') }}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SERVICIOS <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li class="{{ Menu::activeMenu('cimhe-sas') }}"><a href="{{ url('cimhe-sas') }}">CIMHE SAS</a></li>

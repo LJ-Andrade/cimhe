@@ -129,10 +129,15 @@
 		font-weight: 400
 	img
 		width: 200px
-	.owl-carousel .item img
-		width: auto
-		margin-right: 20px
-		float: left
+	.owl-carousel 
+		.item 
+			img
+				width: auto
+				margin-right: 20px
+				float: left
+	.owl-carousel .item
+		@include flex-center
+
 
 //--------- PROFESIONALES ------------- //
 .profesionales-section-1
@@ -269,12 +274,23 @@
 .download-catalog
 	color: #fff
 	padding: 25px 5px
+	.container .row
+		@include flex-center
 	.text
 		margin-right: 20px
 		font-size: 1.4rem
 		font-weight: 400
 		font-family: $font2
 		float: left
+	.button
+
+@media (max-width: 768px)
+	.download-catalog
+		.container .row
+			@include flex-column
+			text-align: center
+			span
+				margin-bottom: 10px
 
 ////////////////////////////////////////
 //                                    //

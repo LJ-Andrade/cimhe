@@ -71,33 +71,32 @@
                 </div>  
 
                 <div class="inner">
-                    <?php $items =  array(
-
-                                    'Estudios técnicos - económicos sobre hormigones y sus materiales componentes.',
-                                    'Durabilidad. Acciones internas y externas.',
-                                    'Cambios volumétricos.',
-                                    'Ensayos no destructivos. Esclerometría IRAM 1694 y Ultrasonido IRAM 1683.',
-                                    'Extracción de Testigos.',
-                                    'Detección de armaduras de refuerzo en estructuras de hormigón.',
-                                    'Ensayo a Flexión de vigas.',
-                                    'Asistencia y toma de Probetas  en obra.',
-                                    'Almacenamiento en pileta de curado controlada por temperatura de probetas de hormigón. ',
-                                    'Figuración en estructuras.',
-                                    'Estudios especiales e investigaciones.',
-                                    'Instalación y operación de laboratorios de obra.',
-                                    'Ensayos de penetración de agua bajo presión Norma IRAM 1554.',
-                                    'Ensayos de succión capilar Norma IRAM 1871',
-                                    'Ensayos de pilotes. Marca PILETEST Modelo PET Eco.',
-                                    'Desarrollo de distintas dosificaciones de hormigones. ',
-                                    'Desarrollo de piso sin junta (Hasta 1500 m2)'
-                                ); 
-                    foreach($items as $item){
-                    ?>
-                    <div class="col-md-4 item">
-                        <img src="webimages/main/punto.png" alt="">
-                        <p>{{ $item }}</p>
-                    </div> 
-                    <?php } unset($items); ?>
+                    @php $items =  array(
+                            'Estudios técnicos - económicos sobre hormigones y sus materiales componentes.',
+                            'Durabilidad. Acciones internas y externas.',
+                            'Cambios volumétricos.',
+                            'Ensayos no destructivos. Esclerometría IRAM 1694 y Ultrasonido IRAM 1683.',
+                            'Extracción de Testigos.',
+                            'Detección de armaduras de refuerzo en estructuras de hormigón.',
+                            'Ensayo a Flexión de vigas.',
+                            'Asistencia y toma de Probetas  en obra.',
+                            'Almacenamiento en pileta de curado controlada por temperatura de probetas de hormigón. ',
+                            'Figuración en estructuras.',
+                            'Estudios especiales e investigaciones.',
+                            'Instalación y operación de laboratorios de obra.',
+                            'Ensayos de penetración de agua bajo presión Norma IRAM 1554.',
+                            'Ensayos de succión capilar Norma IRAM 1871',
+                            'Ensayos de pilotes. Marca PILETEST Modelo PET Eco.',
+                            'Desarrollo de distintas dosificaciones de hormigones. ',
+                            'Desarrollo de piso sin junta (Hasta 1500 m2)'
+                        ); 
+                    @endphp
+                    @foreach($items as $item)
+                        <div class="col-md-4 item">
+                            <img src="webimages/main/punto.png" alt="">
+                            <p>{{ $item }}</p>
+                        </div> 
+                    @endforeach
                 </div>
             </div>  
             <div class="row">
@@ -135,29 +134,26 @@
                     <hr>
                 </div>  
                 <div class="inner">
-                    <?php $items =  array(
+                    @php
+                        $items =  array(
                                     'Exploraciones geotécnicas en sitio a través del Standar Penetration Test. (SPT), Determinación de capacidades y deformaciones admisibles del suelo para fundación de estructuras. Perfiles Geotécnicos del Suelo.',
                                     'Ensayos de plato de carga',
                                     'Sondeos superficiales para infraestructura de pavimento. DCP',
                                     'Determinacion de densidades en sitio, controles de compactacion de rellenos.',
                                     'Resistividad en Suelos'
                                 ); 
-                    foreach($items as $item){
-                    ?>
-                    <div class="col-md-4 item">
-                        <img src="webimages/main/punto.png" alt="">
-                        <p>{{ $item }}</p> 
-                    </div> 
-                    <?php } unset($items); ?>
+                    @endphp
+                    @foreach($items as $item)
+                        <div class="col-md-4 item">
+                            <img src="webimages/main/punto.png" alt="">
+                            <p>{{ $item }}</p> 
+                        </div> 
+                    @endforeach
                 </div>
             </div>
-
-
         </div>
     </section>
-
     @include('layouts.web.partials.contact')
-
     @include('layouts.web.partials.foot')
 @endsection
 
@@ -165,10 +161,4 @@
     <script type="text/javascript" src="{{ asset('plugins/parallax/parallax.min.js') }}"></script>
     {{-- Slider --}}
     <script type="text/javascript" src="{{ asset('plugins/swiper-slider/swiper.jquery.min.js') }}"></script>
-@endsection
-
-@section('custom_js')
-<script>    
-
-</script>
 @endsection

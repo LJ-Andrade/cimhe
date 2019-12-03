@@ -32,7 +32,7 @@ var mySwiper = new Swiper('.swiper-container', {
 
 $('.Show-Mobile-Filter').click(function(){
             
-	var filter = $('.Fiter-Inner');
+	let filter = $('.Fiter-Inner');
 
 	if(filter.hasClass('Hidden')){
 		filter.removeClass('Hidden');

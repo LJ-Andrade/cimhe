@@ -93,7 +93,7 @@
 }
 
 .btnXL {
-  padding: 14px 40px;
+  padding: 6px 25px;
 }
 
 .btnGreen {
@@ -135,7 +135,7 @@
 .btnBlueDark {
   background-color: #00c9ef;
   margin: 2px 2px;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: #000;
   font-family: "Arvo", serif;
 }
@@ -965,7 +965,7 @@
 .medium-text {
   font-size: 1.4rem;
   font-weight: 400;
-  line-height: 1.5rem;
+  line-height: 1.7rem;
 }
 
 .anchor {
@@ -1143,7 +1143,8 @@
 .main-slider .slider-inner h2 {
   display: inline;
   background-color: #fff;
-  padding: 15px;
+  padding: 10px;
+  line-height: 3.5rem;
   font-family: "Arvo", serif;
   font-size: 1.6rem;
   font-weight: 600;
@@ -1786,6 +1787,19 @@ ul {
   float: left;
 }
 
+.home-section-4 .owl-carousel .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .profesionales-section-1 .inner {
   margin-bottom: 25px;
 }
@@ -1985,12 +1999,48 @@ ul {
   padding: 25px 5px;
 }
 
+.download-catalog .container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .download-catalog .text {
   margin-right: 20px;
   font-size: 1.4rem;
   font-weight: 400;
   font-family: "Arvo", serif;
   float: left;
+}
+
+@media (max-width: 768px) {
+  .download-catalog .container .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+  }
+  .download-catalog .container .row span {
+    margin-bottom: 10px;
+  }
 }
 
 .contact-section {

@@ -105,16 +105,16 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-1.jpg') }}" alt="">
+                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-1.png') }}" alt="">
                         <div class="text">
                         <h2>CIMHE</h2>
                         <p>
-                            forma parte de la Asociación Argentina del Hormigón Elaborado
+                            El grupo Cimhe forma parte de la Asociación Argentina del Hormigón Elaborado
                         </p>
                         </div>
                     </div>
                     <div class="item">
-                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-2.jpg') }}" alt="">
+                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-2.png') }}" alt="">
                         <div class="text">
                             <h2>CIMHE SRL</h2>
                             <p>
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-2.jpg') }}" alt="">
+                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-2.png') }}" alt="">
                         <div class="text">
                             <h2>CIMHE SRL</h2>
                             <p>
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-3.jpg') }}" alt="">
+                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-3.png') }}" alt="">
                         <div class="text">
                             <h2>CIMHE SRL</h2>
                             <p>
@@ -141,7 +141,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-4.jpg') }}" alt="">
+                        <img class="left-image" img src="{{ asset('webimages/home/logo-icon-4.png') }}" alt="">
                         <div class="text">
                             <h2>CIMHE SRL</h2>
                             <p>
@@ -153,15 +153,71 @@
             </div>  
         </div>
     </section>
+    <section class="maincolor-back download-catalog">
+        <div class="container">
+            <div class="row">
+                <span class="text">Descarga nuestro catálogode productos para laboratorio</span>
+                <a href="https://cimhe.com/downloads/insumos-para-plantas-y-mixer-de-hormigon.pdf" class="btn button btnWhiteMedium">
+                    <i class="ion-archive"></i> Descargar
+                </a>
+            </div>
+        </div>	
+    </section>
+    <section class="container-fluid section section-container home-section-4">
+        <div class="container">
+            <div class="row">
+                <div class="title text-center">
+                    <h1>Clientes</h1>
+                    <p>Algunas empresas para las cuales CIMHE S.R.L presta/ha prestado servicios</p>
+                </div>
+                <div class="SliderCustomers owl-carousel owl-theme">
+                    @php
+                        $items = array(
+                                    asset('webimages/main/logos1.png'),
+                                    asset('webimages/main/logos2.png'),
+                                    asset('webimages/main/logos3.png'),
+                                    asset('webimages/main/logos4.png'),
+                                    asset('webimages/main/logos5.png'),
+                                    asset('webimages/main/logos6.png'),
+                                    asset('webimages/main/logos7.png'),
+                                    asset('webimages/main/logos8.png'),
+                                    asset('webimages/main/logos9.png'),
+                                    asset('webimages/main/logos10.png'),
+                                    asset('webimages/main/logos11.png'),
+                                    asset('webimages/main/logos12.png'),
+                                    asset('webimages/main/logos14.png'),
+                                    asset('webimages/main/logos15.png'),
+                                    asset('webimages/main/logos16.png'),
+                                    asset('webimages/main/logos17.png'),
+                                    asset('webimages/main/logos18.png'),
+                                    asset('webimages/main/logos19.png'),
+                                    asset('webimages/main/logos20.png'),
+                                    asset('webimages/main/logos21.png'),
+                                    asset('webimages/main/logos22.png'),
+                                    asset('webimages/main/logos23.png'),
+                                    asset('webimages/main/logos24.png'),
+                                    asset('webimages/main/logos25.png'),
+                                    asset('webimages/main/logos26.png'),
+                                    asset('webimages/main/logos27.png'),
+                                    asset('webimages/main/logos28.png'),
+                                    asset('webimages/main/logos29.png')
+                                );
+                    @endphp
+                    @foreach($items as $item)
+                        <div class="item">
+                            <img style="max-width: 100%" src="{{ $item }}" alt="">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div> 
+    </section>
     @include('layouts.web.partials.contact')
     <section class="contact-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26265.016655206902!2d-58.552247088918456!3d-34.62622871030209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7e009360379%3A0x128a92ca4dd9f1b3!2sSan+Roque+2472%2C+B1703BCF+Jos%C3%A9+Ingenieros%2C+Buenos+Aires!5e0!3m2!1ses-419!2sar!4v1521251006319" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
     </section>
-        
     @include('layouts.web.partials.foot')
-
-    <div id="Error"></div>
-   
+    {{-- <div id="Error"></div> --}}
 @endsection
 
 
@@ -175,11 +231,28 @@
 			$('.MainOwlSlider').trigger('to.owl.carousel', 0);
 		});
 
+        
+        $('.SliderCustomers').owlCarousel({
+			loop: true,
+			margin: 10,
+			nav: false,
+			responsive:{
+				0:{
+					items: 2
+				},
+				600:{
+					items: 3 
+				},
+				1000:{
+					items: 5 
+				}
+			}
+		});
 
 		$('.SliderOwlSmall').owlCarousel({
 			loop: true,
 			margin: 10,
-			nav: true,
+			nav: false,
 			responsive:{
 				0:{
 					items:1

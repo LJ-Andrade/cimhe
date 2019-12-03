@@ -20,12 +20,6 @@ mix.sass('resources/assets/sass/web/web.sass', 'public/css')
     outputStyle: 'compressed'
 });
 
-// Store
-mix.sass('resources/assets/sass/store/store-custom.sass', 'public/css')
-.options({
-    processCssUrls: false,
-    outputStyle: 'compressed'
-});
 
 // Vadmin 
 //mix.js('resources/assets/js/vadmin-ui.js', 'public/js')
