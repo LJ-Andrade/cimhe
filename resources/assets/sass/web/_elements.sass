@@ -784,7 +784,13 @@ $red1: rgb(235, 87, 87)
 			font-weight: 400
 			margin-top: 5px
 			padding-left: 40px
+	.mh-100-desk
+		min-height: 100px
 
+@media (max-width: 1000px)
+	.enum-items-col
+		.mh-100-desk
+			min-height: auto
 
 .text-with-preimg
 	position: relative
@@ -967,7 +973,7 @@ $red1: rgb(235, 87, 87)
 		.h2
 			display: none
 		.title
-			margin-top: 25px
+			margin-top: 5px
 			font-family: $font2
 			font-size: 3rem
 			font-weight: 600
@@ -976,6 +982,21 @@ $red1: rgb(235, 87, 87)
 			font-size: 1.3rem
 			font-weight: 400
 			color: #fff
+
+@media (max-width: 768px)
+	.main-slider
+		.slider-inner 
+			.title,h2
+				font-size: 1.8rem
+
+@media (max-width: 500px)
+	.main-slider
+		.slider-inner 
+			padding: 20px
+			img
+				max-width: 100%
+			.title,h2
+				font-size: 1.2rem
 
 .simple-slider
 	position: relative

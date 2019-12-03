@@ -50,7 +50,7 @@
 					@endphp
 					<div class="row">
 						@foreach($items as $item)
-							<div class="col-md-4 item" style="min-height: 100px">
+							<div class="col-md-4 col-sm-12 item mh-100-desk" >
 								<img src="{{ asset('webimages/main/punto.png') }}" alt="">
 								<p>{{ $item }}</p>
 							
@@ -88,7 +88,7 @@
 				@endphp
 				<div class="row horiz-items">
 					@foreach($items as $item)
-						<div class="col-md-4 col-xs-12 inner">
+						<div class="col-md-4 col-sm-6 col-xs-12 inner">
 							<img src="{{ asset('webimages/cimhesas/'.$item[0]) }}" alt="">
 							<p>
 								{{ $item[1] }}
@@ -131,7 +131,7 @@
 					@endphp
 					<div class="row">
 						@foreach($items as $item)
-						<div class="col-md-4 item">
+						<div class="col-md-4 item second-sect-text">
 							<img src="webimages/main/punto.png" alt="">
 							<p>{{ $item }}</p>
 						</div> 
@@ -206,9 +206,9 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-6 enum-items-col">
-					<h2>Exploración en hormigones <br> 
-						con tecnología GPR <br> (Ground Penetration Radar)<br> 
+				<div class="col-md-6 enum-items-col second-sect-text">
+					<h2>Exploración en hormigones 
+						con tecnología GPR (Ground Penetration Radar)
 						 y Face Array hasta 1.20mts de profundidad</h2>
 				</div>
 				<div class="col-md-6">

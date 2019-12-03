@@ -4,7 +4,7 @@
 		<div class="container-fluid slider-inner slider-cimhe">
 			<div class="container">
 				<img style="width: auto" src="{{ asset('webimages/home/logo.jpg') }}" alt="">
-				<br><br>
+				<br>
 				<h2>Ciencia e Ingeniería Móvil del Hormigón Elaborado</h2>
 				<div class="title">
 					Laboratorio de Ensayos <br>
@@ -21,7 +21,7 @@
 		<div class="container-fluid slider-inner slider-insumos">
 			<div class="container">
 				<img style="width: auto" src="{{ asset('webimages/home/logo.jpg') }}" alt="">
-				<br><br>
+				<br>
 				<h2>Cimhe Insumos S.A.S.</h2>
 				<div class="title">
 					Equipamiento para Laboratorios, <br>
@@ -38,7 +38,7 @@
 		<div class="container-fluid slider-inner slider-geotermica">
 			<div class="container">
 				<img style="width: auto" src="{{ asset('webimages/home/logo.jpg') }}" alt="">
-				<br><br>
+				<br>
 				<h2>Cimhe Geotécnica S.A.S.</h2>
 				<div class="title">
 					Laboratorio de Suelos <br> y Ensayos Especiales
