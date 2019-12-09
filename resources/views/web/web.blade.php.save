@@ -156,13 +156,14 @@
     <section class="maincolor-back download-catalog">
         <div class="container">
             <div class="row">
-                <span class="text">Descarga nuestro catálogo de productos para laboratorio</span>
+                <span class="text">Descarga nuestro catálogode productos para laboratorio</span>
                 <a href="https://cimhe.com/downloads/insumos-para-plantas-y-mixer-de-hormigon.pdf" class="btn button btnWhiteMedium">
                     <i class="ion-archive"></i> Descargar Productos
                 </a>
-		<a href="https://cimhe.com/downloads/respuesto-cimhe-insumos.pdf" class="btn button btnWhiteMedium">
-                    <i class="ion-archive"></i> Descargar Repuestos
+		<a href="https://cimhe.com/downloads/insumos-para-plantas-y-mixer-de-hormigon.pdf" class="btn button btnWhiteMedium">
+                    <i class="ion-archive"></i> Descargar 
                 </a>
+
             </div>
         </div>	
     </section>
